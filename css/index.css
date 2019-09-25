@@ -1,0 +1,88 @@
+.index-con{
+	height:1000px;
+	margin:0 auto;
+}
+.index-head{
+	height:200px;
+	min-width:500px;
+	background: url("../images/index-head.png") no-repeat 30px bottom;
+}
+.index-middle{
+	height:500px;
+	min-width:1000px;
+	background: url("../images/index-middle.png") no-repeat left top;
+}
+.index-login{
+	width:380px;
+	padding:0 20px;
+	height:380px;
+	margin:30px 0;
+	float:right;
+    border: 20px solid #bdbdbd;
+    border-radius: 10px;
+    position:relative;
+}
+.index-login p{
+	display: block;
+	color: #fc8429;
+    text-align: center;
+    font-size: 24px;
+    height:60px;
+    line-height:60px;
+}
+.index-login input{
+	width: 300px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    font-size: 20px;
+    padding-left: 50px;
+}
+.index-login button{
+	width: 300px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    background: #fc882c;
+    border:0;
+}
+.index-login span{
+	position:absolute;
+	width:143px;
+	height:34px;
+	color: #FFF;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+	background: url("../images/input-bg.png") no-repeat;
+}
+.login-username{
+	background: url("../images/index-login.png") no-repeat 10px 5px;
+}
+.login-password{
+	background: url("../images/index-login.png") no-repeat 10px -85px;
+}
+.username-span{
+	left:-130px;
+	top:80px;
+}
+.password-span{
+	left:-130px;
+	top:170px;
+}
+.index-footer{
+	font-size: 20px;
+    text-align: center;
+    color:red;
+}
+.index-footer a{
+	cursor:pointer;
+}
+.index-footer a:hover {
+    color: #ff6600;
+}
