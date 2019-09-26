@@ -4,8 +4,25 @@
 	<meta charset="utf-8">
 	<title>index3</title>
 	<link rel="stylesheet" type="text/css" href="css/index3.css">
+	<style type="text/css">
+		.her1{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="vue/vue.js"></script>
 </head>
 <body>
-	<div class="main"></div>
+<div id="firstVue" :class="my_hidden">
+{{ my_data }}
+</div>
+<script type="text/javascript">
+	var myVue = new Vue({
+		el : "#firstVue",
+		data : {
+			my_data : "test",
+			my_hidden : "her1",
+		}
+	});
+</script>
 </body>
 </html>
