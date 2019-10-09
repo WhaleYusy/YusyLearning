@@ -16,7 +16,7 @@
 	<button>点击9</button>
 	<button>点击0</button>
 	
-<script src="dist/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
 <script type="text/javascript">
 	
 	var bs = document.getElementsByTagName("button");
@@ -28,7 +28,21 @@
 		})(a);
 	}
 	
-	var alll = document.getElementsByTagName("*");
+	var bs2 = $("button");
+	var b = 0;
+	for(var a=0;a<bs2.length;a++,b++){
+		function bc(a1){
+			bs2.eq(a1).on("click",function(){
+				alert(a1);
+			})
+		};
+		bc(a);
+	}
+	
+	console.log(bs);
+	console.log(bs2);
+	
+	// var alll = document.getElementsByTagName("*");
 	// console.log(alll);
 	// console.log($("*"));
 	
@@ -39,11 +53,12 @@
 			if(obj[i].children){
 				fn(obj[i].children);
 			}
-			arr.push(obj[i]);
+			arr.push(obj[i].localName);
 		}
 	}
 	fn(child);
-	// console.log(arr);
+	var set1 = new Set(arr);
+	console.log(set1);
 	
 	var arr2 = [];
 	function fn2(obj){
@@ -51,11 +66,12 @@
 			if(obj[i].children){
 				fn2(obj[i].children);
 			}
-			arr2.push(obj[i]);
+			arr2.push(obj[i].tagName);
 		}
 	}
 	fn2($("html"));
-	// console.log(arr2);
+	var set2 = new Set(arr2);
+	console.log(set2);
 </script>
 </body>
 </html>

@@ -17,11 +17,11 @@ var os = function (){
 }();
 if (os.isAndroid || os.isPhone) {
     // 手机
-    $(".stable").css({"width": "3.2rem","height": "4.8rem","background": "#00FF00"});
+    $(".stable").css({"width": "3.2rem","height": "4.8rem","background": "#FF0000"});
 } else if (os.isTablet) {
     // 平板
    $(".stable").css({"width": "4.8rem","height": "6.4rem","background": "#00FF00"});
 } else if (os.isPc) {
     // pc
-    $(".stable").css({"width": "8rem","height": "3.2rem","background": "#00FF00"});
+    $(".stable").css({"width": "8rem","height": "3.2rem","background": "#0000FF"});
 }
