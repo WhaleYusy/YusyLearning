@@ -2,22 +2,60 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JSONP 实例</title>
+<title>Test</title>
 </head>
 <body>
-<div id="divCustomers"></div>
+	<button>点击1</button>
+	<button>点击2</button>
+	<button>点击3</button>
+	<button>点击4</button>
+	<button>点击5</button>
+	<button>点击6</button>
+	<button>点击7</button>
+	<button>点击8</button>
+	<button>点击9</button>
+	<button>点击0</button>
+	
+<script src="dist/jquery.min.js"></script>
 <script type="text/javascript">
-function callbackFunction(result, methodName)
-{
-    var html = '<ul>';
-    for(var i = 0; i < result.length; i++)
-    {
-        html += '<li>' + result[i] + '</li>';
-    }
-    html += '</ul>';
-    document.getElementById('divCustomers').innerHTML = html;
-}
+	
+	var bs = document.getElementsByTagName("button");
+	for(var a=0;a<bs.length;a++){
+		(function (a1) {
+			bs[a1].addEventListener("click", function (e) {
+				alert(a1);
+			}, false);
+		})(a);
+	}
+	
+	var alll = document.getElementsByTagName("*");
+	// console.log(alll);
+	// console.log($("*"));
+	
+	var child = document.children;
+	var arr = [];
+	function fn(obj){
+		for(var i=0;i<obj.length;i++){
+			if(obj[i].children){
+				fn(obj[i].children);
+			}
+			arr.push(obj[i]);
+		}
+	}
+	fn(child);
+	// console.log(arr);
+	
+	var arr2 = [];
+	function fn2(obj){
+		for(var i=0;i<obj.length;i++){
+			if(obj[i].children){
+				fn2(obj[i].children);
+			}
+			arr2.push(obj[i]);
+		}
+	}
+	fn2($("html"));
+	// console.log(arr2);
 </script>
-<script type="text/javascript" src="https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction"></script>
 </body>
 </html>
