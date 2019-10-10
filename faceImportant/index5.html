@@ -19,28 +19,35 @@
 <script src="jquery.min.js"></script>
 <script type="text/javascript">
 	//js 设置按钮点击事件
-	var bs = document.getElementsByTagName("button");
-	for(var a=0;a<bs.length;a++){
-		(function (a1) {
-			bs[a1].addEventListener("click", function (e) {
-				alert(a1+1);
-			}, false);
-		})(a);
-	}
-	//js 设置按钮点击事件2
-	var bs2 = $("button");
-	var b = 0;
-	for(var a=0;a<bs2.length;a++,b++){
-		function bc(a1){
-			bs2.eq(a1).on("click",function(){
-				alert(a1+1);
-			})
-		};
-		bc(a);
+	// var bs = document.getElementsByTagName("button");
+	// for(var a=0;a<bs.length;a++){
+	// 	(function (a1) {
+	// 		bs[a1].addEventListener("click", function (e) {
+	// 			alert(a1+1);
+	// 		}, false);
+	// 	})(a);
+	// }
+	// //jq 设置按钮点击事件
+	// var bs2 = $("button");
+	// for(var a=0;a<bs2.length;a++){
+	// 	function bc(a1){
+	// 		bs2.eq(a1).on("click",function(){
+	// 			alert(a1+1);
+	// 		})
+	// 	};
+	// 	bc(a);
+	// }
+	// console.log(bs);
+	// console.log(bs2);
+	
+	//jq 设置按钮点击事件2 (let只用于局部且不重复，var会重复最后一次全局数据)
+	var bs3 = $("button");
+	for(let s=0;s<bs3.length;s++){
+		bs3.eq(s).on("click",function(){
+			alert(s+1);
+		})
 	}
 	
-	console.log(bs);
-	console.log(bs2);
 	
 	var alll = document.getElementsByTagName("*");
 	console.log(alll);
@@ -60,7 +67,7 @@
 	fn(child);
 	//去重1
 	var set1 = new Set(arr);
-	console.log(set1);
+	console.log(Array.from(set1));
 	
 	var arr2 = [];
 	function fn2(obj){
@@ -73,7 +80,7 @@
 	}
 	fn2($("html"));
 	var set2 = new Set(arr2);
-	console.log(set2);
+	console.log(Array.from(set2));
 	
 	//去重2
 	var hash = [];

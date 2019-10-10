@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vueTest2</title>
+		<link rel="stylesheet" type="text/css" href="vueTest2.css"/>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{title}}
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:"#app",
+			data:{//数据绑定
+				title: "Hello Vue",
+			},
+			filters:{
+				
+			},
+			mounted: function(){
+				this.viewChange();
+			},
+			methods:{//事件绑定
+				viewChange: function(){
+					this.title = "Vue Hello";
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// for (var i = 0; i < 10; i++) {
+			//   setTimeout(function(){
+			//     console.log(i);
+			//   })
+			// }
+			// // 输出十个 10
+			// for (let j = 0; j < 10; j++) {
+			//   setTimeout(function(){
+			//     console.log(j);
+			//   })
+			// }
+			// // 输出 0123456789
+			
+			var myMap = new Map();
+			var keystr = "111";
+			var keyobj = [1];
+			var keyfun = function(){};
+			myMap.set(keystr,"111111");
+			myMap.set(keyobj,"______");
+			myMap.set(keyfun,"------");
+			myMap.forEach(function(value,key){
+				console.log(key + " = " + value);
+			})
+			for (let item of myMap) {
+			  console.log(item);
+			}
+			for (let [key, value] of myMap) {
+			  console.log(key + " = " + value);
+			}
+			
+			// let user = {
+			// 	id : "9527",
+			// 	name : "nimaqi",
+			// }
+			// let getSet = {
+			// 	get : function(user,key){
+			// 		console.log("getting "+key);
+			// 		return user[key];
+			// 	},
+			// 	set : function(user,key,value){
+			// 		console.log("setting "+key);
+			// 		user[key] = value;
+			// 	}
+			// }
+			// let proxy = new Proxy(user,getSet);
+			// console.log(proxy.id);
+			// proxy.name = "nilaodou";
+			// console.log(proxy.name);
+			
+			// let exam = {
+			//     name: "Tom",
+			//     age: 24,
+			//     get info(){
+			//         return this.name + this.age;
+			//     }
+			// }
+			// console.log(Reflect.get(exam, 'name')); // "Tom"
+			// // 当 target 对象中存在 name 属性的 getter 方法， getter 方法的 this 会绑定 // receiver
+			// let receiver = {
+			//     name: "Jerry",
+			//     age: 20
+			// }
+			// Reflect.get(exam, 'info', receiver); // Jerry20
+			// // 当 name 为不存在于 target 对象的属性时，返回 undefined
+			// Reflect.get(exam, 'birth'); // undefined
+			// // 当 target 不是对象时，会报错
+			// // Reflect.get(1, 'name'); // TypeError
+			
+			// let string = "apple,banana,orange";
+			// console.log(string.includes("banana"));     // true
+			// console.log(string.startsWith("apple"));    // true
+			// console.log(string.endsWith("apple"));      // false
+			// console.log(string.startsWith("banana",6));  // true
+			// console.log((string+",").repeat(3));
+			
+			// console.log("h".padStart(5,"o"));  // "ooooh"
+			// console.log("h".padEnd(5,"o"));    // "hoooo"
+			// console.log("h".padStart(5));      // "    h"
+			
+			// let name = "yusy";
+			// let compute = "is cool boy!";
+			// let all = `${name} ${compute}`;
+			// console.log(all);
+			
+			var f = (a,b) => (a+b);
+			console.log(f(6,2));  //8
+			
+		</script>
+	</body>
+</html>
