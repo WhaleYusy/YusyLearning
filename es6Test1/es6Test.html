@@ -19,22 +19,22 @@
 			// }
 			// // 输出 0123456789
 			
-			var myMap = new Map();
-			var keystr = "111";
-			var keyobj = [1];
-			var keyfun = function(){};
-			myMap.set(keystr,"111111");
-			myMap.set(keyobj,"______");
-			myMap.set(keyfun,"------");
-			myMap.forEach(function(value,key){
-				console.log(key + " = " + value);
-			})
-			for (let item of myMap) {
-			  console.log(item);
-			}
-			for (let [key, value] of myMap) {
-			  console.log(key + " = " + value);
-			}
+			// var myMap = new Map();
+			// var keystr = "111";
+			// var keyobj = [1];
+			// var keyfun = function(){};
+			// myMap.set(keystr,"111111");
+			// myMap.set(keyobj,"______");
+			// myMap.set(keyfun,"------");
+			// myMap.forEach(function(value,key){
+			// 	console.log(key + " = " + value);
+			// })
+			// for (let item of myMap) {
+			//   console.log(item);
+			// }
+			// for (let [key, value] of myMap) {
+			//   console.log(key + " = " + value);
+			// }
 			
 			// let user = {
 			// 	id : "9527",
@@ -90,8 +90,32 @@
 			// let all = `${name} ${compute}`;
 			// console.log(all);
 			
-			var f = (a,b) => (a+b);
-			console.log(f(6,2));  //8
+			// var f = (a,b) => (a+b);
+			// console.log(f(6,2));  //8
+			
+			var section = {
+				"title" : "BOOK",
+				"signing":[
+					{
+						"author":{
+							"name":"author-1"
+						},
+						"book":{
+							"title":"book1",
+							"price":"$11"
+						}
+					},
+					{
+						"author":{
+							"name":"author-2"
+						},
+						"book":{
+							"title":"book2",
+							"price":"$22"
+						}
+					}]
+			}
+			console.log(section);
 			
 		</script>
 	</body>

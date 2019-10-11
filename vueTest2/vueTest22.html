@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Test22</title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{ money | moneyFilter }}
+			<input v-model="money" >
+			{{ money2 }}
+			<div>
+				<select v-model="site">
+					<option value="Google http://www.google.com">Google http://www.google.com</option>
+					<option value="baidu http://www.baidu.com">baidu http://www.baidu.com</option>
+					<option value="网易 http://www.163.com">网易 http://www.163.com</option>
+				</select>
+				<p>name：{{name}}</p>
+				<p>url：{{url}}</p>
+			</div>
+			 <div>
+			    <input v-model="filterText"/>
+			    <ul>
+			      <li v-for="item in obj">
+			        <span>{{myfilter(item.label)}}</span>
+			      </li>
+			    </ul>
+			  </div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				"money":"19",
+				"name": 'Google',
+				"url": 'http://www.google.com',
+				"obj": [
+				        {value: 0, label: 'beijing'},
+				        {value: 1, label: 'shanghai'},
+				        {value: 2, label: 'guangdong'},
+				        {value: 3, label: 'zhejiang'},
+				        {value: 4, label: 'jiangshu'}
+				      ],
+				"filterText": ''
+			},
+			filters:{
+				moneyFilter : function(data){
+					return "$"+data+" dollar";
+				}
+			},
+			computed:{
+				money2: function(){
+					return "$"+this.money + " dollar";
+				},
+				site: {
+				      // getter
+				      get: function () {
+				        return this.name + ' ' + this.url
+				      },
+				      // setter
+				      set: function (newValue) {
+				        let names = newValue.split(' ')
+				        this.name = names[0]
+				        this.url = names[names.length - 1]
+				      },
+				}
+			},
+			methods:{
+				myfilter (value) {
+				      if (value.indexOf(this.filterText) > -1) {
+				        return value
+				      }
+				    }
+			}
+		})
+	</script>
+</html>
