@@ -5,8 +5,8 @@
 <title>Test</title>
 </head>
 <body>
-	<button>点击1</button>
-	<button>点击2</button>
+	<button style="display: none;">点击1</button>
+	<button style="visibility: hidden;">点击2</button>
 	<button>点击3</button>
 	<button>点击4</button>
 	<button>点击5</button>
@@ -41,56 +41,66 @@
 	// console.log(bs2);
 	
 	//jq 设置按钮点击事件2 (let只用于局部且不重复，var会重复最后一次全局数据)
-	var bs3 = $("button");
-	for(let s=0;s<bs3.length;s++){
-		bs3.eq(s).on("click",function(){
-			alert(s+1);
-		})
-	}
+	// var bs3 = $("button");
+	// for(let s=0;s<bs3.length;s++){
+	// 	bs3.eq(s).on("click",function(){
+	// 		alert(s+1);
+	// 	})
+	// }
 	
 	
-	var alll = document.getElementsByTagName("*");
-	console.log(alll);
-	console.log($("*"));
+	// var alll = document.getElementsByTagName("*");
+	// console.log(alll);
+	// console.log($("*"));
 	
-	//递归html所有不重复标签
-	var child = document.children;
-	var arr = [];
-	function fn(obj){
-		for(var i=0;i<obj.length;i++){
-			if(obj[i].children){
-				fn(obj[i].children);
-			}
-			arr.push(obj[i].localName);
+	// //递归html所有不重复标签
+	// var child = document.children;
+	// var arr = [];
+	// function fn(obj){
+	// 	for(var i=0;i<obj.length;i++){
+	// 		if(obj[i].children){
+	// 			fn(obj[i].children);
+	// 		}
+	// 		arr.push(obj[i].localName);
+	// 	}
+	// }
+	// fn(child);
+	// //去重1
+	// var set1 = new Set(arr);
+	// console.log(Array.from(set1));
+	
+	// var arr2 = [];
+	// function fn2(obj){
+	// 	for(var i=0;i<obj.length;i++){
+	// 		if(obj[i].children){
+	// 			fn2(obj[i].children);
+	// 		}
+	// 		arr2.push(obj[i].localName);
+	// 	}
+	// }
+	// fn2($("html"));
+	// var set2 = new Set(arr2);
+	// console.log(Array.from(set2));
+	
+	// //去重2
+	// var hash = [];
+	// for(var p=0;p<arr.length;p++){
+	// 	if(arr2.indexOf(arr[p])==p){
+	// 		hash.push(arr[p]);
+	// 	}
+	// }
+	// console.log(hash);
+	
+	function a(){
+		var i=0;
+		function b(){
+			console.log(++i);
 		}
+		return b;
 	}
-	fn(child);
-	//去重1
-	var set1 = new Set(arr);
-	console.log(Array.from(set1));
-	
-	var arr2 = [];
-	function fn2(obj){
-		for(var i=0;i<obj.length;i++){
-			if(obj[i].children){
-				fn2(obj[i].children);
-			}
-			arr2.push(obj[i].localName);
-		}
-	}
-	fn2($("html"));
-	var set2 = new Set(arr2);
-	console.log(Array.from(set2));
-	
-	//去重2
-	var hash = [];
-	for(var p=0;p<arr.length;p++){
-		if(arr2.indexOf(arr[p])==p){
-			hash.push(arr[p]);
-		}
-	}
-	console.log(hash);
-	
+	var c = a();
+	c();
+	c();
 </script>
 </body>
 </html>
