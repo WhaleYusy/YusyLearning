@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="app">
-			{{title | }}
+			{{title | title2}}
 		</div>
 		<div id="app-2">
 		  <span v-bind:title="message">
@@ -41,14 +41,8 @@
 				title: "Hello Vue",
 			},
 			filters:{
-				
-			},
-			mounted: function(){
-				this.viewChange();
-			},
-			methods:{//事件绑定
-				viewChange: function(){
-					this.title = "Vue Hello";
+				title2 : function(title){
+					return title.split("").reverse().join("");
 				}
 			}
 		});
