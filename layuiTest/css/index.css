@@ -1,0 +1,30 @@
+body{
+	font-size:0.14rem;
+}
+.main{
+	padding:0.1rem 0.1rem 0 0;
+}
+.layui-form{
+	max-width:3.75rem;
+	margin:0 auto;
+}
+.layui-form-label{
+	padding: 0.09rem 0.15rem;
+	width: 0.8rem;
+	line-height: 0.2rem;
+}
+.layui-input-block {
+    margin-left: 1.1rem;
+    min-height: 0.36rem;
+}
+.layui-input{
+	padding-left: 0.1rem;
+	height: 0.38rem;
+	line-height: 1.3;
+	border-width: 0.01rem;
+	border-radius: 0.02rem;
+}
+.layui-form-select dl dd, .layui-form-select dl dt {
+    padding: 0 0.1rem;
+    line-height: 0.36rem;
+}
