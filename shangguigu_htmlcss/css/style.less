@@ -1,0 +1,28 @@
+@r:red;
+@l:100px;
+@w:500px;
+@d:box1;
+@d2:box1;
+body{
+	width: 1000px;
+	height: 1000px;
+	div{
+		color: @r;
+	}
+	.@{d}{
+		width:@w;
+		height:@l;
+		background:#000;
+	}
+	.@{d2}{
+		color: #fff;
+	}
+}
+.box2{
+	width: 200px;
+	height: 200px;
+	background: #bfa;
+}
+.box3:extend(.box2){
+	width: 300px;
+}
