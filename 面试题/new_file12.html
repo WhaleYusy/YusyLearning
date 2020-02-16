@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body{
+				height: 1500px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">123</button>
+	</body>
+	<script type="text/javascript">
+		// 函数节流
+		function throttle(fn,delay){
+			var lastTime = 0;
+			return function(){
+				var nowTime = Date.now();
+				if(nowTime - lastTime > delay){
+					fn();
+					lastTime = nowTime;
+				}				
+			}
+		}
+		
+		document.onscroll = throttle(function(){
+			console.log('scroll:'+Date.now())
+		},2000)
+		
+		// 函数防抖
+		function debounce(fn,delay){
+			var timer = null;
+			return function(){
+				clearInterval(timer);
+				timer = setTimeout(function(){
+					fn();
+				},delay)
+			}
+		}
+		
+		document.getElementById("btn").onclick = debounce(function(){
+			console.log('click:'+Date.now())
+		},1000)
+		
+	</script>
+</html>

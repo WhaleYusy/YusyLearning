@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			html{
+				font-size: 100px;
+			}
+			#box{
+				width: 0.5rem;
+				height: 0.5rem;
+				border-bottom: 1px solid #000;/* css像素 */
+			}
+		</style>
+		<!-- 像素比 = 物理像素 / CSS像素 -->
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function(){
+			var dpr = window.devicePixelRatio;
+			console.log(dpr);
+			var scale = 1/dpr;
+			var metaNode = document.querySelector("meta[name='viewport']")
+			metaNode.setAttribute('content','width=device-width,initial-scale='+ scale +',user-scalable=no')
+		}	
+	</script>
+</html>
