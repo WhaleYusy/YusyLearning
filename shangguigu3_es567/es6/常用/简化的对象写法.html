@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let username = 'kobe'
+			let age = 39
+			let obj = {
+				username: username,
+				age: age
+			}
+			console.log(obj)
+			let obj2 = {
+				username,
+				age,
+				getName(){
+					return this.username;
+				}
+			}
+			console.log(obj2)
+			console.log(obj2.getName())
+		</script>
+	</body>
+</html>

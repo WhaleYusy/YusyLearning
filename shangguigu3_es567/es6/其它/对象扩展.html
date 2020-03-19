@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log(0 == -0)
+			console.log(NaN == NaN)
+			console.log(Object.is(0,-0))
+			console.log(Object.is(NaN,NaN))
+			
+			let a = {name:'1'},b = {age:'2'}
+			let c = {sex:'0'}
+			console.log(c)
+			Object.assign(c,a,b)
+			console.log(c)
+			
+			let obj3 = {}
+			let obj4 = {money: 50000};
+			console.log(obj3)
+			console.log(obj4) 
+			console.log(obj3.money)
+			console.log(obj4.money)
+			obj3.__proto__ = obj4;
+			console.log(obj3)
+			console.log(obj4) 
+			console.log(obj3.money)
+			console.log(obj4.money)
+			
+		</script>
+	</body>
+</html>

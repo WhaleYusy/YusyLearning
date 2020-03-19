@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//字符串 不影响源数据
+			// let str = 'abcd'
+			// let str2 = str;
+			// str2 = '';
+			// console.log(str)
+			
+			// let bool1 = true;
+			// let bool2 = bool1;
+			// bool2 = false;
+			// console.log(bool1)
+			
+			// let obj = {username:'kobe',age:39}
+			// let obj1 = obj;
+			// console.log(obj1)
+			// obj1.username = "wade"
+			// console.log(obj.username)
+			
+			// //拷贝数组或者对象的时候，没有生成新的数据，而是复制了引用
+			// let arr = [1,4,{username:'kobe',age:39}];
+			// let arr2 = arr;
+			// arr2[0] = 'abcd'
+			// console.log(arr,arr2)
+			
+			// 直接赋值	浅拷贝
+			// Object.assign	浅拷贝
+			// Array.concat	浅拷贝
+			// Array.slice	浅拷贝
+			// JSON.parse(JSON.stringify())	//深拷贝，但拷贝的数据不能有函数
+			
+			// let obj = {username:'kobe',age:39}
+			// // let obj2 = Object.assign(obj)
+			// // console.log(obj2)
+			// // obj2.username = 'wade'
+			// // console.log(obj)
+			
+			// let arr = [1,3,{username:'kobe'},function fun(){}]
+			// // let arr2 = arr.concat();
+			// // console.log(arr2)
+			// // arr2[1] = 300
+			// // console.log(arr2) 
+			// // console.log(arr)
+			
+			// // let arr3 = arr.slice()
+			// // console.log(arr3)
+			
+			// let arr4 = JSON.parse(JSON.stringify(arr))
+			// console.log(arr4)
+			// arr4[2].username = 'jack'
+			// console.log(arr)
+			
+			// 思考，如何实现深度拷贝（克隆）
+			// 拷贝的数据有对象/数组
+			// 拷贝的数据里不能有对象/数组
+			
+			
+			
+		</script>
+	</body>
+</html>

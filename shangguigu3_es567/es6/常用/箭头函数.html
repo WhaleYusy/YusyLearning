@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn1">测试箭头函数1</button>
+		<button id="btn2">测试箭头函数2</button>
+		<script type="text/javascript">
+			let fun = () => console.log("我是箭头函数")
+			fun()
+			
+			let fun1 = data => console.log("形参是："+data)
+			fun1("yusy")
+			
+			let fun2 = (data,index) => console.log(data,index)
+			fun2('yusy',2)
+			
+			//函数体只有一条语句或者是表达式的时候，会自动返回语句执行的结果或者是表达式的结果
+			let fun3 = (x,y) => x+y
+			console.log(fun3(24,36))
+			
+			let fun5 = (x,y) =>{
+				console.log(x,y)
+				return x+y;
+			}
+			console.log(fun5(35,49))
+			
+			//测试
+			let btn1 = document.getElementById('btn1');
+			let btn2 = document.getElementById('btn2');
+			btn1.onclick = function(){
+				console.log(this)
+			}
+			btn2.onclick = () => console.log(this)
+			
+			let obj = {
+				name:'箭头函数',
+				getName:()=>{
+					btn2.onclick = () => console.log(this)
+				},
+				getName2:() => console.log(this)
+			}
+			obj.getName()
+			obj.getName2()
+			
+		</script>
+	</body>
+</html>

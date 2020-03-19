@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let symbol = Symbol();
+			console.log(symbol)
+			let obj = {
+				username: 'kobe',
+				age: 39
+			}
+			obj[symbol] = "hello"
+			console.log(obj)
+			
+			for(let i in obj){
+				console.log(i)
+			}
+			
+			let symbol2 = Symbol('one');
+			let symbol3 = Symbol('two');
+			console.log(symbol2 , symbol3)
+			
+			//可以定义常量
+			const PI = Symbol('PI')
+			console.log(PI)
+			
+			
+			
+		</script>
+	</body>
+</html>

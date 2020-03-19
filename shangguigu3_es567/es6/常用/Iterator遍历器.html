@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 模拟指针对象 遍历器对象
+			function myIterator(arr){
+				let nextIndex = 0;
+				return{	//遍历器对象
+					next: function(){
+						return nextIndex < arr.length?{value: arr[nextIndex++], done: false}:{value: undefined,done:true}
+					}
+				}
+			}
+			//准备数据
+			let arr = [1,4,65,'abc']
+			let iteratorObj = myIterator(arr);
+			console.log(iteratorObj.next())
+			console.log(iteratorObj.next())
+			console.log(iteratorObj.next())
+			console.log(iteratorObj.next())
+			console.log(iteratorObj.next())
+			console.log(iteratorObj.next())
+			console.log(iteratorObj.next())
+			
+			//遍历器 for of循环遍历
+			//数组 字符串 arguments set容器 map容器
+			for(let i of arr){
+				console.log(i)
+			}
+			
+			let str = "abcdefg"
+			for(let i of str){
+				console.log(i)
+			}
+			
+			function myIterator2(){
+				for(let i of arguments){
+					console.log(i)
+				}
+			}
+			myIterator2(1,2,3)
+			
+			let obj = {username:'kobe',age:39}
+			// for(let i of obj){
+			// 	console.log(i)
+			// }
+			
+			let targetData = {
+				[Symbol.iterator]: function(){
+					let nextIndex = 0;
+					return{	//遍历器对象
+						next: function(){
+							return nextIndex < this.length?{value: this[nextIndex++], done: false}:{value: undefined,done:true}
+						}
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fun(a,...value){
+				console.log(arguments)
+				console.log(value)
+				value.forEach(item=>{
+					console.log(item)
+				})
+			}
+			fun(1,2,33,65,123)
+			
+			let arr = [1,6]
+			let arr1 = [2,3,4,5]
+			arr = [1,...arr1,6]
+			console.log(arr)
+			console.log(...arr)
+			
+		</script>
+	</body>
+</html>

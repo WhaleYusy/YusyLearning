@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// function* myGenerator(){
+			// 	console.log("开始执行")
+			// 	yield 'hello';
+			// 	console.log("hello执行完毕")
+			// 	yield 'generator';
+			// 	console.log("generator执行完毕")
+			// }
+			// let MG = myGenerator();
+			// console.log(MG.next());
+			// console.log(MG.next());
+			// console.log(MG.next());
+			
+			function getNews(url){
+				$.get(url,function(data){
+					console.log(data)
+					let url = "https://www.qq.com/"
+					SX.next(url);
+				})
+			}
+			function* sendXml(){
+				let url = yield getNews('https://www.baidu.com/')
+				yield getNews(url)
+			}
+			let SX = sendXml();
+			SX.next();
+			
+		</script>
+	</body>
+</html>

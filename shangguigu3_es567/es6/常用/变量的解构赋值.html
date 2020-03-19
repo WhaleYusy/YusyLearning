@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let obj = {username: 'kobe', age: 39}
+			// let username = obj.username;
+			// let age = obj.age
+			// console.log(username,age)
+			let {username, age} = obj;
+			console.log(username,age)
+			
+			let arr = [1,3,5,'abc',true]
+			let [a,b,c,d,e] = arr;
+			console.log(a,b)
+			
+			function foo({username,age}){
+				console.log(username, age);
+			}
+			foo(obj);
+		</script>
+	</body>
+</html>
