@@ -1,0 +1,66 @@
+/* pages/service/component/vote/voteRank/voteRank.wxss */
+.voteRankContent{
+  margin-bottom:120rpx;
+}
+.rankingList_box {
+  width: 100%;
+  height: calc(100vh - 120rpx);
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.rankingList_cont_box {
+  width: 96%;
+  margin: 0rpx auto;
+  box-sizing: border-box;
+}
+.rankingList_cont_box .rankingList_title {
+  width: 100%;
+  height: 80rpx;
+  background: #ffcc66;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+}
+.rankingList_cont_box .flex {
+  display: flex;
+  border-bottom: 1rpx solid #eeeeee;
+  height: 80rpx;
+}
+.rankingList_cont_box .flex .item {
+  flex: 1;
+  margin: auto;
+  font-size: 28rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5rpx 0;
+}
+.line1{
+  background: #ffffff;
+}
+.line2{
+  background: #fdf5e6;
+}
+
+.rankingList_content {
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #949494;
+  padding: 30rpx 0;
+}
+
+.more-btn-box {
+  display: flex;
+  padding: 30rpx 0 15rpx 0;
+}
+.more-btn-box .more-btn {
+  font-size: 22rpx;
+  margin: auto;
+  padding: 15rpx 30rpx;
+}
+
+/*# sourceMappingURL=lo.css.map */

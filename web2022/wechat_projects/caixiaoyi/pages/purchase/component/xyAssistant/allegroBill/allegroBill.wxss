@@ -1,0 +1,96 @@
+page{
+  background: #f6f6f6;
+}
+.ab-main{
+  margin-bottom: 140rpx;
+}
+.ab-header{
+  height: 300rpx;
+  width: 100%;
+}
+.ab-header image{
+  width: 100%;
+  height: 100%;
+}
+.ab-content{
+  
+}
+.ab-content-tab{
+  display: flex;
+  overflow: scroll;
+  height: 80rpx;
+}
+.ab-ctli{
+  width: 24%;
+  flex-shrink: 0;
+  height: 100%;
+  line-height: 80rpx;   
+  font-size: 30rpx;
+  text-align: center;
+  padding: 0 10rpx;
+  border: 2rpx solid #c8c8c8;
+  border-left: none;
+  box-sizing: border-box;
+}
+.ab-content-tab .active{
+  background: gray;
+  color: white;
+}
+
+.ab-content-main{
+  padding:10rpx 30rpx;
+  margin: 0 auto;
+  font-size: 26rpx;
+}
+.ab-cmli{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+  color: #2c3e50;
+}
+.ab-cmli1,.ab-cmli2,.ab-cmli3{
+  display: flex;
+  border-bottom: 2rpx solid #c8c8c8;
+}
+.ab-cmli3{
+  border-bottom: 0;
+}
+.ab-cmliname{
+  width: 25%;
+  background: lightgray;
+  padding: 14rpx;
+  box-sizing: border-box;
+}
+.ab-cmlidata{
+  width: 25%;
+  background: #fff;
+  padding: 14rpx;
+  box-sizing: border-box;
+}
+.ab-cmliaddress{
+  width: 75%;
+  background: #fff;
+  padding: 14rpx;
+  box-sizing: border-box;
+}
+.br1{
+  border-top-left-radius: 20rpx;
+}
+.br2{
+  border-top-right-radius: 20rpx;
+}
+.br3{
+  border-bottom-left-radius: 20rpx;
+}
+.br4{
+  border-bottom-right-radius: 20rpx;
+}
+
+.ab-footer{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #696969;
+  font-size: 24rpx;
+}

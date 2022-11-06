@@ -1,0 +1,49 @@
+<!--pages/shoppingMall/component/my/Coupon/Coupon.ttml-->
+<shopNav selected="{{2}}"></shopNav>
+<view class="CouponContent">
+  <view class="bottom">
+      <!-- 优惠券列表 -->
+        <view tt:for="{{couponList}}" tt:for-item="v" tt:key="index" class="list-warp {{v.couponUse === 1 && v.isDelete === 0 && v.isUse === 0 ? 'list-bg-start' : 'list-bg-end'}}">
+        <view class="upper">
+          <view class="upper-box">
+            <view class="left">￥<text>{{v.couponPrice}}</text></view>
+            <view class="center">
+              <view class="msg">
+                <text>{{v.couponName}}</text>
+                <text>满{{v.couponTop}}可用</text>
+              </view>
+            </view>
+            <view class="right">
+              <view class="btn" tt:if="{{v.couponUse === 1 && v.isUse ===  0 && v.isDelete === 0}}" catchtap="onImmediateUse">立即使用</view>
+              <view class="btn btn-color" wx:elif="{{v.couponUse === 0 && v.isDelete === 0}}">不可用</view>
+              <view class="btn btn-color" wx:elif="{{v.isDelete === 1}}">无效</view>
+              <view class="btn btn-color" wx:elif="{{v.isUse === 1}}">已使用</view>
+            </view>
+          </view>
+        </view>
+        <view class="lower">
+          <view class="lower-box">
+            <p>有效日期：{{v.startTime}} 至 {{v.endTime}}</p>
+            <p>可用范围：仅用于商城</p>
+          </view>
+        </view>
+      </view>
+
+      <!-- 加载更多 -->
+      <!-- <view class="load-more" tt:if="couponList.length > 10" catchtap="onLoadingClick">
+        <view class="more-box">
+          {{loadMoreTxt}}
+          <i class="el-icon-arrow-right" v-show="!isMoreLoading"></i>
+        </view>
+      </view> -->
+
+      <!-- 无数据 -->
+      <view class="showTip" tt:if="{{couponList.length > 0 && showNoMore}}">暂无更多</view>
+      <view class="no-address" tt:if="{{couponList.length <= 0}}">
+        <view class="no-box">
+          <image src="/img/shoppingMall/mySvg/address.png" alt=""></image>
+          <p style="width:400rpx;padding:20rpx;text-align:center;font-size:28rpx;">您还没有优惠券列表！</p>
+        </view>
+      </view>
+    </view>
+</view>

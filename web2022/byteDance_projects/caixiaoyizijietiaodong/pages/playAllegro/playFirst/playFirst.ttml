@@ -1,0 +1,57 @@
+<!--pages/playAllegro/playFirst/playFirst.ttml-->
+
+<view class="playFirstContent">
+  <swiperImgs id="purSwiper" imgUrls="{{imgUrls}}"></swiperImgs>
+  <view class="warp">
+    <view class="playingAllegro_cont_box">
+      <view class="cont_item">
+        <view class="item_title">板子层数</view>
+        <image src="http://qiniuoss.822644.com/wxPic/20191125/767336340881707008.blob" class="icon_img" />
+        <!-- <select name="" id="" class="select_inp" value="{{submitData.layerNum}}">
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+        </select> -->
+        <input type="number" value="{{layer}}" class="inp" readonly  catchtap="showLayerBoard"/>
+        <view class="layer" tt:if="{{ifShow}}" ><!--- -->
+          <picker-view indicator-style="height: 50px;" style="width: 400rpx; height: 400rpx;" value="{{index}}" bindchange="chooseLayer" class="picker" >
+            <picker-view-column>
+              <view  style="line-height: 50px;text-align:center" tt:for="{{layerlist}}" tt:key="{{index}}" >{{item}}</view>
+            </picker-view-column>
+          </picker-view>
+          <button bindtap="sureChoose">确定</button>
+        </view>
+      </view>
+      <view class="cont_item">
+        <view class="item_title">板子宽度</view>
+        <input type="number" value="{{submitData.pcbWide}}" class="inp" bindinput="setValue" data-name="pcbWide"/>
+        <view class="unit_box">厘米</view>
+      </view>
+      <view class="cont_item">
+        <view class="item_title">板子长度</view>
+        <input type="number" value="{{submitData.pcbLong}}" class="inp" bindinput="setValue" data-name="pcbLong"/>
+        <view class="unit_box">厘米</view>
+      </view>
+      <view class="cont_item">
+        <view class="item_title">板子数量</view>
+        <input type="text" disabled="false" bindtap="openSelectBox" class="inp" value="{{submitData.pcbNum}}" style="width:70%;outline:none" />
+      </view>
+      <button class="next_step" catchtap="goNext">下一步</button>
+    </view>
+    <view class="select_num" tt:if="{{isShowSelect}}">
+      <view class="select_title">
+        <text>请选择板子数量</text>
+        <i class="fa fa-times" catchtap="closeSelectBox">x</i>
+      </view>
+      <view class="select_cont">
+       <radio-group class='radio-group' bindchange="radioChange">
+            <radio  class='radio'style='margin-left: 11px;' tt:for="{{radioList}}" tt:key="num" value="{{item}}" checked="{{item.checked}}">
+            <text class="loginLab" style='margin-left: 0px;'>{{item}}</text>
+            </radio>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+</view>
+<tabBar></tabBar>

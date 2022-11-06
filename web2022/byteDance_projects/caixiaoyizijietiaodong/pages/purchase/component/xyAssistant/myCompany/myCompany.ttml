@@ -1,0 +1,31 @@
+<view class="mc-bg">
+  <image src="{{imgUrlNormal}}"></image>
+</view>
+<view class="mc-block">
+  <view class="mc-blocka">
+    <view class="mc-content">
+    <!-- 企业名称 点赞数 -->
+      <view class="mc-blockh">
+        <view><image src="{{imgUrl}}"></image></view>
+        <view class="mc-blockhc">{{name}}</view>
+        <view class="mc-blockhl" bindtap="likeCout">
+          <i class="iconfont iconaixin" style="color:red;"></i>
+          <text class="mc-blockhlt">{{goodCount}}</text>
+        </view>
+      </view>
+      <view class="mc-blockc">
+        <text>注册资本：{{registerMoney}}</text><text>\n</text>
+        <text>成立时间：{{buildDateS}}</text><text>\n</text>
+        <text>注册地址：{{buildAddress}}</text><text>\n</text>
+        <text style="color:blue;">浏  览  量：{{watchCountS}}</text>
+      </view>
+      <view class="mc-blockf">
+        <view class="mc-blockfh">
+          <image src="http://qiniuoss.822644.com/wxPic/20191122/765268458916057088.png"></image>
+          <text class="mc-blockfht">公司简介</text>
+        </view>
+        <view class="mc-blockff">{{introduce}}</view>
+      </view>
+    </view>
+  </view>
+</view>

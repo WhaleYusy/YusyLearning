@@ -1,0 +1,17 @@
+<!--pages/purchase/component/xyAssistant/myWallet/myWallet.ttml-->
+<view class="mn-main">
+  <view class="mn-header">
+    <image src="/img/gzhImg/fabu.jpg"></image>
+  </view>
+  <view class='cont_box'>
+    <view class='cont_item' bindtap='bindPhone'>
+      <text>{{telephone ? '已绑定手机号' : '绑定手机号' }}</text>
+      <text decode><text style='color:gray' >{{telephone || ''}}</text>&gt;</text>
+    </view>
+    <view class='cont_item' bindtap='changePassword'>
+      <text>支付密码</text>
+      <text decode>&gt;</text>
+    </view>
+  </view>
+</view>
+<tabBar></tabBar>

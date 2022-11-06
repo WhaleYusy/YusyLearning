@@ -1,0 +1,107 @@
+<!--pages/purchase/component/xyAssistant/investCashout/investCashout.ttml-->
+<view class='head-box' >
+  <text class='head-box-point' >{{userInfo.bi}}</text>
+  <text>我的积分</text>
+</view>
+<view class='investCashout-tab' >
+  <view tt:for="{{tabList}}" tt:key="index" class='{{currentInd == index ? "active" : "" }}' data-index='{{index}}' bindtap='changeTab'  >{{item.label}}</view>
+</view>
+<!-- 充值 -->
+<view tt:if="{{currentInd == 0}}" >
+  <view class='investCashout-title' >充值金额</view>
+  <view class='invest-box' >
+    <view tt:for="{{payList}}" tt:key="index" class='{{currentPayInd == index ? "pay-active" : "" }}' data-index='{{index}}' bindtap='changePayTab' data-item='{{item}}'  >{{item.label}}</view>
+  </view>
+  <view class='investCashout-inp-box' >
+    <text>输入其他金额</text>
+    <view class='inp-box' >
+      <input type='number' value="{{investPay}}" class='investCashout-inp' bindinput='setVal'   /><text class='investCashout-inp-btn' >确 认</text>   
+    </view>
+  </view>
+  <view class='investCashout-payTip' >注:自定义充值积分为100的倍数,需支付金额(注：1RMB=2积分)</view>
+  <view class='bottom-tip' >
+    <view>支付金额：<text style='color:red' >{{investMoney}} 元</text></view>
+    <view class='confirm-btn' bindtap='doInvest' >立即充值积分</view>
+  </view>
+</view>
+<!-- 提现 -->
+<view tt:if="{{currentInd == 1}}" >
+  <view class='investCashout-title' >兑换积分</view>
+  <view class='cashout-inp-box' >
+    <input type='number' class='cashout-inp'  bindinput='setValue' value="{{cashOutMoney}}"  /> 
+  </view>
+  <view class='investCashout-title' >温馨提示</view>
+  <view class='investCashout-payTip cashout-payTip' >1:普通会员提现扣减20%(国税税额13%,腾讯收取1.2%帐务手续费）</view>
+  <view class='investCashout-payTip cashout-payTip' >2:VIP会员扣减15%<text style='color:red' bindtap="onGoto">升级会员(点击跳转)</text></view>
+  <view class='investCashout-payTip cashout-payTip' >3:普通会员200积分起,VIP会员100积分起即可提现。</view>
+  <view class='investCashout-payTip cashout-payTip' >4:每日限提现一次,每次最高限额10000积分,提现积分限10倍数。</view>
+  <view class='investCashout-payTip cashout-payTip' >5:旅游积分不能提现。</view>
+  <view class='investCashout-payTip' style='font-size:26rpx;' >6:赚积分</view>
+  <view class='bottom-tip' style='justify-content: center;' >
+    <view class='confirm-btn' style='width:80%' bindtap='cashout' >立即提现</view>
+  </view>
+</view>
+
+<!-- <view class='cashout-mb' >
+  <view class='cashout-box' >
+    <view class='cashout-title' >提示</view>
+    <view class='cashout-tip' >本次手续费{{userInfo.serviceCharge}}%, 升级会员手续费低至15%</view>
+  </view>
+</view> -->
+ <view class="mb" tt:if="{{ppshow}}" catchtap="onIsShowSqClose"></view>
+ <view tt:if="{{ppshow}}" bind:close="onppClose" closeable="true" style="height: 66.6vh;">
+        <view class="chain-mask"></view>
+        <view class='chain-dialog'>
+        <view class="cashout-title">提 现</view>
+        <view class="cashout-tip">
+          本次手续费{{userInfo.serviceCharge}}%, 升级会员手续费低至15%
+          <span bindtap="onGoto">(点击此处升级)</span>
+        </view>
+        <view class="wi-flex">
+          <view class="wi-item">提现积分：{{cashOutMoney}}</view>
+        </view>
+        <view class="wi-flex">
+          <view class="wi-item">实名验证：{{userInfo.realName || ''}}</view>
+          <view
+            class="go-binding"
+            tt:if="{{userInfo.realName == null || userInfo.realName == ''}}"
+            bindtap="goBindingInfo"
+          >去绑定</view>
+        </view>
+        <view class="wi-flex">
+          <view class="wi-item">
+           <text>手机号码：</text>
+            <input
+              type="text"
+              class="wi-input br"
+              placeholder="未绑定手机号码"
+              value="{{userInfo.payTelephone}}"
+              disabled
+            />
+          </view>
+          <view
+            class="go-binding"
+            tt:if="{{userInfo.payTelephone == '' || userInfo.payTelephone == null}}"
+            bindtap="goBindingInfoP"
+          >去绑定</view>
+        </view>
+        <view class="wi-flex">
+          <view class="wi-item">
+            输入验证码：
+            <input
+              type="text"
+              class="wi-code"
+              placeholder="请输入验证码"
+              maxlength="6"
+              bindinput="onCode"
+              value="{{code}}"
+            />
+          <view class="wi-count-down {{isDisabled ? 'wi-count-down-bg' : ''}}" bindtap="onCodeClick" >{{codeTxt}} </view>
+          </view>
+        </view>
+        <view class="wi-btns">
+          <view class="btn1" bindtap="onppClose">取消</view>
+          <view class="btn2" bindtap="onWiPopupSubmit">确认</view>
+        </view>
+        </view>
+</view>

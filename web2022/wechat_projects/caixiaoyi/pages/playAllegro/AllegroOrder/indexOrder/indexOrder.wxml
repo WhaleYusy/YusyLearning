@@ -1,0 +1,32 @@
+<!--pages/playAllegro/AllegroOrder/indexOrder/indexOrder.wxml-->
+<view class="indexOrderContent">
+  <view class="tabList">
+    <view class="tableListCon">
+      <view  wx:if="{{dataList.length > 0}}" class="tabItem {{active == -1 ? 'linkTabItem' : ''}}" 
+      catchtap="onTabClick" data-index="{{-1}}" >抢接单</view>
+      <view  class="tabItem {{active == index ? 'linkTabItem' : ''}}" wx:for="{{tabList}}" wx:key="index" 
+      catchtap="onTabClick" data-index="{{index}}" data-active="{{item.active}}">{{item.title}}</view>
+        <!--   -->
+    </view>
+  </view>
+  <!-- 各种类型的订单 -->
+  <view class="orderContent">
+    <!-- <catchOrder wx:if="{{active == 0 && dataList.length > 0}}"  id="catchOrder"></catchOrder>
+    <allOrder wx:if="{{active == 1}}" id="allOrder"  ></allOrder>
+    <waitPay wx:if="{{active == 2}}" id="waitPay"  ></waitPay>
+    <create  wx:if="{{active == 3}}" id="create" ></create>
+    <hasPost wx:if="{{active == 4}}" id="hasPost"></hasPost>
+    <hasBeen wx:if="{{active == 5}}" id="hasBeen" ></hasBeen>
+    <appeal wx:if="{{active == 6}}"   id="appeal" ></appeal>
+    <hasCancel wx:if="{{active == 7}}" id="hasCancel"  ></hasCancel> -->
+
+    <catchOrder wx:if="{{active == -1 && dataList.length > 0}}"  id="catchOrder"></catchOrder>
+    <allOrder wx:if="{{active == 0}}" id="allOrder"  ></allOrder>
+    <waitPay wx:if="{{active == 1}}" id="waitPay"  ></waitPay>
+    <create  wx:if="{{active == 2}}" id="create" ></create>
+    <hasPost wx:if="{{active == 3}}" id="hasPost"></hasPost>
+    <hasBeen wx:if="{{active == 4}}" id="hasBeen" ></hasBeen>
+    <appeal wx:if="{{active == 5}}"   id="appeal" ></appeal>
+    <hasCancel wx:if="{{active == 6}}" id="hasCancel"  ></hasCancel>
+  </view>
+</view>

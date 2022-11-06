@@ -1,0 +1,90 @@
+var formatDate = function (item) {
+  if (item) {
+    return item.substring(0, 10)
+  } else {
+    return ''
+  }
+}
+var formatNickname = function (item) {
+  if (item.length > 0) {
+    return "*****" + item.substring(item.length - 1, item.length);
+  }
+}
+var formatProxyBrandStr = function (item) {
+  if(item==null||item==""||item==undefined){
+    return []
+  }else if (item.length > 0) {
+    return item.split(',')
+  }else{
+    return []
+  } 
+}
+var isFacilitatorTypeId = function(idnex) {
+  var txt = "";
+  switch (parseInt(idnex)) {
+    case 1:
+      txt = "开发公众号";
+      break;
+    case 2:
+      txt = "开发小程序";
+      break;
+    case 3:
+      txt = "教育培训";
+      break;
+    case 4:
+      txt = "财务记账";
+      break;
+    case 5:
+      txt = "旅游";
+      break;
+    case 6:
+      txt = "调户口";
+      break;
+    case 7:
+      txt = "团队拓展";
+      break;
+    case 8:
+      txt = "高新认证";
+      break;
+    case 9:
+      txt = "打快板";
+      break;
+    case 10:
+      txt = "产品认证";
+      break;
+    case 11:
+      txt = "库存处理";
+      break;
+    case 12:
+      txt = "3D打印";
+      break;
+    case 13:
+      txt = "机票酒店";
+      break;
+    case 14:
+      txt = "商务法律";
+      break;
+    case 15:
+      txt = "民事法律";
+      break;
+  }
+  return txt;
+}
+var toFixed = function (num,decimal) {
+  decimal = decimal || 0;
+  if(!num){
+    return '0.0';
+  }
+  return parseFloat(num).toFixed(decimal);
+}
+/*
+ * 导出
+ */
+module.exports = {
+  formatDate: formatDate,
+  formatNickname: formatNickname,
+  isFacilitatorTypeId: isFacilitatorTypeId,
+  toFixed: toFixed,
+  formatProxyBrandStr:formatProxyBrandStr
+
+}

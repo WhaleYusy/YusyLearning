@@ -1,0 +1,55 @@
+/* componentS/shopNav/shopNav.wxss */
+.tab_wrap {
+    height:70rpx;
+    background: #FEFEFE;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 3000;
+  }
+  .tab_wrap .tab_item {
+    flex: 1;
+    /* border:1px solid lightgray; */
+    border-right:none;
+    /* display: inline-block; */
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rpx 0;
+    /* border-top: 1px solid #eaeaea; */
+    box-sizing: border-box;
+  }
+  .tab_wrap .tab_item i {
+    font-size: 44rpx;
+    display: inline-block;
+  }
+  .tab_wrap .tab_item .ssss {
+    flex: 1;
+    width: 200rpx;
+    height: 55rpx;
+    font-size: 28rpx;
+    padding: 10rpx 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .tab_wrap .tab_item .ssss .icon {
+    margin-right: 10rpx;
+  }
+  .ssss2{
+    padding:10rpx 10rpx 0 0;
+  }
+  .tab_wrap .active {
+    color: #030CF9 !important;
+  }
+  
+  /*# sourceMappingURL=navTabbar.css.map */
+  

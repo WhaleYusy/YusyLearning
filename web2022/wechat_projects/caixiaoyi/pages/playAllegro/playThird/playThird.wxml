@@ -1,0 +1,112 @@
+<!--pages/playAllegro/playThird/playThird.wxml-->
+<view class="playThirdContent">
+    <view class="second_step_box">
+      <p class="cont_title">
+        <text>网络支付价:</text>
+        ￥{{res2.totalPrice}}<text style="color:gray;font-size:14px;">(含邮费)</text>
+        <!-- 引入一个toFixed 的wxs -->
+        <!-- <text style="color:gray;font-size:0.3rem">(原价:￥{{res.pcbPrice}},折扣:{{(res.discount*100).toFixed(1)}}%)</text> -->
+      </p>
+      <view class="cont_content">
+        <text>工程费：</text>
+        <text>￥{{res.projectFree}}</text>
+        <!-- <view class="tips">工程费(100.0元)×工程费折扣率(0.6)</view> -->
+      </view>
+      <view class="cont_content">
+        <text>板费：</text>
+        <text>￥{{res2.boardPrice}}</text>
+        <!-- <view class="tips">工程费(100.0元)×工程费折扣率(0.6)</view> -->
+      </view>
+      <view class="cont_content">
+        <text>测试费：</text>
+        <text>￥{{res.testPrice}}</text>
+      </view>
+      <view class="cont_content">
+        <text>菲林费：</text>
+        <text>￥{{res.filmFree}}</text>
+      </view>
+      <view class="cont_content">
+        <text>邮费：</text>
+        <text>￥{{res2.freightFree}}</text>
+      </view>
+      <view class="cont_content">
+        <text>加价：</text>
+        <text>￥{{res2.otherPrice}}</text>
+      </view>
+    </view>
+    <view class="codeBox">
+      <view class="cont_title">积分信息</view>
+      <view class="cont_content">
+        <text>当前积分：</text>
+        <text>{{userInfo.bi}}</text>
+      </view>
+      <view class="cont_content">
+        <text>积分抵扣：</text>
+        <text>{{userInfo.bi < 0 ? (userInfo.bi + 60) : -(useCode>userInfo.bi?userInfo.bi:useCode)}}</text>
+      </view>
+      <view class="cont_content">
+        <text>待付金额：</text>
+        <text>￥{{shouldPay}}</text>
+      </view>
+    </view>
+    <view class="addrBox">
+      <view class="cont_title">收货信息</view>
+      <view class="cont_content" catchtap="toChooseAddr">
+        <text>收货地址：</text>
+        <view wx:if="{{addr.area !== undefined }}" style="font-size:30rpx;" class="addrCenter">
+          <view style="margin-bottom:15rpx;">
+            {{addr.consignee}}
+            <text style="color:gray">{{addr.telephone}}</text>
+          </view>
+          <view class="addr" style="line-height:36rpx;font-size:28rpx;">{{addr.area}}{{addr.detailArea}}</view>
+        </view>
+        <input type="text" placeholder="请选择地址" wx:else />
+      </view>
+    </view>
+
+    <view class="memo">
+      <view class="cont_title">留言</view>
+      <textarea value="{{memo}}" placeholder="请输入您的留言" bindinput="saveMemo"></textarea>
+    </view>
+    <view class="next_step" catchtap="goBack">返回，修改信息</view>
+    <view class="next_step" catchtap="toCreateOrder">下订单</view>
+    <view class="ad_title" style="text-align:center;">————选择服务商————</view>
+    <!-- 服务商列表 -->
+    <block wx:for="{{dataList}}" wx:key="key" wx:for-index="index">
+      <view class="service-li {{activeLi == index ? 'sl-active' : ''}}">
+        <view class="service-lil">
+          <image src="{{item.logo}}"></image>
+          <view class="service-lilb" wx:if="{{item.isMe == false}}">
+            <view class="chatInfo addF" data-id="{{item.id}}" data-uid="{{item.uid}}" bindtap="addFriend" wx:if="{{item.applyStatus === -1}}" data-item="{{item}}">+圈友</view>
+            <view class="chatInfo supplying" data-id="{{item.id}}"  wx:if="{{item.applyStatus === 0}}" data-item="{{item}}">申请中</view>
+            <view class="chatInfo span-active" data-id="{{item.id}}"  wx:if="{{item.applyStatus === 1}}" data-item="{{item}}">已添加</view>
+            <view class="chatInfo" data-id="{{item.id}}" bindtap="onchatInfo" data-item="{{item}}">+私信</view>
+          </view>
+        </view>
+        <view class="service-lir" bindtap="chooseService" data-item="{{item}}" data-index="{{index}}">
+          <view class="service-lir1">{{item.supplierName}}</view>
+          <view class="service-lir2">
+            <text class="service-lit2"> 浏览：{{item.viewNum || 0}}</text>
+            <text class="service-lit2"> 粉丝：{{item.fansNum || 0}}</text>
+            <text class="service-lit2"> 点赞：{{item.zanNum || 0}}</text>
+          </view>
+          <view class="service-lir3">地址：{{item.supplierAddress || ''}}</view>
+          <view class="service-lir3">供应：{{item.operateProduces || ''}}</view>
+        </view>
+      </view>
+    </block>
+    <!-- 输入密码 -->
+    <!-- <view class="payPassword" wx:if="{{isPassword}}">
+      <input type="password" placeholder="请输入您的密码" value="{{enterPassword}}"/>
+      <view class="btnGroup">
+        <view class="cancel" catchtap="toCancel">取消</view>
+        <view class="sure" catchtap="toPayPassword">确定</view>
+      </view>
+    </view> -->
+    <view class="foot-tops">深圳市企智达软件有限公司提供技术支持</view>
+</view>
+<!-- wx:if="{{showPswBoard}}" -->
+  <view class="layer" wx:if="{{showPswBoard}}" catchtouchmove='stopPageScroll'>
+    <payModel id="payModel" bind:check="checkpswd" bind:close="close" payPoint="{{preBi}}"></payModel>
+  </view>
+<tabBar></tabBar>

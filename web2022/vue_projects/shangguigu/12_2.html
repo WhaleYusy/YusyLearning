@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div id="test1">
+    <p v-upper-text="msg1"></p>
+    <p v-lower-text="msg1"></p>
+  </div>
+  <div id="test2">
+    <p v-upper-text="msg2"></p>
+    <p v-lower-text="msg2"></p>
+  </div>
+  <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: "#test1",
+      data: {
+        msg1: "Hello World!!!"
+      },
+      directives: {
+        'upper-text': function (el, binding) {
+          el.textContent = binding.value.toUpperCase()
+        },
+        'lower-text': function (el, binding) {
+          el.textContent = binding.value.toLowerCase()
+        },
+      }
+    })
+    new Vue({
+      el: "#test2",
+      data: {
+        msg2: "NBA I Love This Game!!!"
+      },
+      directives: {
+        'upper-text': function (el, binding) {
+          el.textContent = binding.value.toUpperCase()
+        },
+        'lower-text': function (el, binding) {
+          el.textContent = binding.value.toLowerCase()
+        },
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!--pages/purchase/component/xyAssistant/systemAssitant/systemAssitant.ttml-->
+<!-- 人脉列表 -->
+<view>
+  <block wx:for="{{rmList}}" tt:for-item="item" tt:for-index="idx">
+      <!-- 订单组list -->
+      <view style='margin-bottom:10rpx;' data-index="{{idx}}">
+        <view class="li" data-index="{{idx}}" bindtap='changeToggle'>
+          <view class="left">
+            <view>{{item.name}}</view>
+          </view>
+          <view class="right">
+            <image class="select_img1 {{!selectedFlag[idx]?' ':'select_img_rotate1'}}" src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:20rpx"></image>   
+          </view>
+        </view>
+        <view tt:if="{{item.children.length>0}}" hidden="{{!selectedFlag[idx]}}">
+          <view class="b-shadow">
+            <block  tt:for="{{item.children}}"  tt:key="index" tt:for-item="itemCon">
+              <view>{{itemCon.name}}</view>
+          </block>   
+          </view>
+        </view>
+        <view tt:if="{{item.children.length == 0}}" hidden="{{!selectedFlag[idx]}}" class='no-more' style='margin:8px' >暂无数据</view>  
+        </view>
+      </block> 
+      <view style='margin-bottom:10rpx;' data-index="{{idx}}">
+        <view class="li"   catchtap='selectTap'>
+          <view>6.我要加入社群</view>
+          <view><image class='select_img {{selectShow&&"select_img_rotate"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:20rpx"></image>  </view> 
+        </view>
+        <view class="b-shadow" tt:if="{{selectShow}}">
+          <image class="imgg" src="{{image1}}"></image>
+        </view>
+      </view>
+      <view style='margin-bottom:10rpx;' data-index="{{idx}}">
+        <view class="li"   catchtap='selectTap1'>
+          <view>7.我要关注公众号</view>
+          <view><image class='select_img {{selectShow1&&"select_img_rotate"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:20rpx"></image>  </view> 
+        </view>
+        <view class="b-shadow" tt:if="{{selectShow1}}">
+          <image class="imgg" src="{{image2}}"></image>
+        </view>
+      </view>
+  </view>
+  <view class="gotoSx" catchtap="gotoGf">
+    <view>新圈友</view>
+    <view class="rightBox"><text class="redCode" tt:if="{{unreadNum>0}}">{{unreadNum}}</text><image class="select_img_rotates" src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' ></image></view>
+    
+  </view>
+  <view class="gotoSx" catchtap="gotoSx">
+    <view>系统消息</view>
+    <view class="rightBox"><text class="redCode" tt:if="{{unreadNumMsg>0}}">{{unreadNumMsg}}</text><image class="select_img_rotates" src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' ></image></view>
+  </view>

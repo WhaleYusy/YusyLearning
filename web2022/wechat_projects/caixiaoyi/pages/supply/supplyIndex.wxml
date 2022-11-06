@@ -1,0 +1,106 @@
+<!--pages/supply/supplyIndex.wxml-->
+<view class="supplyIndexContent" style="{{scrollSet}}">
+  <!-- 搜索条 -->
+  <view class="searchBar">
+    <i class="iconfont iconfenlei icon leftIcon " catchtap="goCatogory"></i>
+    <view class="searchContent">
+      <i class="iconfont iconsearch"></i>
+      <input class="search" placeholder="请输入关键字" value='{{keyWords}}'  bindinput="inputKey"/>
+    </view>
+    <view style='width:80rpx;text-align:center;' catchtap="serach"  >搜索</view>
+  </view>
+  <!-- 内容 -->
+  <view class="tips_p" catchtap="onIsShowSq">
+      <!-- <img src="../../assets/weixin.png" class="wechat_img" />
+      <p>点击免费找客户</p> -->
+      <image src="http://qiniuoss.822644.com/wxPic/20191231/793417545884376064.png" class="wechat_img" alt ></image>
+    </view>
+    <view
+      v-infinite-scroll="loadMore"
+      infinite-scroll-disabled="loading"
+      infinite-scroll-distance="10"
+      style="background:#F7F7F7;"
+    >
+      <view
+      wx:for="{{dataList}}"
+        wx:key="index"
+        class="content_list_box"
+        data-item="{{item}}"
+        catchtap="goToDetail"
+      >
+        <view class="left-warp">
+          <image src="{{item.logo}}" alt class="shop_img" :class="item.status == 1 ? 'seop_img_h':''" ></image>
+          <view class="left-btn" wx:if="{{item.status != 1}}">
+            <text wx:if="{{item.applyStatus == 0}}">申请中</text>
+            <text wx:if="{{item.applyStatus == 1}}">已添加</text>
+            <text catchtap="onAddCircleFriend" data-item='{{item}}' data-index='{{index}}'  wx:if="{{item.applyStatus == -1}}">+圈友</text>
+            <text
+              catchtap="onAddPrivateLetter"
+              data-item="{{item}}"
+              class="{{item.applyStatus == 1 ? '' : 'text-active'}}"
+            >私信</text>
+          </view>
+        </view>
+        <view class="right_box">
+          <p class="isStick" wx:if="{{item.isStick == 1}}">置顶</p>
+          <view class="right-warp">
+            <p class="right_box_p1">{{item.supplierName}}</p>
+            <view class="right_box_p2">
+              <text>推荐点赞:{{item.likeCount}}</text>
+              <text>浏览:{{item.viewNum}}</text>
+              <text wx:if="{{item.distance== null || item.distance<=0}}"></text>
+              <text wx:elif="{{item.distance<=1}}">距离:{{filter.toFixed(item.distance * 1000,0)}}m</text>
+              <text wx:elif="{{item.distance<=3}}">距离:{{filter.toFixed(item.distance,1)}}km</text>
+              <text wx:else>距离:3km以上</text>
+            </view>
+            <!-- <p class="right_box_p3" wx:if="{{item.distance==-1}}">暂无位置距离信息</p>
+            <p class="right_box_p3" wx:elif="{{item.distance<=1}}">位置距您直线1公里以内</p>
+            <p class="right_box_p3" wx:elif="{{item.distance>500}}">位置距您直线500公里以外</p>
+            <p class="right_box_p3" wx:else>位置距您直线{{filter.toFixed(item.distance,0)}}公里</p> -->
+            <p class="right_box_p3">地址：{{item.supplierAdress}}</p>
+            <p class="right_box_p4">供应：{{item.operateProduces || '暂无数据'}}</p>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="no_more" wx:if="{{loadMore}}">加载中~~</view>
+    <view class="no_more" wx:if="{{noMore}}">没有更多数据了</view>
+    <view class="issue_btn" catchtap="goToEntry">免费入驻</view>
+
+    <!-- 加入社群弹窗 -->
+    <!-- <p>加入社群</p> -->
+    <!-- <view class="mb" wx:if="{{isShowSq}}" ></view>
+    <view class="popup" wx:if="{{isShowSq}}">
+      <view class="ad">采购，爱上【采销易】</view>
+      <img :src="qrCodeImg" alt class="popup-img" />
+      <view class="close" catchtap="onIsShowSqClose">X</view>
+      <view class="ad-title" wx:if="isPublicNumber == true">关注公众号，及时获取最新需求消息，记得关注哟~</view>
+    </view> -->
+    <!-- 加圈友弹窗 -->
+    <!-- <view class="mb" wx:if="{{isShowCir}}" ></view>
+    <view class="popup" wx:if="{{isShowCir}}">
+      <view class="ad">提 示</view>
+      <view class="popup-cont" >添加圈友需要支付一个积分，是否继续？</view>
+      <view class="popup-btn-line" >
+        <button  catchtap="isShowCir = false"  >取消</button>
+        <button catchtap="isShowCir = false" >确定</button>
+      </view>
+    </view>  -->
+</view>
+<view class="catoLayer" wx:if="{{showCato}}" bindtap="clickLayer"> 
+  <view class="closeChaP">
+      <view class="closeCha" catchtap="onCatoClose">X</view>
+    <ul class="fir">
+      <li wx:for="{{menuList}}" wx:for-item="pItem" wx:key="index" catchtap="expandFir" data-index="{{index}}" class="{{active == index ? 'active-class' : ''}}">
+      {{pItem.className}}
+          <ul  class="sec" wx:if="{{pItem.children.length && active == index}}">
+            <li wx:for="{{pItem.children}}" wx:for-item="cItem" wx:key="index" catchtap="chooseAndClose" data-item="{{cItem}}">{{cItem.className}}</li>
+          </ul>
+      </li>
+    </ul>
+    </view>
+</view>
+
+<van-dialog id="van-dialog" />
+
+<wxs src="../../utils/filter.wxs" module="filter" />

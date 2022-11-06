@@ -1,0 +1,33 @@
+<view class="mb-main">
+  <!-- <view class="mb-title" >
+    <van-icon name="arrow-left" class="mb-last" bindtap="rLastPage"></van-icon>
+    <text>我的企业</text>
+  </view> -->
+  <view class="mb-header">
+    <image src="/img/gzhImg/fabu.jpg"></image>
+  </view>
+  <view class="mb-content">
+    <block wx:for="{{mbList}}" wx:key="id" >
+      <view class="mb-cli" catchtap="goBusinessDetail" data-id="{{item.id}}">
+        <view class="mb-clis" wx:if="{{item.checkStatus == 1}}">审核通过</view>
+        <view class="mb-clis" wx:elif="{{item.checkStatus == 0}}">审核中</view>
+        <view class="mb-clis" wx:else>未通过</view>
+        <image src="{{item.logo}}"></image>
+        <view class="mb-clic">
+          <view class="mb-clic1">{{item.supplierName}}</view>
+          <view class="mb-clic2">注册资本：{{item.regCapital}}</view>
+          <view class="mb-clic2">注册地址：{{item.supplierAddress}}</view>
+          <view class="mb-clic2">注册时间：{{item.establishTime}}</view>
+        <view class="mb-clicc" data-id="{{item.id}}" catchtap="oneditBus">修改</view>
+        <view class="mb-clict" wx:if="{{item.type === 1}}">供应商</view>
+        <view class="mb-clict" wx:else>服务商（{{item.facilitatorTypeName}}）</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="mb-footer" wx:if="{{showNoMore && mbList.length > 0}}">没有更多数据了</view>
+  <view class="mb-footer" wx:if="{{mbList.length == 0}}">暂无数据</view>
+
+</view>
+<wxs src="../../../../../utils/filter.wxs" module="filter" />
+<tabBar></tabBar>

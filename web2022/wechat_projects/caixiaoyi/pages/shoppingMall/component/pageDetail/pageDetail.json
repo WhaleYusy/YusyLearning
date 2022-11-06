@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "shopNav": "/componentS/shopNav/shopNav",
+    "swiper": "/componentS/swiper/swiper"
+  }
+}

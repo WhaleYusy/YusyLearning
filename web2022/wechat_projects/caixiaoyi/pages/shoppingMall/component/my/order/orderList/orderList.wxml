@@ -1,0 +1,107 @@
+<!--pages/shoppingMall/component/my/order/orderList/orderList.wxml-->
+<shopNav selected="{{2}}" ></shopNav>
+<view class="orderListContent">
+    <view class="tab">
+      <text class="{{active == 1 ? 'activeTab' : ''}}" catchtap="orderList" data-index="1">全部</text>
+      <text class="{{active == 2 ? 'activeTab' : ''}}" catchtap="orderList" data-index="2" >待付款</text>
+      <text class="{{active == 3 ? 'activeTab' : ''}}" catchtap="orderList" data-index="3">待发货</text>
+      <text class="{{active == 4 ? 'activeTab' : ''}}" catchtap="orderList" data-index="4">待收货</text>
+      <text class="{{active == 5 ? 'activeTab' : ''}}" catchtap="orderList" data-index="5">已完成</text>
+    </view>
+    <!-- <view class="loading-box" v-if="isLoading">
+      <van-loading class="loading" size="35px" color="#0303fe" />
+    </view> -->
+    <block >
+      <view class="flex" wx:for="{{orderList}}" wx:key="id" wx:for-item="val">
+        <view class="banner">
+          <text>下单时间：{{val.createdTime}}</text>
+          <text class="type-danger" wx:if="{{val.orderStatus == 1}}">待付款</text>
+          <text class="type-info" wx:elif="{{val.orderStatus == 2}}">待发货</text>
+          <text class="type-primary" wx:elif="{{val.orderStatus == 3}}">待收货</text>
+          <text class="type-success" wx:elif="{{val.orderStatus == 4}}">已完成</text>
+          <text class="type-danger" wx:else>已取消</text>
+        </view>
+        <view class="banner">
+          <text>订单编号：{{val.orderNo}}</text>
+        </view>
+        <view class="center" wx:for="{{val.omcGoodsOrderViEnList}}" wx:for-item="v" wx:key="index">
+          <view class="img">
+            <image src="{{v.mainImage}}" alt=""></image>
+          </view>
+          <view class="info-box">
+            <view class="info">
+              <view class="title">{{v.goodsName}}</view>
+              <view class="attr">{{v.goodsSpec}}</view>
+              <view class="price">
+                <text>￥{{v.goodsPrice}}</text>
+                <text class="msg">x {{v.goodsNum}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="footer">
+          <view class="footer-box">
+            <view class="num">
+              <view class="trip">共{{val.allGoodsNum}}件商品</view> 合计：
+              <view>￥{{val.totalPrice}}
+                <text wx:if="{{val.totalBi !== null}}">({{val.totalBi}}积分换购)</text>
+              </view>
+            </view>
+            <view class="btn" wx:if="{{val.orderStatus == 1}}">
+              <view class="btn-item" catchtap="onOrderDetails" data-id="{{val.id}}">订单详情</view>
+              <view class="btn-item" catchtap="calcelOrder" data-no="{{val.orderNo}}" data-id="{{val.id}}">取消订单</view>
+              <view class="btn-item" catchtap="payNow" data-id="{{val.id}}" data-item="{{val}}" >立即支付</view>
+            </view>
+            <view class="btn" wx:elif="{{val.orderStatus == 2}}">
+              <view class="btn-item" catchtap="onOrderDetails" data-id="{{val.id}}" >订单详情</view>
+            </view>
+            <view class="btn" wx:elif="{{val.orderStatus == 3}}">
+              <view class="btn-item" catchtap="onOrderDetails" data-id="{{val.id}}" >订单详情</view>
+              <view class="btn-item" catchtap="onViewLogistics" data-id="{{val.id}}" >查看物流</view>
+              <view class="btn-item" catchtap="ensureReceive" data-no="{{val.orderNo}}"  data-id="{{val.id}}" >确认收货</view>
+            </view>
+            <view class="btn" wx:elif="{{val.orderStatus == 4}}">
+              <view class="btn-item" catchtap="onOrderDetails" data-id="{{val.id}}" >订单详情</view>
+              <view class="btn-item" catchtap="onViewLogistics" data-id="{{val.id}}"  >查看物流</view>
+            </view>
+            <view class="btn" wx:else>
+              <view class="btn-item" catchtap="onOrderDetails" data-id="{{val.id}}">订单详情</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="layer" wx:if="{{isPassword}}">
+        <payModel id="payModel" bind:check="checkpswd" data-item="{{val}}" bind:close="close" payPoint="{{selectItem.totalBi}}" ></payModel>
+      </view>
+    </block>
+    <view class="showTip" wx:if="{{orderList.length > 0 && showNoMore}}">暂无更多</view>
+    <!-- 无数据 -->
+    <view class="no-address" wx:if="{{orderList.length <= 0}}">
+      <view class="no-box">
+        <image src="/img/shoppingMall/mySvg/address.png" alt=""></image>
+        <p>订单列表是空的！</p>
+      </view>
+    </view>
+
+    <!-- 加载更多 -->
+    <!-- <view class="load-more" v-if="orderList.length >= 10" catchtap="onLoadingClick">
+      <view class="more-box">
+        {{loadMoreTxt}}
+        <i class="el-icon-arrow-right" v-show="!isMoreLoading"></i>
+      </view>
+    </view> -->
+</view>
+<!-- 支付弹窗 -->
+  <van-popup show="{{isPayPopup}}" class="pay-box" close-on-click-overlay="{{false}}">
+    <view class="payContent">
+      <view class="top">
+        <i class="iconfont iconjinakangbaoicons18" catchtap="onIsPayPopupClose"></i>
+      </view>
+      <view class="bottom">
+        <view class="item" catchtap="onPointsPayment">积分支付</view>
+        <view class="item" catchtap="onWeChatPayment">微信支付</view>
+      </view>
+    </view>
+  </van-popup>
+<tabBar>
+</tabBar>

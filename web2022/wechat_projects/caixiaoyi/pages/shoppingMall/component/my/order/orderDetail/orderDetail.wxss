@@ -1,0 +1,189 @@
+/* pages/shoppingMall/component/my/order/orderDetail/orderDetail.wxss */
+.header{
+  display:flex;
+  align-items: center;
+  position:fixed;
+  top:70rpx;
+  height: 75rpx;
+  font-size: 24rpx;
+  z-index: 1000;
+  width: 100%;
+  background: #fff;
+  border-top: 2rpx solid #eee;
+}
+.toAdminIcon{
+  padding: 20rpx;
+}
+.toAdminCenter{
+  flex:1;
+  padding:20rpx 10rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+.orderDetailContent{
+  margin-top:146rpx;
+  margin-bottom:135rpx;
+}
+.bottom {
+    height: calc(100% - 70rpx);
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 20rpx;
+  }
+  .bottom .address-box {
+    height: 180rpx;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    display: flex;
+    border-radius: 10rpx;
+  }
+  .bottom .address-box .address-info {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+  }
+  .bottom .address-box .address-info .info-left {
+    margin: auto;
+    width: 100%;
+    margin: auto;
+    padding: 0 28rpx;
+    flex: 1;
+  }
+  .bottom .address-box .address-info .info-left .title {
+    color: #1a1a1a;
+    font-size: 32rpx;
+  }
+  .bottom .address-box .address-info .info-left .title text {
+    margin-left: 28rpx;
+  }
+  .bottom .address-box .address-info .info-left .info {
+    font-size: 24rpx;
+    line-height: 36rpx;
+    color: #292621;
+    margin-top: 20rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding: 3rpx 0;
+  }
+  .bottom .flex-box {
+    width: 100%;
+    height: auto;
+    background: white;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+    margin: 20rpx 0;
+  }
+  .bottom .flex-box .banner {
+    color: #666666;
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    font-size:28rpx;
+    padding: 0 20rpx;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #f7f7f7;
+  }
+  .bottom .flex-box .banner .type-primary {
+    color: #409eff;
+  }
+  .bottom .flex-box .banner .type-success {
+    color: #67c23a;
+  }
+  .bottom .flex-box .banner .type-info {
+    color: #909399;
+  }
+  .bottom .flex-box .banner .type-danger {
+    color: #e20001;
+  }
+  .bottom .flex-box .center {
+    box-sizing: border-box;
+    display: flex;
+    padding: 30rpx 20rpx;
+    border-bottom: 2rpx solid #f7f7f7;
+  }
+  .bottom .flex-box .center .img {
+    width: 189rpx;
+    border-radius: 10rpx;
+  }
+  .bottom .flex-box .center .img image {
+    border-radius: 10rpx;
+    width: 189rpx;
+    height: 189rpx;
+  }
+  .bottom .flex-box .center .info-box {
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+  }
+  .bottom .flex-box .center .info-box .info {
+    width: 100%;
+    margin: auto;
+    padding-left: 20rpx;
+  }
+  .bottom .flex-box .center .info-box .info .title {
+    color: #1a1a1a;
+    font-size: 24rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 35rpx;
+  }
+  .bottom .flex-box .center .info-box .info .attr {
+    color: #7d7d7d;
+    font-size: 24rpx;
+    padding: 28rpx 0;
+  }
+  .bottom .flex-box .center .info-box .info .price {
+    display: flex;
+    justify-content: space-between;
+    color: #e20001;
+    font-size: 24rpx;
+  }
+  .bottom .flex-box .center .info-box .info .price .msg {
+    color: #1a1a1a;
+  }
+  .bottom .flex-box .footer {
+    padding: 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    height: auto;
+    width: 100%;
+  }
+  .bottom .flex-box .footer .footer-box {
+    width: 100%;
+    margin: auto;
+  }
+  .bottom .flex-box .footer .footer-box .num {
+    font-size: 24rrpx;
+    color: #535353;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 45rrpx;
+  }
+  .bottom .flex-box .footer .footer-box .num text {
+    color: #1a1a1a;
+  }
+  .bottom .flex-box .footer .footer-box .num .trip {
+    padding-right: 15rpx;
+    color: #535353;
+  }
+  .bottom .flex-box .footer .footer-box .num .price-color {
+    color: #e20001;
+  }
+  .bottom .flex-box .footer .footer-box .num .price-color text {
+    color: #e20001;
+  }
+  
+  /*# sourceMappingURL=OD.css.map */
+  .buttonItem{
+    background:#030CF9;
+    color:white;
+    margin-bottom:25rpx;
+  }

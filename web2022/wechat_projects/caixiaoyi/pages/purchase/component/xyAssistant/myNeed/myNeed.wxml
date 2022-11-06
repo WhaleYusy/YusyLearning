@@ -1,0 +1,35 @@
+<view class="mn-main">
+  <view class="mn-header">
+    <image src="/img/gzhImg/fabu.jpg"></image>
+  </view>
+    <!-- 采购列表 -->
+  <view class="purchaseProductlist">
+    <view class="purchaseProductItem" wx:for="{{purchaseProductlist}}" wx:key="id" catchtap="goPage" data-item="{{item}}" data-index="index">
+    <view class='purchaseProductItem-edit' data-item="{{item}}" catchtap='goEdit' wx:if="{{item.status == 1}}" >修改</view>
+    <view class="leftMesg">
+      <h3 class="mesgTitle">{{item.title}}</h3>
+      <p class="mesgItem">
+          <text class="mesgItemTitle">日期：</text>
+          <text class="mesgItemContent">{{filter.formatDate(item.startTime)}}至{{filter.formatDate(item.endTime)}}</text>
+      </p>
+      <p class="mesgItem">
+          <text class="mesgItemTitle">类别：</text>
+          <text class="mesgItemContent">{{item.className}}</text>
+      </p>
+      <p class="mesgItem mesgItem-flex">
+          <text class="mesgItemTitle">浏览量：</text>
+          <text class="mesgItemContent">{{item.viewNum}}</text>
+          <text class=" pStatus {{item.status == 1 ? 'ing' : '' }}">{{item.status == 1 ? '进行中' : '已结束'}}</text>
+      </p>
+    </view>
+    <image wx:if="{{item.logo}}" src="{{item.logo}}" alt class="mainImg"></image>
+    <image wx:else src="../../../../../img/timg.jpg" alt class="mainImg"></image>
+    </view>
+  </view>
+  <view class="tip showNoMore" wx:if="{{loadMore}}">加载中~</view>
+  <view class="tip showNoMore" wx:if="{{purchaseProductlist.length>0 && showNoMore}}">没有更多啦~</view>
+  <view class="tip showNo" wx:if="{{total == 0}}">暂无数据</view>
+</view>
+<tabBar></tabBar>
+
+<wxs src="../../../../../utils/filter.wxs" module="filter" />

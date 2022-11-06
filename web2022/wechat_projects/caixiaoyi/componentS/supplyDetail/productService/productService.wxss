@@ -1,0 +1,148 @@
+/* componentS/supplyDetail/productService/productService.wxss */
+.popus-mb {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+  }
+  .popus-mb .popus-box {
+    width: 80%;
+    height: auto;
+    background: white;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 5rpx;
+    z-index: 4;
+    padding: 70rpx 30rpx;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .popus-mb .popus-box .flex-warp {
+    margin: auto;
+  }
+  .popus-mb .popus-box .flex-warp .btn {
+    width:100%;
+    height:60rpx;
+    line-height:60rpx;
+    text-align:center;
+    background:#0066ff;
+    color:white;
+  }
+  .popus-mb .popus-box .flex-warp .flex {
+    display: flex;
+    font-size: 28rpx;
+    padding-bottom: 20rpx;
+  }
+  .popus-mb .popus-box .flex-warp .flex .left {
+    flex-basis: 150rpx;
+  }
+  .popus-mb .popus-box .flex-warp .flex .right {
+    flex: 1;
+  }
+  .popus-mb .popus-box .flex-warp .flex .right input {
+    border: 1rpx solid #cccccc;
+    height: 40rpx;
+    font-size: 28rpx;
+    padding: 0 10rpx;
+  }
+  .popus-mb .popus-box .flex-warp .flex .right .photo {
+    width: 100%;
+    height: 200rpx;
+    margin-bottom: 10rpx;
+  }
+  .popus-mb .popus-box .close {
+    position: absolute;
+    top: -20rpx;
+    right: -20rpx;
+    width: 30rpx;
+    height: 30rpx;
+    text-align: center;
+    line-height: 30rpx;
+    border-radius: 100%;
+    border: 4rpx solid white;
+    background: #09f;
+    color: white;
+    padding: 5rpx;
+  }
+  
+  .image_card {
+    width: 97%;
+    margin: 10rpx auto;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .image_card .add {
+    width: 50%;
+    padding: 10rpx;
+    height: 200rpx;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 5rpx;
+  }
+  .image_card .add .br {
+    width: 50%;
+    height: 50%;
+    border: 3rpx dashed #cccccc;
+    margin: auto;
+    border-radius: 10rpx;
+    display: flex;
+  }
+  .image_card .add .icon {
+    margin: auto;
+    font-size: 50rpx;
+    color: #cccccc;
+  }
+  .image_card .image_box {
+    width: 50%;
+    padding: 10rpx;
+    height: 280rpx;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .image_card .image_box .mb {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  .image_card .image_box .del-btn {
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+    z-index: 2;
+    background: red;
+    color: white;
+    text-align: center;
+    padding: 15rpx 10rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+    font-size: 22rpx;
+  }
+  .image_card .image_box .detail-title {
+    width: 100%;
+    padding: 5rpx 0;
+    font-size: 28rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .image_card .image_box .detail_img {
+    height: 220rpx;
+    width: 100%;
+  }
+  .image_card .image_box p {
+    font-size: 32rpx;
+    margin-top: 10rpx;
+  }
+  
+  /*# sourceMappingURL=lo.css.map */
+  

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <!-- 视图view -->
+  <div id="app">
+    <input type="text" v-model="username">
+    <p>Hello {{username}}</p>
+    <p v-text="username"></p>
+  </div>
+  <script type="text/javascript">
+    // vm viewModel
+    const vm = new Vue({
+      el: "#app",
+      data: { //数据model
+        username: "atguigu"
+      }
+    })
+    vm.username = "xfzhang"
+  </script>
+</body>
+
+</html>

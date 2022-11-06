@@ -1,0 +1,134 @@
+.wrap{
+  background: #fff;
+  padding-top: 20rpx;
+}
+.date-show{
+	position: relative;
+	width: 250rpx;
+	font-family: PingFang-SC-Regular;
+	font-size: 40rpx;
+	color: #282828;
+	text-align: center;
+	margin: 10rpx auto;
+}
+.lt-arrow,.rt-arrow{
+	position: absolute;
+	top: 1rpx;
+	width: 60rpx;
+	height: 60rpx;
+}
+.lt-arrow image,.rt-arrow image{
+	width: 14rpx;
+	height: 26rpx;
+}
+.lt-arrow{
+	left: -110rpx;
+}
+.rt-arrow{
+	right: -100rpx;
+}
+.header{
+	font-size: 0;
+	padding: 0 24rpx;
+}
+.header view{
+	display: inline-block;
+	width: 14.285%;
+	color: #333;
+	font-size: 30rpx;
+	text-align: center;
+	border-bottom: 1px solid #D0D0D0;
+	padding: 25rpx 0;
+}
+.weekMark{
+	position: relative;
+}
+.weekMark view{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 1px solid #22A7F6;
+}
+.date-box{
+	font-size: 0;
+	padding: 10rpx 0;
+  height:360rpx;
+}
+.date-box .cell{
+  /* border:1px solid red; */
+	/* position: relative; */
+	display: inline-block;
+  /* display:flex; */
+  /* flex-wrap:wrap; */
+	width: 14.285%;
+	color: #020202;
+	font-size: 40rpx;
+	text-align: center;
+	vertical-align: middle;
+	margin: 15rpx 0;
+  box-sizing: border-box;
+}
+.date-head{
+  width:40rpx;
+	height: 40rpx;
+  margin:0 auto;
+	line-height: 40rpx;
+	font-size: 26rpx;
+}
+.nowDay .date-head{
+	width: 40rpx;
+	text-align: center;
+	color: red;
+	margin: 0 auto;
+  font-weight: 600;
+}
+.date-weight{
+	font-size: 22rpx;
+	padding: 11rpx 0;
+  height: 22rpx;
+  color: #ffac46;
+}
+.nowDay .date-weight{
+	color: red;
+}
+.one{
+	position: absolute;
+	bottom: 0;
+	right: 5rpx;
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 50%;
+	background-color: red;
+}
+.two{
+	position: absolute;
+	bottom: 30rpx;
+	right: 5rpx;
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 50%;
+	background-color: blue;
+}
+.date-time{
+  display: flex;
+  padding: 20rpx 0;
+  overflow: auto;
+}
+.date-time-li{
+  flex-shrink: 0;
+  width: 20%;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.date-time .active{
+  color: blue;
+  font-size: 36rpx;
+}
+.chooseStyle{
+  background:red !important;
+  color:white !important;
+  border-radius:50%;
+}

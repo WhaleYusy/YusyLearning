@@ -1,0 +1,36 @@
+<wxs module="filter" src="myBill.wxs"></wxs>
+<view class="mb-main">
+  <!-- <view class="mb-title" >
+      <van-icon name="arrow-left" class="mb-last" bindtap="rLastPage"></van-icon>
+      <text>我的账单</text>
+    </view> -->
+  <view class="mb-header">
+    <image src="/img/gzhImg/fabu.jpg"></image>
+  </view>
+  <view class="mb-content-tab">
+    <view class="mb-ctli {{active=='1'?'active':''}}" data-active="1" bindtap="ontabActive">账单明细</view>
+    <view class="mb-ctli {{active=='2'?'active':''}}" data-active="2" bindtap="ontabActive">月度汇总</view>
+    <view class="mb-ctli {{active=='3'?'active':''}}" data-active="3" bindtap="ontabActive">收入明细</view>
+    <view class="mb-ctli {{active=='4'?'active':''}}" data-active="4" bindtap="ontabActive">支出明细</view>
+  </view>
+  <view class="mb-content-lis">
+    <block wx:for="{{activeList}}" wx:key="k">
+      <view class="mb-content-li">
+        <view class="mb-clil">
+          <view class="mb-cliname">{{filter.getTypeName(item.type)}}</view>
+          <view class="mb-cliendt">截止时间：{{item.createdTime}}</view>
+        </view>
+        <view class="mb-clir">
+          <view>
+            <van-icon name="fire-o"></van-icon>
+            <text>积分：{{item.biCount}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+      <view class="mb-footer">
+    没有更多数据了
+  </view>
+  </view>
+</view>
+<tabBar></tabBar>

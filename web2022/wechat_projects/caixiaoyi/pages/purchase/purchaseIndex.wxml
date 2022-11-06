@@ -1,0 +1,177 @@
+<view class="PurchaseIndeContent" style="{{scrollSet}}">
+  <!-- 搜索条 -->
+  <view class="searchBar">
+    <i style="font-size:30rpx;" class="iconfont iconfenlei icon leftIcon " catchtap="goCatogory">  类别</i>
+    <view class="searchContent">
+      <i class="iconfont iconsearch"></i>
+      <input class="search" placeholder="请输入关键字" bindinput="inputKey" value="{{keyWords}}"/>
+    </view>
+    <view class="gzbss" catchtap="serach">关注并搜索</view>
+  </view>
+  <swiper  id="purSwiper" imgUrls="{{imgUrls}}" ></swiper>
+  <!-- linkDotColor="{{'background:green'}}" unLinkDotColor="{{'background:pink'}}" -->
+  <!-- <purchaseList bind:imgClick="clickImgParent" bind:rightClick="clickImgParent" isReachBottom="isReachBottom" ></purchaseList> -->
+  <!-- 导菜单 -->
+  <view class="menuBlock">
+    <view class="menuItem" catchtap="toPage"  data-index="1">
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768615103758110720.png" alt ></image>
+      <text>物料需求</text>
+      <!-- <text class="tag" >{{meTotal >= 1000 ? '999+' : meTotal }}</text> -->
+    </view>
+    <view class="menuItem" catchtap="toPage" data-index="2">
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768615254493007872.png" alt ></image>
+      <text>其他需求</text>
+      <!-- <text class="tag" >{{otTotal>=1000 ? 999+ : otTotal}}</text> -->
+    </view>
+    <view class="menuItem" catchtap="toPage" data-index="3" >
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768615421317255168.png" alt ></image>
+      <text>精彩活动</text>
+      <text class="tag" style="background:red">奖励</text>
+    </view>
+    <view class="menuItem" catchtap="toPage" data-index="4">
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768615515848478720.png" alt ></image>
+      <text>行业资讯</text>
+    </view>
+    <view class="menuItem" catchtap="toPage" data-index="5" >
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768615823878164480.png" alt ></image>
+      <text>积分商城</text>
+      <text class="tag" style="background:#A04AD3">特惠</text>
+    </view>
+    <view class="menuItem" catchtap="toPage" data-index="6">
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768615928131784704.png" alt ></image>
+      <text>采销社群</text>
+    </view>
+    <view class="menuItem" catchtap="toPage" data-index="7">
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768616073044987904.png" alt ></image>
+      <text>优惠旅游</text>
+    </view>
+    <view class="menuItem" catchtap="toPage" data-index="8" >
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768616177667706880.png" alt ></image>
+      <text>小易助手</text>
+      <text class="tag" style="background:red" wx:if="{{totalMsg > 0}}">{{totalMsg}}</text>
+    </view>
+  </view>
+  <!-- 采购列表 -->
+  <view class="purchaseProductlist" wx:if="{{purchaseProductlist.length > 0}}">
+    <view class="purchaseProductItem" wx:for="{{purchaseProductlist}}" wx:key="id" catchtap="goPage" data-item="{{item}}" data-index="index">
+    <view wx:if="{{item.status != 1}}" class="ppiMeng"></view>
+    <view class="leftMesg">
+      <h3 class="mesgTitle">求购 {{item.title}}</h3>
+      <p class="mesgItem">日期：{{filter.formatDate(item.startTime)}}至{{filter.formatDate(item.endTime)}}
+      </p>
+      <p class="mesgItem">类别：{{item.className}}
+      </p>
+      <p class="mesgItem mesgItem-flex">要求：{{item.description}}
+          <!-- <text class=" pStatus {{item.status == 1 ? 'ing' : '' }}">{{item.status == 1 ? '进行中' : '已结束'}}</text> -->
+      </p>
+    </view>
+    <image src="{{item.logo}}" wx:if="{{item.logo}}" class="mainImg"></image>
+    <image src="{{'http://qiniuoss.822644.com/wxPic/20191122/765288437703020544.blob'}}" wx:else alt class="mainImg"></image>
+    </view>
+  </view>
+
+  <view class="tip showNoMore" wx:if="{{purchaseProductlist.length>0 && showNoMore}}">没有更多啦~</view>
+  <view class="tip showNo" wx:if="{{purchaseProductlist.length == 0}}">暂无数据</view>
+</view>
+
+<view class="catoLayer" wx:if="{{showCato}}" bindtap="clickLayer"  > 
+  <view class="closeChaP" >
+    <view class="closeCha" catchtap="onCatoClose">X</view>
+      <ul class="fir" >
+        <li wx:for="{{menuList}}" wx:for-item="pItem" wx:key="index" catchtap="expandFir" data-index="{{index}}" class="{{active == index ? 'active' : ''}}" data-item="{{pItem}}">
+        {{pItem.className}}
+            <ul  class="sec" wx:if="{{pItem.children.length && active == index}}">
+              <li wx:for="{{pItem.children}}" wx:for-item="cItem" wx:key="index" catchtap="chooseAndClose" data-item="{{cItem}}">{{cItem.className}}</li>
+            </ul>
+        </li>
+      </ul>
+  </view>
+</view>
+
+
+<image src='../../../../../img/push.png' class='add-img' catchtap='goPostPurchaseIndex' ></image>
+
+<!-- 评价弹窗 -->
+<!-- 未评价内容弹窗 -->
+<view class="popup-menban" wx:if="{{isShowPopup}}" catchtap="onPopupClose" catchtouchmove='stopPageScroll' ></view>
+
+<view class="popup-wap" wx:if="{{isShowPopup}}">
+  <view class="popup-top">
+    <view class="popup-close" catchtap="onPopupClose">×</view>
+    <view class="popup-title">采购需求真实可靠，销售爱上【采销易】</view>
+  </view>
+  <view class="popup-bottom">
+    <view class="popup-bottom-box">
+      <view class="ad-code">
+        <view class="ad-code-title">想要免费找客户吗？快来扫一扫</view>
+        <image src="{{qrCodeImg}}" alt style="width:320rpx;" catchtap="imgView" data-img="{{qrCodeImg}}" />
+         <!-- catchtap="previewImg" -->
+      </view>
+      <!-- <view class="p2">
+        您尚有以下项目未评价
+        <text class="text">({{evaluateList.length}}条)</text>
+      </view> -->
+      <view class="nr-box" wx:for="{{evaluateList}}" wx:key="index" wx:for-item="v">
+        <!-- <view class="p3">第{{index + 1}}条：</view> -->
+        <view class="nr-box-title"><text>标题名称：</text>{{v.title}}</view>
+        <view class="nr-box-title"><text>打赏时间：</text>{{v.createdTime}}</view>
+        <view class="radios">
+        <van-radio-group value="{{v.radio}}">
+          <van-radio  checked-color="red" name="{{3}}" class="radioItem" catchtap="setValue" data-index="{{index}}" data-value="3">
+            好评，多认识一个朋友，奖励积分给发布者。
+          </van-radio>
+          <van-radio checked-color="red" name="{{2}}" class="radioItem" catchtap="setValue" data-index="{{index}}" data-value="2">
+            该项目一般。
+          </van-radio>
+          <van-radio checked-color="red" name="{{1}}"  class="radioItem" catchtap="setValue" data-index="{{index}}" data-value="1">
+            差评，没有兴趣合作。即时/全额/无理由退积分。
+          </van-radio>
+          <van-radio checked-color="red" name="{{0}}" class="radioItem" catchtap="setValue" data-index="{{index}}" data-value="0">
+            对该项目、公司及联系人不满意，申请退款我要投诉。
+          </van-radio>
+        </van-radio-group>
+        </view>
+        <view class="textarea" wx:if="{{v.radio == 0 && v.radio != ''}}">
+          <textarea rows="8" placeholder="请输入投诉内容，200字以内" maxlength="200" value="{{v.textarea}}" bindinput="setTextArea" data-index="{{index}}" ></textarea>
+        </view>
+        <button class="btn" catchtap="onCurrentClic" data-item="{{v}}">立即评价</button>
+      </view>
+      <!-- 公司广告位 -->
+      <view class="companyAd">
+        <image src="http://qiniuoss.822644.com/wxPic/20191226/789629131854717952.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 关注弹窗 -->
+<!-- 关注内容弹窗 -->
+<view class="popup-menban popup-menban2" wx:if="{{isShowPopup2}}" catchtap="onPopupClose2" catchtouchmove='stopPageScroll' ></view>
+<view class="popup-wap popup-wap2" wx:if="{{isShowPopup2}}">
+  <view class="popup-top">
+    <view class="popup-close" catchtap="onPopupClose2">X</view>
+    <view class="popup-title">采购需求真实可靠，销售爱上【采销易】</view>
+  </view>
+  <view class="popup-bottom popup-bottom2">
+    <view>采购需求一个不漏，随时随时掌握，关注公众号吧。</view>
+    <image src="http://qiniuoss.822644.com/wxPic/20191216/782436359695508480.jpg"  data-img="http://qiniuoss.822644.com/wxPic/20191216/782436359695508480.jpg" catchtap="imgView"></image>
+  </view>
+</view>
+
+<view class="showCodeLayer" wx:if="{{showCode}}">
+  <view class="showCodeContent">
+    <view class="title">采购易、销售易、采销更容易</view>
+    <view class="catchQrcode">
+      <image class="qrCode" src="{{qrCodeImg}}"  data-img="{{qrCodeImg}}" catchtap="imgView" />
+      <view class="catchCon">加我好友，给您带来</view>
+      <view class="catchCon"><text class="blue">优质</text>的资源、<text class="blue">优秀</text>的客户</view>
+      <view class="catchCon"><text class="blue">志同</text>的伙伴、<text class="blue">前沿</text>的行情</view>
+      <!-- <view class="catchCon">还等什么，扫二维码加入我们吧！</view> -->
+    </view>
+  </view>
+  <view class="btnContent">
+    <i class="iconfont iconjinakangbaoicons18" catchtap="closeShowCode"></i>
+  </view>
+</view>
+
+<wxs src="../../utils/filter.wxs" module="filter" />

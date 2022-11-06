@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "tabBar":"/componentS/tabBar/tabBar",
+    "productService":"/componentS/supplyDetail/productService/productService",
+    "comPage":"/componentS/supplyDetail/comPage/comPage",
+    "indrustNews":"/componentS/supplyDetail/indrustNews/indrustNews",
+    "Recruitment": "/componentS/supplyDetail/Recruitment/Recruitment",
+    "tripServer": "/componentS/supplyDetail/tripServer/tripServer"
+  }
+}

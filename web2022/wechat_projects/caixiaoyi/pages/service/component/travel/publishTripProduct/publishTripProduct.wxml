@@ -1,0 +1,167 @@
+<view class="publishTripProduct">
+  <view class="warp-box">
+    <!-- 线路类型 -->
+    <view class="itemBox">
+      <view class="productItem">
+        <span class="routeType itemTitle">线路类型:</span>
+        <input type="text" disabled="disabled" value="{{submitList.typeName}}" bindtap="toShow" placeholder="请选择线路类型" />
+        <van-popup show="{{show}}" position="bottom" overlay="true">
+          <view class="showBySelect">
+            <view type="text" readonly wx:for="{{routeTypeList}}" wx:key="index" bindtap="toChooseRoute" data-item="{{item}}" class="routeItem">{{item.name}}</view>
+          </view>
+        </van-popup>
+      </view>
+
+      <!-- 线路名称 -->
+      <view class="productItem">
+        <span class="routeName itemTitle">线路名称:</span>
+        <input placeholder="请输入线路名称" value="{{submitList.name}}" bindinput="submitName" maxlength="18" />
+      </view>
+
+      <!-- 行程主图 -->
+      <view class="productItem">
+        <span class="tripMainImg itemTitle">行程主图:</span>
+        <view class="img_box" style="display:flex;align-items: center;">
+          <image wx:if="submitList.mainImg !== ''" src="{{submitList.mainImg}}" data-img="{{submitList.mainImg}}" catchtap="previewImg" alt class="upload_img_s" />
+          <image wx:else src="/img/timg.jpg" alt class="upload_img_s" />
+          <!-- <input type="file" id="upload_coverUrl" style="display:none" bindinput="companyCoverUrl" accept="image/*" ref="fileImg1" /> -->
+          <button class="upload-btn btnnn" bindtap="chooseImage">请上传图片</button>
+        </view>
+      </view>
+
+      <!-- 上传产品小图 -->
+      <view class="productItem img_box_item">
+        <p class="itemTitle">上传产品小图:(最多上传5张)</p>
+        <view class="form_uploadimg_cont">
+          <view class="pic_box">
+            <view wx:for="{{images}}" class="img_box" wx:key="index">
+              <i class="fa fa-times icon_delete" catchtap="delete_img" data-index="{{index}}"></i>
+              <image src="{{item}}" bindtap="previewImg" data-item="{{item}}" alt="{{item}}" />
+            </view>
+            <view class="upload_html" bindtap="chooseImage2" wx:if="{{images.length<5}}">
+                <p class="icon">+</p>
+            </view>
+            <!-- <input type="file" style="display:none" value="上传" bindtap="fileChange" id="upload_file" accept="image/*" ref="fileImg2" /> -->
+          </view>
+        </view>
+      </view>
+
+      <!-- 行程天数 -->
+      <view class="productItem">
+        <span class="tripDateNum itemTitle">行程天数:</span>
+        <view style="display:flex;">
+          <input placeholder="请输入行程天数" value="{{submitList.tourDays}}" type="text" bindinput="onInputChange1" maxlength="3" />天
+        </view>
+      </view>
+
+      <!-- 热门 -->
+      <view class="productItem">
+        <span class="isHot itemTitle">热门:</span>
+        <van-switch bind:change="onChange" value="{{submitList.isHot}}" class="switch" size="32rpx" style="border: 1px solid #eeeeee;" />
+      </view>
+
+      <!-- 原价 -->
+      <view class="productItem">
+        <span class="oldPrice itemTitle">原价:</span>
+        <view style="display:flex;">
+          <input value="{{submitList.marketPrice}}" placeholder="请输入原价" type="text" bindinput="onInputChange2" maxlength="5" />元
+        </view>
+      </view>
+
+      <!-- 现价 -->
+      <view class="productItem">
+        <span class="newPrice itemTitle">现价:</span>
+        <view style="display:flex;">
+          <input type="text" value="{{submitList.price}}" placeholder="请输入现价" bindinput="onInputChange3" maxlength="5" />元
+        </view>
+      </view>
+
+      <!-- 儿童身高 -->
+      <view class="productItem">
+        <span class="routeType itemTitle">儿童身高:</span>
+        <input type="text" disabled="true" value="{{submitList.childHeightName}}" bindtap="childHeightPopuptrue" placeholder="请选择儿童身高" />
+        <van-popup show="{{childHeightPopup}}" position="bottom" overlay="true">
+          <view class="showBySelect">
+            <view type="text" readonly wx:for="{{childHeighList}}" wx:key="index" catchtap="onchildHeightSel" data-item="{{item}}" class="routeItem">{{item.name}}</view>
+          </view>
+        </van-popup>
+      </view>
+
+      <!-- 儿童身高价格 -->
+      <view class="productItem">
+        <span class="newPrice itemTitle">儿童身高价格:</span>
+        <view style="display:flex;">
+          <input type="text" value="{{submitList.childAmount}}" placeholder="请输入儿童身高价格" bindinput="onInputChange4" maxlength="5" />元
+        </view>
+      </view>
+
+      <!-- 开始预定日期 -->
+      <view class="productItem">
+        <span class="starBook itemTitle">开始预定日期:</span>
+        <input bindtap="chooseStarDate" value="{{submitList.startTime}}" disabled="true" placeholder="请选择开始预定日期" />
+        <van-popup show="{{isShowDate1}}" position="bottom" overlay="true">
+          <van-datetime-picker type="datetime" min-date="{{minDate}}" bind:confirm="confirmStarBookDate" bind:cancel="cancelStarBookDate"></van-datetime-picker>
+        </van-popup>
+      </view>
+
+      <!-- 截止预定日期 -->
+      <view class="productItem">
+        <span class="endBook itemTitle">截止预定日期:</span>
+        <input bindtap="chooseEndDate" value="{{submitList.endTime}}" disabled="true" placeholder="请选择截止预定日期" />
+        <van-popup show="{{isShowDate2}}" position="bottom" overlay="true">
+          <van-datetime-picker type="datetime" min-date="{{minDate}}" bind:confirm="confirmEndBookDate" bind:cancel="cancelEndBookDate"></van-datetime-picker>
+        </van-popup>
+      </view>
+
+      <!-- 产品特色 -->
+      <view class="productItem productSpecialItem">
+        <span class="productSpecial itemTitle title-algin">产品特色:</span>
+        <view style="width:100%;" class="proSpec" wx:for="{{characteristicList}}" wx:key="index">
+          <textarea placeholder="请输入产品特色" value="{{item.content}}" bindinput="psChange" data-index="{{index}}" maxlength="255"></textarea>
+          <i wx:if="index !== 0" class="fa fa-close" bindtap="deleteOneMoreProductSpecial" data-index="{{index}}"></i>
+        </view>
+        <view class="addOneMoreProductSpecial" bindtap="addOneMoreProductSpecial">添加更多产品特色</view>
+      </view>
+
+      <!-- 行程介绍 -->
+      <view class="productItem tripIntroduceCase" wx:if="{{submitList.tourDays != '' && submitList.tourDays !=  0}}">
+        <span class="tripIntroduce itemTitle title-algin">行程介绍:</span>
+        <view style="width:100%;" class="proSpec" wx:for="{{tripList}}" wx:key="index" wx:for-index="indexM">
+          <block wx:for="{{item.children}}" wx:key="k" wx:for-item="v" >
+          <input type="text" class="proSpec-input" placeholder="请输入行程时间：如第一天，以此类推" value="{{v.time}}"   bindinput="icChange1" data-index="{{indexM}}" />
+          </block>
+          <textarea placeholder="请输入行程内容" bindinput="icChange2" data-index="{{indexM}}" maxlength="255" style="width: 100%" value="{{item.content}}"></textarea>
+          <i class="fa fa-close" wx:if="{{indexM !== 0}}" bindtap="deleteOneMoreTripIntro" data-index="{{v.indexM}}"></i>
+        </view>
+        <view class="addOneMoreTripContent" bindtap="toAddOneMoreTripContent" wx:if="{{submitList.tourDays > tripList.length}}">添加更多行程介绍</view>
+      </view>
+
+      <!-- 富文本内容 -->
+      <view class="productItem productDetailItem">
+        <span class="productDetail itemTitle title-algin">图文详情:</span>
+        <view class="myQuillEditor">
+          <!-- <quill-editor v-model="submitList.tourDetDesc" ref="myQuillEditor" :options="editorOption" @blur="onEditorBlur($event)" @focus="onEditorFocus($event)" @change="onEditorChange($event)" style="height: 50vh;"></quill-editor> -->
+          <view class="q-quill">
+              <view class="toolbar" catchtouchend="format1" style="bottom: {{isIOS ? keyboardHeight : 0}}px">
+                <i class="iconfont icon-charutupian" catchtouchend="insertImage1"></i>
+                <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+                <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+                <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+                <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+                <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+                <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+                <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+                <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+                <i class="iconfont iconjuzhong {{formats.align === 'center' ? 'ql-active' : ''}}" data-name="align" data-value="center"></i>
+              </view>
+            <view>
+              <editor id="editor1" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange1" bindready="onEditorReady1" show-img-size	="{{true}}" show-img-resize	="{{true}}" show-img-toolbar	="{{true}}" bindblur="blur1">
+              </editor>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="submitButton" bindtap="onRelease">{{type != "edit" ? "发 布" : "修 改"}}</view>
+    </view>
+  </view>
+</view>

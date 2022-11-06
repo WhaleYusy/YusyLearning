@@ -1,0 +1,32 @@
+<!--pages/service/component/common/common.wxml-->
+<view class="mn-main">
+  <view class="mn-header">
+    <image src="/img/gzhImg/fabu.jpg"></image>
+  </view>
+  <view >
+    <view class="content_card" wx:for="{{dataList}}" wx:key="id" data-id="{{item.id}}" catchtap="selectType">
+      <image src="{{item.logo}}" alt class="company_img" />
+      <view class="info_box">
+        <p class="title_p">
+          <text class="company_name">{{item.supplierName}}</text>
+        </p>
+        <p class="title_p">
+          <i class="iconfont iconuser2"></i>
+          <text>{{item.contactPerson}}</text>
+        </p>
+        <p class="title_p">
+          <i class="iconfont icontel"></i>
+          <text>{{item.phone}}</text>
+        </p>
+        <p class="title_p">
+          <i class="iconfont iconlocation"></i>
+          <text>{{item.supplierAddress}}</text>
+        </p>
+      </view>
+    </view>
+  </view>
+  <view class='cont_box'>
+    没有更多数据了~~
+  </view>
+</view>
+<tabBar></tabBar>

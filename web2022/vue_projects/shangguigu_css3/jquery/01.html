@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+      $(function () {
+        $('.check1').click(function () {
+          let s = $(":checkbox[name='yusy']")
+          for (let index = 0; index < s.length; index++) {
+            const element = s[index]
+            element.checked = !element.checked
+          }
+        })
+        $('.check2').click(function () {
+          $('.check1').click()
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <button class="check1">123</button>
+    <button class="check2">456</button>
+    <input type="checkbox" name="yusy" id="" /><label>123</label>
+    <input type="checkbox" name="yusy" id="" /><label>123</label>
+    <input type="checkbox" name="yusy" id="" /><label>123</label>
+  </body>
+</html>

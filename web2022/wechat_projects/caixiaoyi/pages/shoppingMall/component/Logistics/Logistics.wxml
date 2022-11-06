@@ -1,0 +1,29 @@
+<!--pages/shoppingMall/component/Logistics/Logistics.wxml-->
+<shopNav></shopNav>
+<view class="LogisticsContent">
+    <view class="bottom">
+      <view class="step" wx:if="{{logisticsList.length > 0}}">
+        <!-- 列表数据 -->
+        <view class="express">
+          <p>订单编号: {{logistics.expNo}}</p>
+          <p>快递公司: {{logistics.expName}}</p>
+        </view>
+        <view class="loContent">
+          <view wx:for="{{logisticsList}}" wx:key="{{index}}" class="loItem {{active == index ? 'active' : ''}}">
+            <h3 style="margin-left: 10px;">{{item.context}}</h3>
+            <p style="margin-left: 10px;">{{item.time}}</p>
+          </view>
+        </view>
+      </view>
+      <!-- 无数据 -->
+      <view class="steps" wx:if="{{logisticsList.length == 0}}">
+        <view class="no-address">
+          <view class="no-box">
+            <image src="/img/shoppingMall/mySvg/address.png" alt=""></image>
+            <p>您的物流信息是空的！</p>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
+<tabBar></tabBar>

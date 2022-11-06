@@ -1,0 +1,46 @@
+/* pages/supply/component/indrustNewsDetail/indrustNewsDetail.wxss */
+.businessNewDetails {
+    margin-bottom:120rpx;
+    width: 100%;
+    height: calc(100vh - 120rpx);
+    background: #f5f5f5;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: white;
+    padding: 15rpx;
+  }
+  .businessNewDetails .title {
+    font-size: 30rpx;
+    text-align: center;
+    padding-top: 15rpx;
+    line-height: 35rpx;
+  }
+  .businessNewDetails .time {
+    text-align: center;
+    color: gray;
+    padding: 15rpx 0;
+  }
+  .businessNewDetails .html /deep/ img {
+    width: 100%;
+    margin: 15rpx 0;
+  }
+  .businessNewDetails .html /deep/ p {
+    line-height: 35rpx;
+    margin-top: 15rpx;
+  }
+  .businessNewDetails .html /deep/ span {
+    line-height: 35rpx;
+    margin-top: 15rpx;
+  }
+  .businessNewDetails .html /deep/ p,
+  .businessNewDetails .html /deep/ span {
+    font-size: 25rpx;
+  }
+  .businessNewDetails .html /deep/ pre {
+    word-break: break-all;
+    line-height: 35rpx;
+  }
+  
+  /*# sourceMappingURL=lo.css.map */
+  

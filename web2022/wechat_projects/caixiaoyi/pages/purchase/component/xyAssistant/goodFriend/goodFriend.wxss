@@ -1,0 +1,73 @@
+.warp {
+  margin: 90rpx 0 100rpx;
+}
+.g-msg {
+  color: gray;
+  padding: 28rpx;
+  font-size: 28rpx;
+}
+.g-warp {
+  display: flex;
+  padding: 20rpx;
+  background: white;
+  height: 70rpx;
+  align-items: center;
+}
+.g-img {
+  width: 70rpx;
+  height: 70rpx;
+}
+.g-img  image {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+  }
+.g-title {
+  flex: 1;
+  padding: 0 15rpx;
+  font-size: 28rpx;
+}
+.g-btn {
+  display: flex;
+  flex-basis: 180rpx;
+  text-align: center;
+}
+.g-btn .btn {
+  padding: 5rpx 0;
+  border-radius: 30rpx;
+  color: white;
+  font-size: 24rpx;
+}
+.g-btn1 {
+  flex: 1;
+  border: 2rpx solid #c5c5c5;
+  background: #c5c5c5;
+  margin-right: 10rpx;
+}
+.g-btn2 {
+  flex: 1;
+  border: 2rpx solid #09f;
+  background: #09f;
+}
+.btn3 {
+  width: 100%;
+  color: #cccccc;
+  display: flex;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.more {
+  border-top: 2rpx solid #ebeef5;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+  background: white;
+}
+
+.no-more {
+  font-size: 28rpx;
+  color: gray;
+  padding: 100rpx 0;
+  text-align: center;
+}

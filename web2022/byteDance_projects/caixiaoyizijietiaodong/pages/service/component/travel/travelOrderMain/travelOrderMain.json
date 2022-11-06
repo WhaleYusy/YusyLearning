@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "payModel":"/componentS/payModel/payModel"
+  },
+  "navigationBarTitleText": "采销更容易，爱上【采销易】"
+}

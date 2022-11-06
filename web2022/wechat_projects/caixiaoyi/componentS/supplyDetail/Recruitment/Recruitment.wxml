@@ -1,0 +1,126 @@
+<!--componentS/supplyDetail/Recruitment/Recruitment.wxml-->
+<view class="main_content" style="margin:20rpx auto;">
+    <view class="content_box">
+      <view class="content_card" wx:for="{{dynamicList}}" wx:key="index" data-item='{{item}}' catchtap="goToDetails" data-us="{{userStatus}}">
+        <view class="left-box">
+          <view class="l-img">
+            <image src="{{item.supplierLogo}}" alt />
+          </view>
+        </view>
+        <view class="right-box">
+          <view class="r-place r-font-size">
+            <font>招聘岗位：</font>
+            <span class="r-title">{{item.job}}</span>
+          </view>
+          <view class="r-company r-font-size">{{item.companyName}}</view>
+          <view class="r-num r-font-size">
+            <font>招聘人数：</font>
+            {{item.recruitmentPersons}}人
+            <font>薪资：</font>
+            {{item.salaryRange}}
+          </view>
+          <view class="r-place r-font-size">
+            <font>工作地点:</font>
+            {{item.workAddress || ""}}
+          </view>
+          <view class="r-fabric r-font-size">
+            <font>生产产品:</font>
+            {{item.project == "" || item.project == null ? '无' : item.project}}
+          </view>
+          <view class="r-msg" catchtap="onModify" data-item="{{item}}" wx:if="{{userStatus == 1}}">修改</view>
+        </view>
+      </view>
+    </view>
+    <view class="add" wx:if="{{userStatus == 1}}">
+      <view class="br" catchtap="onAddClick">
+        <p class="icon">+</p>
+      </view>
+    </view>
+
+    <!-- 新增弹窗 -->
+    <view class="popus-mb" wx:if="{{isShow}}">
+      <view class="popus-box">
+        <view class="close-warp">
+          <view class="close-title">人才招聘</view>
+          <view class="close" catchtap="onCloseClick">X</view>
+        </view>
+        <view class="flex-warp">
+          <view class="flex">
+            <view class="left">公司地址：</view>
+            <view class="right">
+              <input placeholder="请输入公司所在城市" value="{{param.workAddress}}" maxlength="18" bindinput="saveValue" data-key="workAddress"/>
+            </view>
+          </view>
+          <view class="flex">
+            <view class="left">招聘职位：</view>
+            <view class="right">
+              <input placeholder="请输入职位名称" value="{{param.job}}" maxlength="18" 
+              bindinput="saveValue" data-key="job"/>
+            </view>
+          </view>
+          <view class="flex">
+            <view class="left">薪资水平：</view>
+            <view class="right">
+              <input placeholder="请输入薪资(如:10k-100k)" value="{{param.salaryRange}}" maxlength="10" bindinput="saveValue" data-key="salaryRange" />
+            </view>
+          </view>
+          <view class="flex">
+            <view class="left">招聘人数：</view>
+            <view class="right">
+              <input placeholder="请输入招聘人数" value="{{param.recruitmentPersons}}" ref="inputNum" type="text" bindinput="saveValue" data-key="recruitmentPersons" maxlength="2" />
+            </view>
+          </view>
+          <view class="flex">
+            <view class="left font-weights">任职要求：</view>
+          </view>
+          <!-- <view class="q-quill">
+            <quill-editor v-model="param.content" ref="myQuillEditor" :options="editorOption" @blur="onEditorBlur($event)" @focus="onEditorFocus($event)" bindchange="onEditorChange($event)" style="height: 40vh;"></quill-editor>
+          </view> -->
+          <view class="q-quill">
+              <view class="toolbar" catchtouchend="format1" style="bottom: {{isIOS ? keyboardHeight : 0}}px">
+                <i class="iconfont icon-charutupian" catchtouchend="insertImage1"></i>
+                <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+                <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+                <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+                <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+                <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+                <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+                <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+                <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+                <i class="iconfont iconjuzhong {{formats.align === 'center' ? 'ql-active' : ''}}" data-name="align" data-value="center">中</i>
+              </view>
+            <view class="container" >
+              <editor id="editor1" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange1" bindready="onEditorReady1" show-img-size	="{{true}}" show-img-resize	="{{true}}" show-img-toolbar	="{{true}}" bindblur="blur1">
+              </editor>
+            </view>
+          </view>
+          <view class="flex">
+            <view class="left font-weights">岗位职责：</view>
+          </view>
+          <view class="q-quill">
+              <view class="toolbar" catchtouchend="format2" style="bottom: {{isIOS ? keyboardHeight : 0}}px">
+                <i class="iconfont icon-charutupian" catchtouchend="insertImage2"></i>
+                <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+                <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+                <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+                <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+                <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+                <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+                <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+                <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+                <i class="iconfont iconjuzhong {{formats.align === 'center' ? 'ql-active' : ''}}" data-name="align" data-value="center">中</i>
+              </view>
+            <view class="container" >
+              <editor id="editor2" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange2" bindready="onEditorReady2" show-img-size	="{{true}}" show-img-resize	="{{true}}" show-img-toolbar	="{{true}}" bindblur="blur2">
+              </editor>
+            </view>
+          </view>
+          <!-- <view class="q-quill">
+            <quill-editor v-model="param.jobRemark" ref="myQuillEditor1" :options="editorOption1" @blur="onEditorBlur1($event)" @focus="onEditorFocus1($event)" bindchange="onEditorChange1($event)" style="height: 40vh;"></quill-editor>
+          </view> -->
+          <view  class="onSubmitClickBtn" catchtap="onSubmitClick2">提 交</view>
+        </view>
+      </view>
+    </view>
+    <view style="text-align:center" wx:if="{{dynamicList.length == 0}}">暂无数据</view>
+  </view>

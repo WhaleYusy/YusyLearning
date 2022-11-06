@@ -1,0 +1,94 @@
+.mb-main{
+  margin-bottom: 240rpx;
+}
+.mb-title{
+  display: flex;
+  background: #fff;
+}
+.mb-title text{
+  font-size: 28rpx;
+  line-height: 56rpx;
+}
+.mb-last{
+  padding: 10rpx 20rpx;
+}
+.mb-header{
+  height: 300rpx;
+  width: 100%;
+}
+.mb-header image{
+  width: 100%;
+  height: 100%;
+}
+.mb-footer{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #696969;
+  font-size: 24rpx;
+}
+.mb-cli{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  padding: 10rpx 20rpx;
+  position: relative;
+}
+.mb-clis{
+  position: absolute;
+  top: 15rpx;
+  left: 20rpx;
+  padding: 0 10rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+}
+.mb-cli image{
+  width: 190rpx;
+  height: 200rpx;
+}
+.mb-clic{
+  width: 440rpx;
+  margin-left:20rpx; 
+  position: relative;
+}
+.mb-clic1{
+  color: red;
+  font-size: 28rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  margin: 20rpx 0;
+  padding: 10rpx 0;
+}
+.mb-clic2{
+  font-size: 24rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mb-clicc{
+  padding: 0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  background: #009688;
+  color: #fff;
+  position: absolute;
+  right: -80rpx;
+  top: 65rpx;
+}
+.mb-clict{
+  position: absolute;
+  background: #000;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 5rpx;
+  top: -5rpx;
+  right: 0rpx;
+}

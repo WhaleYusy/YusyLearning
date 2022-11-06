@@ -1,0 +1,68 @@
+<!--pages/shoppingMall/component/my/collect/collect.ttml-->
+<shopNav selected="{{2}}" ></shopNav>
+<view class="collectContent">
+    <view  class="bottom {{!isSupervise ? 'bottom-height' : ''}}">
+      <!-- 收藏列表 -->
+      <view class="loading-box" tt:if="{{isLoading}}">
+        <van-loading class="loading" size="35px" color="#0303fe" />
+      </view>
+      <block wx:else>
+        <view class="flex" tt:for="{{collectionList}}" tt:key="k" tt:for-item="v">
+          <view class="left-box" tt:if="{{isSupervise}}" catchtap="onHandlerClick2" data-index="{{index}}" data-item="{{v}}">
+            <radio  class="checked" checked="{{v.isChecked}}" />
+          </view>
+          <view class="center-box">
+            <image src="{{v.mainImage}}" alt=""></image>
+          </view>
+          <view class="right-box" catchtap="onHandlerClick" data-index="{{index}}" data-item="{{v}}">
+            <view class="title">{{v.goodsName}}</view>
+            <view class="msg">{{v.num}}人已收藏</view>
+            <view class="integral" tt:if="{{v.status === 1}}">
+              <text class="points">{{v.points}}积分换购</text>
+              <text class="price">￥{{v.price}}</text>
+            </view>
+            <view class="integral" wx:else>
+              <text class="points failure">已失效</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 加载更多 -->
+      <!-- <view class="load-more" tt:if="collectionList.length >= 10" catchtap="onLoadingClick">
+        <view class="more-box">
+          {{loadMoreTxt}}
+          <i class="el-icon-arrow-right" wx:show="!isMoreLoading"></i>
+        </view>
+      </view> -->
+
+      <!-- 无数据 -->
+      <view class="no-address" tt:if="{{collectionList.length <= 0}}">
+        <view class="no-box">
+          <image src="/img/shoppingMall/mySvg/address.png" alt=""></image>
+          <p>您还没有收藏列表！</p>
+        </view>
+      </view>
+    </view>
+    <view class="showTip" tt:if="{{collectionList.length > 0 && showNoMore}}" >暂无更多</view>
+    <!-- 底部操作栏 -->
+    <view class="footer"  tt:if="{{collectionList.length > 0}}">
+      <block  tt:if="{{isSupervise}}">
+        <view class="left">
+          <view class="checked-box"  catchtap="changeChecked">
+            <radio  class="checked" checked="{{isAllChecked}}"/>
+            <text style="margin-top: 3px;">全选</text>
+          </view>
+        </view>
+      </block>
+      <view class="right">
+        <block  tt:if="{{isSupervise}}">
+          <view class="del" catchtap="onHandlerDel">删除<text tt:if="{{idArr.length > 0}}">({{idArr.length}})</text></view>
+        </block>
+        <text class="adminBtn" catchtap="toAdmin">{{isSupervise ? '取消' : '管理'}}</text>
+      </view>
+    </view>
+    <!-- <view class="footer footerADMIN" tt:if="{{!isSupervise}}">
+      <text style="flex:1"></text>
+    </view> -->
+</view>

@@ -1,0 +1,80 @@
+<!--pages/service/component/vote/voterDetail/voteDetail.ttml-->
+<view >
+    <view class="detail_box" tt:if="{{isReApply}}">
+        <view class="bg_box">
+            <view class="detail_cont_box">
+            <p class="title">选手介绍</p>
+            <view class="detail_produce">
+                <text>公司名称：{{userInfos.companyName}}</text>
+            </view>
+            <p class="detail_info">
+                <text>选手名称：{{userInfos.userName}}</text>
+                <text>编号：{{userInfos.voteCode}}号选手</text>
+            </p>
+            <view class="detail_produce"><text>格言：{{userInfos.motto}}</text></view>
+            <p class="detail_info end" tt:if="{{status == 3}}">活动已结束</p>
+            </view>
+            <view class="vote_detail">
+            <ul>
+                <li>
+                <text>当前票数</text>
+                <text>{{userInfos.voteNum}}票</text>
+                </li>
+                <li>
+                <text>距离上一名</text>
+                <text>{{userInfos.afterVoteCount}}票</text>
+                </li>
+                <li>
+                <text>票数榜</text>
+                <text>第{{userInfos.sortNum}}名</text>
+                </li>
+            </ul>
+            </view>
+            <view class="img_box">
+            <image src="{{userInfos.voteMainImg}}" alt catchtap="previewImg(userInfos.voteMainImg)" />
+            </view>
+            <!-- <view class="wx:adver">
+            <view class="promotion-ad">广告</view>
+            <view class="wx:warp" catchtap="onAdLinkClick(voteAdverInfo.url)">
+                <view class="wx:img">
+                <image:src="voteAdverInfo.logo" alt />
+                </view>
+                <view class="wx:title">{{voteAdverInfo.advertisingName}}</view>
+            </view>
+            </view> -->
+
+            <ul class="ul-box">
+            <li tt:for="{{voteAdverInfo}}" tt:key="{{index}}" class="content_list_box" catchtap="onVoteAdverInfo" data-item="{{item}}">
+                <view class="left-warp">
+                <image src="{{item.supplerImage}}" alt class="shop_img seop_img_h" />
+                </view>
+                <view class="right_box">
+                <p class="isStick">广告</p>
+                <view class="right-warp">
+                    <p class="right_box_p1">{{item.supplerName}}</p>
+                    <view class="right_box_p2">
+                    <text>浏览：{{item.viewNum}}</text>
+                    <text>粉丝：{{item.fansNum}}</text>
+                    <text>点赞：{{item.likeCount}}</text>
+                    </view>
+                    <p class="right_box_p3">地址：{{item.supplierAddress}}</p>
+                    <p class="right_box_p4">供应：{{item.operateProduces}}</p>
+                </view>
+                </view>
+            </li>
+            </ul>
+        </view>
+        <view class="control_line">
+            <!-- <button catchtap="onVote" tt:if="userInfos.reVote == false && status != 3">给ta投票</button>
+            <button
+            catchtap="onGoBack"
+            tt:if="userInfos.reVote == true || status == 3"
+            class="back-bg"
+            >返回</button>
+            <button catchtap="goToApply" wx:show="isSignUp">我要报名</button>-->
+            <button catchtap="onGoBack" tt:if="{{status == 3}}" class="back-bg">返回</button>
+            <button catchtap="onVote" tt:if="{{status != 3}}">给ta投票</button>
+            <button catchtap="goToApply" tt:if="{{isSignUp}}">我要报名</button>
+        </view>
+    </view>
+</view>

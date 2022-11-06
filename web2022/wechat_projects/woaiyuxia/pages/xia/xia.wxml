@@ -1,0 +1,19 @@
+<view class="container">
+  <view> - 2020以后 -</view>
+  <view class="container3">
+    <text class="title">总得有点对未来的计划</text>
+  </view>
+  <view class="container2">
+    <block wx:for="{{list}}" wx:key="index">
+      <text class="title2">{{index}}、{{item}}</text>
+    </block>
+  </view>
+  <view class="container2">
+    <text class="title3">
+      啊，不知道还要表达些什么了，，，
+    </text>
+    <text class="title3">
+      反正2020都到了，爱你爱你就对了。。。
+    </text>
+  </view>
+</view>

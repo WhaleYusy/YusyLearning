@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "swiper": "/componentS/swiper/swiper",
+    "purchaseList":"/componentS/purchaseList/purchaseList"
+  },
+  "enablePullDownRefresh": true
+}

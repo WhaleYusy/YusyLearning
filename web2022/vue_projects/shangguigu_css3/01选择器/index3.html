@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input:enabled {
+      background: pink;
+    }
+
+    input:disabled {
+      background: deeppink;
+    }
+
+    /* input:checked {
+      width: 200px;
+      height: 200px;
+    } */
+
+    input:focus {
+      background: yellow;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    label {
+      float: left;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 2px solid;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+
+    label>span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    input {
+      position: absolute;
+      left: -50px;
+      top: 50px;
+    }
+
+    input:checked+span {
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <input type="text" />
+  <hr>
+  <input type="text" disabled />
+  <hr>
+  <input type="checkbox" />
+  <hr> -->
+  <label>
+    <input type="radio" name="atguigu" id="">
+    <span></span>
+  </label>
+  <label>
+    <input type="radio" name="atguigu" id="">
+    <span></span>
+  </label>
+  <label>
+    <input type="radio" name="atguigu" id="">
+    <span></span>
+  </label>
+</body>
+
+</html>

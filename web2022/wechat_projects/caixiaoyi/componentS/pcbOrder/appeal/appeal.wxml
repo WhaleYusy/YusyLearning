@@ -1,0 +1,27 @@
+<!--componentS/pcbOrder/appeal/appeal.wxml-->
+<view class="catchOrder">
+    <view class="listContent">
+      <view class="listContentItem" wx:for="{{orderList1}}" wx:key="orderId" catchtap="toOrderInfo" data-orderid="{{item.orderId}}">
+        <view class="listContentItems">
+          <view class="title" style="border-top-left-radius:10px;">板子尺寸</view>
+          <view class="item">{{item.pcbLong}} X {{item.pcbWide}}</view>
+          <view class="title">板子数量</view>
+          <view class="item" style="border-top-right-radius:10px;">{{item.pcbNum}}</view>
+        </view>
+        <view class="listContentItems">
+          <view class="title">板子层数</view>
+          <view class="item">{{item.layerNum}}</view>
+          <view class="title">板子厚度</view>
+          <view class="item">{{item.depth}}</view>
+        </view>
+        <view class="listContentItems spec" >
+          <view class="titleAddr" style="border-bottom-left-radius:10px;">收货地址</view>
+          <view class="itemAddr " style="border-bottom-right-radius:10px;">{{item.area}} {{item.detailArea}}</view>
+        </view>
+        <!-- <view class="catchOrder111" catchtap.stop="catchOrder(item)">抢单</view> -->
+    </view>
+    </view>
+    <view class="loadMore" catchtap="loadMore" wx:if="{{!showNoMore1 && orderList1.length >=10}}">加载更多</view>
+    <view class="noData" wx:if="{{orderList1.length === 0}}">暂无数据</view>
+    <view class="showNoMore" wx:if="{{showNoMore && orderList1.length > 0 }}">没有更多数据啦~</view>   
+  </view>

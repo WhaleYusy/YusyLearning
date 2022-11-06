@@ -1,0 +1,23 @@
+<!--pages/service/component/news/news.ttml-->
+<swiperImgs id="purSwiper" imgUrls="{{imgUrls}}"></swiperImgs>
+<view class="newsContent">
+    <view class="informationContent">
+    <view class="list-warp" tt:for="{{purchaseProductlist}}" tt:for-item="v" tt:key="{{index}}" catchtap="onSeeNewListDetails" data-v="{{v}}">
+        <view class="list-left">
+            <image src="{{v.logo}}" alt="" />
+        </view>
+        <view class="list-right">
+            <view class="list-right-box">
+                <view class="list-title">{{v.title}}</view>
+                <view class="list-msg">
+                    发布时间：{{v.createdTime}}
+                </view>
+            </view>
+            </view>
+        </view>
+        <!-- <show-loading v-if="showLoading" class="loading"/> -->
+    </view>
+    <view tt:if="{{purchaseProductlist.length >0 && showNoMore}}" class="showTip">暂无更多</view>
+    <view tt:if="{{purchaseProductlist.length == 0}}" class="showTip">暂无数据</view>
+</view>
+<tabBar></tabBar>

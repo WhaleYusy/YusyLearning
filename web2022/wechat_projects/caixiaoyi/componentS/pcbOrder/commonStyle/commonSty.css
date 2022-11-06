@@ -1,0 +1,258 @@
+/* componentS/pcbOrder/catchOrder/catchOrder.wxss */
+/* .catchOrder {
+    background: #ebebeb;
+    padding-top: 16rpx;
+    margin-top:80rpx;
+    min-height:calc(100vh - 80rpx);
+  } */
+  
+  .showNoMore {
+    width: 100%;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+  }
+  
+  .listContent {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 30rpx;
+    box-sizing: border-box;
+  }
+  .listContent .listContentItem {
+    position: relative;
+    min-height: 184rpx;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rpx;
+    box-sizing: border-box;
+  }
+  .listContent .listContentItem .listContentItems {
+    flex: 1;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    border: 1rpx solid #c8c8c8;
+    border-left: none;
+    box-sizing: border-box;
+  }
+  .listContent .listContentItem .listContentItems .title {
+    flex: 1;
+    padding: 16rpx;
+    box-sizing: border-box;
+    background: lightgray;
+    box-sizing: border-box;
+  }
+  .listContent .listContentItem .listContentItems .item {
+    flex: 1;
+    padding: 16rpx;
+    background: white;
+    box-sizing: border-box;
+  }
+  .listContent .listContentItem .listContentItems .titleAddr {
+    width: 25%;
+    padding: 16rpx;
+    box-sizing: border-box;
+    background: lightgray;
+    box-sizing: border-box;
+  }
+  .listContent .listContentItem .listContentItems .itemAddr {
+    width: 75%;
+    padding:16rpx;
+    background: white;
+    line-height: 32rpx;
+    box-sizing: border-box;
+  }
+  
+  .catchOrder111 {
+    width: 120rpx;
+    height:64rpx;
+    position: absolute;
+    right: 0;
+    top: 60rpx;
+    line-height: 64rpx;
+    text-align: center;
+    color: white;
+    background: red;
+    border-radius: 10rpx;
+  }
+  
+  .listContentItems:first-child {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+  }
+  
+  .spec {
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    border-bottom: 1px solid #c8c8c8;
+  }
+  
+  .catchLayer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .catchLayer .tip {
+    color: white;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+  
+  .cancel {
+    z-index: 3000;
+    color: white;
+    font-size: 48rpx;
+    position: fixed;
+    right:40rpx;
+    top:40rpx;
+  }
+  
+  ul {
+    margin-top: 80rpx;
+  }
+  
+  .content_list_box {
+    margin: 12rpx;
+    background: #fff;
+    display: flex;
+    padding: 10rpx;
+    box-sizing: border-box;
+    box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10rpx;
+  }
+  .content_list_box .left-warp {
+    flex-basis: 180rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .content_list_box .left-warp .shop_img {
+    width: 100%;
+    height: 120rpx;
+  }
+  .content_list_box .left-warp .seop_img_h {
+    height: 180rpx;
+  }
+  .content_list_box .left-warp .left-btn {
+    flex: 1;
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    margin-top: 15rpx;
+  }
+  .content_list_box .left-warp .left-btn span {
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10rpx;
+    background: #d81e06;
+    padding: 5rpx;
+    color: #ffffff;
+  }
+  .content_list_box .left-warp .left-btn span:last-of-type {
+    background: #62b900;
+  }
+  .content_list_box .left-warp .left-btn .span-active {
+    background: #cccccc;
+  }
+  .content_list_box .right_box {
+    width: 73%;
+    padding: 10rpx 0rpx 0 20rpx;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+  }
+  .content_list_box .right_box .right-warp {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  .content_list_box .right_box .right-warp p {
+    line-height: 40rpx !important;
+  }
+  .content_list_box .right_box .right-warp .isStick {
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 50rpx;
+    background: red;
+    padding: 7rpx;
+    border-radius: 5rpx;
+  }
+  .content_list_box .right_box .right-warp .right_box_p1 {
+    font-size: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5rpx 0;
+  }
+  .content_list_box .right_box .right-warp .right_box_p2 {
+    margin-top: 5rpx;
+    font-size: 20rpx;
+    color: red;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .content_list_box .right_box .right-warp .right_box_p2 span {
+    padding: 5rpx 30rpx 5rpx 0;
+  }
+  .content_list_box .right_box .right-warp .right_box_p3 {
+    margin-top: 8rpx;
+    font-size: 21rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .content_list_box .right_box .right-warp .right_box_p4 {
+    font-size: 21rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .link {
+    background: lightgray !important;
+  }
+  
+  .btnGroup {
+    display: flex;
+    justify-content: space-around;
+    margin: 320rpx auto;
+  }
+  
+  .ensureUpload, .cancelUpload {
+    width: 320rpx;
+    z-index: 3000;
+    color: white;
+    height:80rpx;
+    background: red;
+    font-size: 32rpx;
+    line-height: 70rpx;
+    text-align: center;
+    border-radius:16rpx;
+  }
+  
+  .noData {
+    position: fixed;
+    left: 45%;
+    top: 35%;
+    font-size: 32rpx;
+    text-align: center;
+  }
+  
+  /*# sourceMappingURL=lo.css.map */
+  .loadMore{
+      text-align: center;
+  }

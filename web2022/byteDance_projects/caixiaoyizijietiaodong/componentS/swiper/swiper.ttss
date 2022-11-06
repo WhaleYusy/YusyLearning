@@ -1,0 +1,47 @@
+/* componentS/swiper.wxss */
+.swiperContent{
+  position: relative;
+  height:350rpx;
+}
+.content{
+  width:100%;
+  height:100%;
+}
+.item{
+  width:100%;
+  height:100%;
+}
+/* .item image{
+  width:100%;
+  height:100%;
+} */
+/* //更改指示点的样式 */
+
+.active{
+  /* 激活时候的指示点的样式 */
+  /* background:red !important; */
+}
+.dotsContent{
+  width:100%;
+  height:30rpx;
+  position:absolute;
+  bottom:20rpx;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.dotsContent .dots{
+  display:inline-block;
+  width:20rpx;
+  height:20rpx;
+  /* //未激活时候的样式 */
+  /* background:yellow; */
+  border-radius:50%;
+  margin-right:15rpx;
+}
+.item .slide-image{
+  height:300rpx;
+}
+image{
+  height:300rpx;
+}

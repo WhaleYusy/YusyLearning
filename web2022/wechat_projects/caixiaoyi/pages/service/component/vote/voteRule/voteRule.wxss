@@ -1,0 +1,114 @@
+/* pages/service/component/vote/voteRule/voteRule.wxss */
+.voteRuleContent{
+  margin-bottom:120rpx;
+}
+.apply_cont_box {
+  width: 90%;
+  min-height: 150rpx;
+  border-radius: 20rpx;
+  border: 2rpx solid #cccccc;
+  margin: 50rpx auto;
+  position: relative;
+  padding: 30rpx;
+  box-sizing: border-box;
+
+}
+.apply_cont_box .title {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  background: #f5f5f5;
+  position: absolute;
+  top: -30rpx;
+  left: 50rpx;
+  font-weight: bold;
+  color: #2dcc70;
+  text-align: center;
+}
+.apply_cont_box .htmls {
+  padding: 30rpx 20rpx !important;
+  text-align: center !important;
+}
+.apply_cont_box .htmls /deep/ p,
+.apply_cont_box .htmls /deep/ span,
+.apply_cont_box .htmls /deep/ div {
+  line-height: 45rpx;
+  font-size: 28rpx;
+  word-break: break-all;
+}
+.apply_cont_box .htmls /deep/ image {
+  width: 100% !important;
+}
+
+.margin-bottom {
+  margin-bottom: 130rpx;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+}
+.margin-bottom .coupon {
+  display: flex;
+  height: 140rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  border: 2rpx solid #f1ce8c;
+  background: white;
+  box-sizing: border-box;
+}
+.margin-bottom .coupon .left {
+  width: 140rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.margin-bottom .coupon .left div {
+  color: red;
+  margin: auto;
+  font-size: 55rpx;
+}
+.margin-bottom .coupon .left div span {
+  font-size: 24rpx;
+}
+.margin-bottom .coupon .center {
+  flex: 1;
+  padding: 10rpx 0;
+}
+.margin-bottom .coupon .center-box {
+  box-sizing: border-box;
+  border-left: 2rpx dashed #cccccc;
+  height: 100%;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+}
+.margin-bottom .coupon .center-box .label {
+  padding-bottom: 15rpx;
+  font-size: 24rpx;
+  color: #a2a2a2;
+}
+.margin-bottom .coupon .center-box .date {
+  font-size: 24rpx;
+}
+.margin-bottom .coupon .right {
+  width: 75rpx;
+  position: relative;
+}
+.margin-bottom .coupon .right image {
+  width: 100%;
+  height: 100%;
+}
+.margin-bottom .coupon .right p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  color: white;
+  line-height: 28rpx;
+  font-size: 24rpx;
+}
+.margin-bottom .coupon:last-of-type {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=lo.css.map */

@@ -1,0 +1,23 @@
+<!--pages/detail/detail.wxml-->
+<view class="detailContainer">
+  <image class="headImg" src=""></image>
+  <view class="avatar_date">
+    <image class="avatar_date_image" src=""></image>
+    <text>美国队长</text>
+    <text>发布于</text>
+    <text>{{detail.date}}</text>
+  </view>
+  <text class="company">{{detail.title}}</text>
+  <view class="collection_share_container">
+    <view class="collection_share">
+      <image wx:if="{{isCollected}}" catchtap="toCollect" src="/img/collection-full.png"></image>
+      <image wx:else catchtap="toCollect" src="/img/collection.png"></image>
+      <image catchtap="toShare" src="/img/good.png"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+  <button>转发此文章</button>
+  <text class="content">{{detail.detail}}</text>
+  <button catchtap="toPlay" wx:if="{{!isPlay}}">播放音乐</button>
+  <button catchtap="toPlay" wx:else>暂停播放</button>
+</view>

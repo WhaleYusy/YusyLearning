@@ -1,0 +1,60 @@
+<view class="travelIndexContent">
+  <view class="container travel-header">
+  <!-- 轮播图 -->
+  <swiperImgs  id="purSwiper" imgUrls="{{swiperData}}" ></swiperImgs>
+  <!-- 内容 -->
+  <view class="travel-con">
+  <!-- 内容左边栏 -->
+    <view class="travel-conl">
+      <block tt:if="{{index%2==0}}" tt:for="{{travelData}}" tt:key="{{index}}">
+      <view class="travel-con-li" bindtap="onNavigateCon" data-item="{{item}}">
+        <image src="{{item.mainImg}}"></image>
+          <text class="travel-con-title">{{item.name}}</text>
+        <view class="travel-con-liwc">
+          <view class="travel-con-liw">
+            <text class="iconfont iconwatch"> {{item.browseNum}}</text>
+          </view>
+          <view class="travel-con-lic">
+            <text class="iconfont iconcollect"> {{item.zanNum}}</text>
+          </view>
+        </view>
+        <view class="travel-con-lino">
+          <view class="travel-con-lin"><text class="iconfont iconrmb"></text>{{item.price}}</view>
+          <view class="travel-con-liqi">起</view>
+          <view class="travel-con-lio"><text class="iconfont iconrmb">{{item.marketPrice}}</text></view>
+        </view>
+        <view class="travel-con-type">{{item.typeName}}</view>
+      </view>
+      </block>
+    </view>
+  <!-- 内容右边栏 -->
+    <view class="travel-conr">
+      <block tt:if="{{index%2!=0}}" tt:for="{{travelData}}" tt:key="{{index}}">
+      <view class="travel-con-li" bindtap="onNavigateCon" data-item="{{item}}" > 
+        <image src="{{item.mainImg}}"></image>
+          <text class="travel-con-title">{{item.name}}</text>
+        <view class="travel-con-liwc">
+          <view class="travel-con-liw">
+            <text class="iconfont iconwatch"> {{item.browseNum}}</text>
+          </view>
+          <view class="travel-con-lic">
+            <text class="iconfont iconcollect"> {{item.zanNum}}</text>
+          </view>
+        </view>
+        <view class="travel-con-lino">
+          <view class="travel-con-lin"><text class="iconfont iconrmb"></text>{{item.price}}</view>
+          <view class="travel-con-liqi">起</view>
+          <view class="travel-con-lio"><text class="iconfont iconrmb">{{item.marketPrice}}</text></view>
+        </view>
+        <view class="travel-con-type">{{item.typeName}}</view>
+        <view class="hotTag" tt:if="{{item.isHot}}">热门</view>
+      </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="showTip" tt:if="{{travelData.length > 0 && showNoMore}}">暂无更多</view>
+<view class="showTip" tt:if="{{travelData.length == 0}}" >暂无数据</view>
+  <!-- 底部还有一个tabbar -->
+<tabBar></tabBar>
+</view>

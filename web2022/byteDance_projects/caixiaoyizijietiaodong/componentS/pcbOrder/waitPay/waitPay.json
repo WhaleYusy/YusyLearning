@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "payModel": "/componentS/payModel/payModel"
+  }
+}

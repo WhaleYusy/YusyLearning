@@ -1,0 +1,70 @@
+<!--pages/shoppingMall/component/catogory/catogory.wxml-->
+<shopNav selected="{{1}}" ></shopNav>
+<view class="catogoryContent">
+    <view class="mall-classify">
+    <!-- 搜索框 -->
+    <view class="search">
+      <view class="search-box">
+        <input type="text" maxlength="30" class="input" placeholder="搜索购买你的商品" bindfocus="toSearchPage" bindtap="toSearchPage" disabled="true" />
+        <van-icon name="search" />
+      </view>
+    </view>
+    <view class="content">
+      <!-- 左侧导航 -->
+      <view class="left">
+        <view  wx:for="{{leftNavList}}"  wx:key="key" class="item {{index == activeIndex ? 'item-active' : ''}}" data-activeindex="{{index}}" catchtap="onHandlerClick" data-id="{{item.id}}" >{{item.name}}</view>
+      </view>
+
+      <!-- 右侧内容 -->
+      <view class="right">
+        <!-- <view class="loading-box" wx:if="isLoading">
+          <van-loading class="loading" size="35px" color="#0303fe" />
+        </view> -->
+        <block v-else>
+          <!-- 最新推荐 -->
+          <image wx:if="{{adRandomImg.advertisingPictureAddress}}" src="{{adRandomImg.advertisingPictureAddress}}" alt="广告图" class="banner" ></image>
+          <view wx:else class="banner no-banner"  >暂无广告图片</view>
+          <!-- <image src="{{adRandomImg.advertisingPictureAddress}}" alt="" class="banner" wx:if="Object.keys(adRandomImg).length > 0"></image> -->
+          <view class="newest-warp" wx:if="{{newRecommendList.length}}">
+            <view class="title">最新推荐</view>
+            <view class="box">
+              <view class="item" wx:for="{{newRecommendList}}" wx:key="k" wx:for-item="v" catchtap="setGotoGoodDetails" data-id="{{v.id}}">
+                <image src="{{v.mainImage}}" alt=""></image>
+                <view class="label">{{v.goodsName}}</view>
+              </view>
+            </view>
+          </view>
+
+          <!-- 热门分类 -->
+          <view class="hot-warp">
+            <view class="title-box">
+              <view class="label">热门产品</view>
+              <!-- <view class="more">更多<i class="el-icon-arrow-right"></i></view> -->
+            </view>
+            <view  class=" content {{classifyList.length <= 0 ? 'content-bg' : ''}}">
+              <view class="content-no-more" wx:if="{{classifyList.length <= 0}}">无数据</view>
+              <view class="flex " wx:for="{{classifyList}}" wx:key="k" wx:for-item="v" catchtap="setGotoGoodDetails" data-id="{{v.id}}">
+                <view class="item ">
+                  <image src="{{v.mainImage}}" alt=""></image>
+                  <view class="name-box">
+                    <view class="name">{{v.goodsName}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+            <!-- 加载更多 -->
+            <!-- <view class="load-more" wx:if="classifyList.length >= 12" catchtap="onLoadingClick">
+              <view class="more-box">
+                {{loadMoreTxt}}
+                <i class="el-icon-arrow-right" v-show="!isMoreLoading"></i>
+              </view>
+            </view> -->
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<tabBar></tabBar>

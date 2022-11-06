@@ -1,0 +1,56 @@
+<!--pages/purchase/component/xyAssistant/travelBill/travelDetail/travelDetail.wxml-->
+<view class="payContent22">
+  <view class="orderDetail">
+    <view class="itemBlock">
+      <view class="title">行程信息</view>
+      <view class="msgItem">
+        <text class="itemTitle">项目名：</text>
+        <text class="itemContent">{{tripOrderDetails.projectName}}</text>
+      </view>
+      <view class="msgItem">
+        <text class="itemTitle">行程日期：</text>
+        <text class="itemContent">{{tripOrderDetails.tourDate}}</text>
+      </view>
+      <view class="msgItem">
+        <text class="itemTitle">成人数量：</text>
+        <text class="itemContent">￥{{tripOrderDetails.personPrice}}X{{tripOrderDetails.personsOrderCount}}</text>
+      </view>
+      <view class="msgItem">
+        <text class="itemTitle">儿童数量：</text>
+        <text class="itemContent">￥{{tripOrderDetails.childAmount}}X{{tripOrderDetails.childOrderCount}}</text>
+      </view>
+    </view>
+    <view class="itemBlock">
+      <view class="title">订单信息</view>
+      <view class="msgItem">
+        <text class="itemTitle">下单时间：</text>
+        <text class="itemContent">{{tripOrderDetails.orderDate}}</text>
+      </view>
+      <view class="msgItem">
+        <text class="itemTitle">订单编号：</text>
+        <text class="itemContent">{{tripOrderDetails.orderNo}}</text>
+      </view>
+    </view>
+    <view class="itemBlock">
+      <view class="title">金额信息</view>
+      <view class="msgItem">
+        <text class="itemTitle">订单总额：</text>
+        <text class="itemContent">{{tripOrderDetails.orderTotalAmount}}</text>
+      </view>
+      <view class="msgItem">
+        <text class="itemTitle">支付积分：</text>
+        <text class="itemContent">{{tripOrderDetails.payPoint}}</text>
+      </view>
+      <view class="msgItem">
+        <text class="itemTitle">支付旅游积分：</text>
+        <text class="itemContent">{{tripOrderDetails.payTravelPoint}}</text>
+      </view>
+      <view class="msgItem">
+        <text class="itemTitle">支付金额：</text>
+        <text class="itemContent">{{tripOrderDetails.payCash}}</text>
+      </view>
+    </view>
+    <text class="orderStatus {{tripOrderDetails.payStatus == 2 ? 'payed' : 'unPay' }}">{{tripOrderDetails.payStatus == 2 ? '已支付' : '未支付'}}</text>
+  </view>
+  <!-- <view catchtap="toPayOrder" class="toPay" wx:if="{{tripOrderDetails.payStatus != 2}}">去支付</view> -->
+</view>

@@ -1,0 +1,224 @@
+<!-- 返回采购易首页 -->
+<!-- <view class="xya-title" >
+      <van-icon name="arrow-left" class="xya-last" bindtap="rPurchaseIndex"></van-icon>
+      <text>小易助手</text>
+    </view> -->
+<!-- 个人简介 -->
+<view class="xya-header">
+  <view class="xya-userImg">
+    <image src="{{userCon.userPic}}" bindtap="changeUserInfo"></image>
+  </view>
+  <view class="xya-userOthers">
+    <view class="xya-vipc">
+      <view class="xya-nickname">{{userCon.nickName}}</view>
+      <view class="xya-vipicon">
+        <i class="iconfont iconxingxing2"  tt:if="{{userCon.userLevelId != 1}}" style="color:#CD7F32"></i>
+        <i class="iconfont iconxingxing2"  tt:else></i>
+        <!-- <text tt:if="{{userCon.userLevelId != 1}}" ><i class="iconfont iconxingxing2" style="color:#CD7F32"></i><text>
+          <text tt:else><i class="iconfont iconxingxing2"></i><text> -->
+        <!-- <van-icon tt:if="{{userCon.userLevelId != 1}}" name="star" size="22rpx" color="#CD7F32"></van-icon>
+        <van-icon wx:else name="star" size="22rpx"></van-icon> -->
+        <text style="color:#CD7F32;" catchtap='beVip' tt:if="{{userCon.userLevelId != 1}}">{{userCon.levelName}}</text>
+        <text wx:else catchtap='beVip' >{{userCon.levelName}}</text>
+      </view>
+    </view>
+    <view class="xya-endTime" tt:if="{{userCon.userLevelId != 1}}">到期时间：{{userCon.expireTime}}</view>
+    <view class="xya-points">
+      <text>用户积分：{{userCon.bi || 0}}</text>
+      <text class="xya-pointsc">|</text>
+      <text>旅游积分：{{userCon.travelBi || 0}}</text>
+    </view>
+    <view class="xya-share">
+      <view class="xya-share-li" bindtap="onMyCard">发送我的名片</view>
+      <view class="xya-share-li" bindtap="onMyCompany">发送我的企业</view>
+    </view>
+  </view>
+</view>
+<view class="xya-content">
+  <!-- 消息 -->
+  <view class="xya-content-li li1 {{(xyaType==1) ? 'show' : ''}}">
+    <block>
+      <view class="xya-content-xx"  catchtap="toSystemAss">
+        <view><image src="http://qiniuoss.822644.com/wxPic/20191122/765261612713021440.blob"></image></view>
+        <view class="xya-content-xx2">
+          <view class="xya-cxname">系统小助手</view>
+          <view class="xya-cxxx" style='margin-top:14rpx;' >嗨~，我是系统小助手，全程为您服务！</view>
+        </view>
+        <view class="xya-content-xx3" tt:if="{{unreadNum !== 0}}" >
+          <view class="xya-content-xx3wd">{{unreadNum}}</view>
+        </view>
+      </view>
+    </block>
+    <block tt:for="{{xxList}}" tt:key="{{key}}"  >
+      <view class="xya-content-xx" data-item="{{item}}"  catchtap="goChatDetail" >
+        <view><image src="{{item.sendHeadImg}}"></image></view>
+        <view class="xya-content-xx2">
+          <view class="xya-cxname">{{item.sendUserName}}</view>
+          <view class="xya-cxxx">{{item.lastMsg || ''}}</view>
+          <text style='font-size:24rpx;color:#ccc' >{{item.updateTime}}</text>
+        </view>
+        <view class="xya-content-xx3" >
+        </view>
+        <view class="xya-content-xx3" tt:if="{{item.unReadNums !== 0}}" >
+          <view class="xya-content-xx3wd">{{item.unReadNums}}</view>
+        </view>
+      </view>
+    </block>
+    <view class='no-more' tt:if="{{noMore}}" >暂无更多</view>
+  </view>
+  <!-- 人脉 -->
+  <view class="xya-content-li li2 {{(xyaType==2) ? 'show' : ''}}">
+      <view class="xya-content-search">
+        <view class="xya-content-s1">
+        <!-- 下拉框插件 -->
+        <view class='select_box'>
+          <view class='select' catchtap='selectTap'>
+            <text class='select_text'>{{selectData[selectIndex - 1]}}</text>
+            <image class='select_img {{selectShow&&"select_img_rotate"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png'></image>   
+          </view>
+          <view class='option_box' style='height:{{selectShow?(selectData.length>5?300:selectData.length*62):0}}rpx;'>
+            <text class='option' style='{{selectIndex==selectData.length-1&&"border:0;"}}' tt:for='{{selectData}}' tt:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+          </view>
+          </view>
+        </view>
+            <!-- 搜索框 -->
+        <view class="xya-content-s2" style="display:flex;width:80%;background:#f7f8fa;padding:5px 0;">
+           <icon class="tt-icon" type="search" style="width:8px;height:8px;margin-right:18px;"></icon>
+           <input  value="{{searchValue}}"  style="width:100%;font-size:12px;"  bindinput="onSearchChange" placeholder="请输入会员名称/供应产品" />
+          <!-- <van-search value="{{searchValue}}" placeholder="请输入会员名称/供应产品" use-action-slot="true"  bind:change="onSearchChange">
+            <view slot="action" bind:tap="onSearch2" class="xya-content-s21" style="color:blue;">搜索</view>
+      </van-search> -->
+            </view>
+            <view slot="action" bind:tap="onSearch2" class="xya-content-s21" style="font-size:12px;color:blue;margin: 0 16rpx;">搜索</view>
+      </view>
+      <view >
+         <!-- <view class="personList" catchtap='selectTap1'> 
+             <view>关注(0)</view>
+             <view>
+               <image class='select_img1 {{selectShow1&&"select_img_rotate1"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:10rpx"></image>   
+             </view>
+         </view>
+         <view class="personList">
+             <view>粉丝(0)</view>
+             <view>
+               <image class='select_img1 {{selectShow1&&"select_img_rotate1"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:10rpx"></image>   
+             </view>
+         </view>
+         <view class="personList">
+             <view>客户(0)</view>
+             <view>
+               <image class='select_img1 {{selectShow1&&"select_img_rotate1"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:10rpx"></image>   
+             </view>
+         </view>
+         <view class="personList">
+             <view>供应商(0)</view>
+             <view>
+               <image class='select_img1 {{selectShow1&&"select_img_rotate1"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:10rpx"></image>   
+             </view>
+         </view>
+         <view class="personList">
+             <view> 圈友(0)</view>
+             <view>
+               <image class='select_img1 {{selectShow1&&"select_img_rotate1"}}' src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:10rpx"></image>   
+             </view>
+         </view> -->
+      </view>
+      <view>
+       <block wx:for="{{rmList}}" tt:for-item="item" tt:for-index="idx">
+          <!-- 订单组list -->
+          <view style='margin-bottom:10rpx;' data-index="{{idx}}">
+            <view class="li" data-index="{{idx}}" bindtap='changeToggle'>
+              <view class="left">
+                <view>{{item.name}}（{{item.sum}}）</view>
+              </view>
+              <view class="right">
+                <image class="select_img1 {{!selectedFlag[idx]?' ':'select_img_rotate1'}}" src='http://qiniuoss.822644.com/wxPic/20191122/765261961435844608.png' style="margin-top:20rpx"></image>   
+              </view>
+            </view>
+            <view tt:if="{{item.children.length>0}}" hidden="{{!selectedFlag[idx]}}">
+              <view class="b-shadow">
+               <block  tt:for="{{item.children}}"  tt:key="index" tt:for-item="itemCon">
+                <view class="xya-rmli" data-item="{{itemCon}}"  catchtap="goChatDetail2" >
+                  <view class="xya-rmliImg">
+                  <image src="{{itemCon.headurl}}"></image>
+                  </view>
+                  <view class="xya-rmliCon">
+                    <view class="xya-rmliTop">
+                      <view class="xya-rmlivipicon">
+                        <!-- <van-icon tt:if="{{itemCon.userLevelId != 1}}" name="star" size="22rpx" color="#CD7F32"></van-icon>
+                        <van-icon wx:else name="star" size="22rpx"></van-icon> -->
+                          <i class="iconfont iconxingxing2"  tt:if="{{itemCon.userLevelId != 1}}" style="color:#CD7F32"></i>
+                          <i class="iconfont iconxingxing2"  tt:else></i>
+                        <text style="color:#CD7F32;" tt:if="{{itemCon.userLevelId != 1}}">{{itemCon.levelName}}</text>
+                        <text wx:else >{{itemCon.levelName}}</text>
+                      </view>
+                      <view class="xya-rmliName"> {{itemCon.nickname}}</view>
+                      <view>粉丝：{{itemCon.fansCount}}</view>
+                    </view>
+                    <view class="xya-rmliBottom">供应产品：{{itemCon.operateProduces}}</view>
+                  </view>
+                </view>
+              </block> 
+              </view>
+            </view>
+            <view class="no-more" style='margin:8px' hidden="{{!selectedFlag[idx]}}" tt:if="{{rmListMore[idx]}}" data-index="{{idx}}" catchtap="loadMoreNew">加载更多</view>
+            <view tt:elif="{{item.children.length != 0 && !rmListMore[idx]}}" hidden="{{!selectedFlag[idx]}}" class='no-more' style='margin:8px' >暂无更多</view>  
+            <view tt:if="{{item.children.length == 0}}" hidden="{{!selectedFlag[idx]}}" class='no-more' style='margin:8px' >暂无数据</view>  
+           </view>
+          <!-- end订单组1 -->
+         </block> 
+       </view>
+      <!-- 人脉列表 -->
+      <!-- <van-collapse value="{{activeCodes}}" bind:change="onchangeCode">
+        <block tt:for="{{rmList}}" tt:key="index">
+            <van-collapse-item title="{{item.name}}（{{item.sum}}）" data-index="{{index}}" name="{{item.code}}" >              
+              <block  tt:for="{{item.children}}"  tt:key="index" tt:for-item="itemCon">
+                <view class="xya-rmli" data-item="{{itemCon}}"  catchtap="goChatDetail2" >
+                  <view class="xya-rmliImg">
+                  <image src="{{itemCon.headurl}}"></image>
+                  </view>
+                  <view class="xya-rmliCon">
+                    <view class="xya-rmliTop">
+                      <view class="xya-rmlivipicon">
+                        <van-icon tt:if="{{itemCon.userLevelId != 1}}" name="star" size="22rpx" color="#CD7F32"></van-icon>
+                        <van-icon wx:else name="star" size="22rpx"></van-icon>
+                        <text style="color:#CD7F32;" tt:if="{{itemCon.userLevelId != 1}}">{{itemCon.levelName}}</text>
+                        <text wx:else >{{itemCon.levelName}}</text>
+                      </view>
+                      <view class="xya-rmliName"> {{itemCon.nickname}}</view>
+                      <view>粉丝：{{itemCon.fansCount}}</view>
+                    </view>
+                    <view class="xya-rmliBottom">供应产品：{{itemCon.operateProduces}}</view>
+                  </view>
+                </view>
+              </block>                
+              <view tt:if="{{item.children.length == 0}}" class='no-more' style='margin:0' >暂无数据</view>             
+            </van-collapse-item>
+        </block>
+      </van-collapse>   -->
+  </view>
+  <!-- 圈子 -->
+  <view class="xya-content-li li3 {{(xyaType==3) ? 'show' : ''}}">
+    <block tt:for="{{quziList}}" tt:key="index">
+    <view class="xya-content-liqz" bindtap="gotoList" data-url="{{item.areaUrl}}">
+      <view>
+        <image src="{{item.imgUrl}}"></image>
+      </view>
+      <view class="xya-content-liqzt">
+      <text>{{item.name}}</text>
+      </view>
+    </view>
+    </block>
+  </view>
+
+<!-- 浮动选择 -->
+  <view class="xya-contentTypeA">
+    <view class="xya-contentType">
+      <view class="xya-ct {{(xyaType == 1) ? 'active' : ''}}" data-type="1" bindtap="onxyaTab">消息<view class="xya-ctheng"></view></view>
+      <view class="xya-ct {{(xyaType == 2) ? 'active' : ''}}" data-type="2" bindtap="onxyaTab">人脉<view class="xya-ctheng"></view></view>
+      <view class="xya-ct {{(xyaType == 3) ? 'active' : ''}}" data-type="3" bindtap="onxyaTab">圈子<view class="xya-ctheng"></view></view>
+    </view>
+  </view>
+</view>
+
+<tabBar></tabBar>

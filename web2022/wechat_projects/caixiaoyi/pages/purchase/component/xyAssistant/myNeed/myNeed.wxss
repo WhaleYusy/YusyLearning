@@ -1,0 +1,111 @@
+.mn-main{
+  min-height: 100vh;
+  background: #f8f8f8;
+  padding: 0rpx 0 10rpx;
+  box-sizing: border-box;
+}
+.mn-header{
+  height: 300rpx;
+  width: 100%;
+}
+.mn-header image{
+  width: 100%;
+  height: 100%;
+}
+.mn-content{
+  padding:10rpx 20rpx;
+  background: #f6f6f6;
+}
+.mn-footer{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #696969;
+  font-size: 24rpx;
+}
+  /* 编译之后的样式 */
+.purchaseProductlist .purchaseProductItem {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin:20rpx auto ;
+  border-radius: 16rpx;
+  position: relative;
+}
+.purchaseProductItem-edit{
+  width: 80rpx;
+  height: 45rpx;
+  background: green;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.purchaseProductlist .purchaseProductItem:last-of-type{
+  margin-bottom:20rpx;
+}
+.purchaseProductlist .purchaseProductItem .mainImg {
+  width: 200rpx;
+  height: 170rpx;
+}
+.purchaseProductlist .purchaseProductItem .leftMesg {
+  width: calc(100% - 200rpx);
+  line-height: 46rpx;
+  text-align: left;
+  display:flex;
+  flex-direction: column;
+}
+.purchaseProductlist .purchaseProductItem .leftMesg .mesgTitle {
+  width:100%;
+  font-size: 28rpx;
+}
+.purchaseProductlist .purchaseProductItem .leftMesg .mesgItem {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  color: gray;
+}
+/* 为何未生效 */
+.pStatus {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  border-radius: 40rpx;
+  margin-left: 10rpx;
+  border: 2rpx solid gray;
+}
+.purchaseProductlist .purchaseProductItem .leftMesg .mesgItem .ing {
+  color: red !important;
+  border: 1px solid red !important;
+}
+.purchaseProductlist .purchaseProductItem .leftMesg .mesgItem .over {
+  color: gray !important;
+  border: 1px solid gray !important;
+}
+.purchaseProductlist .purchaseProductItem .leftMesg .mesgItem-flex {
+  display: flex;
+  align-items: center;
+}
+.purchaseProductlist .loading {
+  margin-bottom: 50rpx;
+}
+.tip{
+  font-size:28rpx;
+  color:#666666;
+  text-align: center;
+  margin:15rpx 0 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <link rel="icon" href="./src/assets/logo.png"> -->
+	<meta name="keywords" content="样品闲置 物料闲置">
+	<meta name="description" content="全球领先的呆料输送平台">
+    <title>欢迎来到闲料网</title>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
+<script >
+  function judgePcAndMobile(){
+      // //alert("目前的地址："+location.href)
+      var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", 
+      "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+      var browser = navigator.userAgent.toLowerCase();
+      // //alert(browser)
+      console.log(browser.match('android'))
+      var isMobile = false;
+      if (
+        browser.match('iphone') !== null || browser.match('ipod') !== null || browser.match('ipad') !== null || 
+        browser.match('android') !== null || browser.match('mobile') !== null || browser.match('blackberry') !== null || browser.match('webos') !== null || 
+        browser.match('incognito') !== null ||browser.match('webmate') !== null ||browser.match('nokia') !== null ||
+        browser.match('lg') !== null ||browser.match('ucweb') !== null || browser.match('skyfire') !== null 
+        )
+      {
+        // alert("是否进入判断是手机")
+        isMobile = true;////alert(mobileAgent[i]);
+        if(location.href.match('wap.yworth.com.cn') !== null){
+          //alert("我已经是手机端网址了")
+          return 
+        }else{
+          //alert("跳转手机端网址手机端网址了")
+          location.href = 'http://wap.yworth.com.cn';
+          return 
+        }
+      }else{
+        if(location.href.match('pc.yworth.com.cn') !== null){
+          //alert("我已经是pc端网址了")
+          return 
+        }else{
+          location.href = 'http://pc.yworth.com.cn';
+          //alert("跳转pc端网址了")
+          return 
+        }
+      }
+    }
+    // judgePcAndMobile()
+</script>

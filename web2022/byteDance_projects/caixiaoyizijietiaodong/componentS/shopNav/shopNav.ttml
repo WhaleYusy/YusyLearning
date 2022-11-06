@@ -1,0 +1,9 @@
+<!--componentS/shopNav/shopNav.ttml-->
+<view class="tab_wrap">
+  <view  tt:for="{{navData}}" tt:key="{{index}}" class=" tab_item {{selected == index ? 'active': ''}}">
+    <view  class="ssss" catchtap="onGoto1" data-path="{{item.path}}" data-index="{{index}}">
+        <text class="iconfont {{item.icon}}"></text>
+        <view>{{item.name}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<view class="tb-main">
+  <!-- <view class="tb-title" >
+    <van-icon name="arrow-left" class="tb-last" bindtap="rLastPage"></van-icon>
+    <text>旅游订单</text>
+  </view> -->
+  <view class="tb-header">
+    <image src="/img/gzhImg/fabu.jpg"></image>
+  </view>
+  <view class="tb-content">
+    <view class="tb-content-tab">
+      <view class="tb-ctli {{type=='1'?'active':''}}" data-type="1" bindtap="ontabType">已支付</view>
+      <view class="tb-ctli {{type=='2'?'active':''}}" data-type="2" bindtap="ontabType">未支付</view>
+      </view>
+    </view>
+    <view class="tb-content-main">
+      <block tt:for="{{tbList}}" tt:key="{{key}}">
+        <view class="tb-cmli">
+          <view class="tb-cmli1">
+            下单时间：{{item.orderDate}}
+          </view>
+          <view class="tb-cmli2" catchtap="toTourDetail" data-id="{{item.id}}">
+            <view class="tb-cmli2l">
+              <image src="{{item.mainImg}}"></image>
+            </view>
+            <view class="tb-cmli2r">
+              <view class="tb-cmli2r1">
+                <view class="tb-cmli2r1n">{{item.projectName}}</view>
+                <!-- <view class="tb-cmli2r1p">￥{{item.price}}</view> -->
+              </view>
+              <!-- <view class="tb-cmli2r2">{{item.typeS}}</view> -->
+              <!-- <view class="tb-cmli2r2">{{item.editionS}}</view> -->
+              <view class="tb-cmli2r3">
+                <view class="tb-cmli2r3i">{{item.tourDate}}</view>
+                <!-- <view class="tb-cmli2r3s" tt:if="{{item.isPay}}">
+                  <van-icon name="checked" color="red" size="22rpx" /><text>已支付</text>
+                </view>
+                <view class="tb-cmli2r3s" wx:else>
+                  <van-icon name="clear" color="gray" size="22rpx" /><text>待付款</text>
+                </view> -->
+              </view>
+            </view>
+          </view>
+         <view class="tb-cmli3">
+            <!-- <view class="tb-cmli31" data-id="{{item.id}}" bindtap="ondelTravel">删除</view> -->
+            <view tt:if="{{type==1}}"><button open-type="share" class="buttonShare" data-id="{{item.tourId}}" data-title="{{item.projectName}}">分享</button></view>
+            <view wx:elif="{{type==2}}"><button open-type="share" class="buttonShare" data-id="{{item.projectId}}" data-title="{{item.projectName}}">分享</button></view>
+            <view tt:if="{{type==1}}" class="tb-cmli32" data-id="{{item.tourId}}" catchtap="onReOrder">再次预订</view>
+            <view wx:elif="{{type==2}}" class="tb-cmli32" data-item="{{item}}" catchtap="onRepay">支付</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="showTip" tt:if="{{tbList.length > 0 && showNoMore}}">暂无更多</view>
+    <view class="showTip" tt:if="{{tbList.length == 0 }}">暂无数据</view>
+</view>
+
+<view class="layer" tt:if="{{showPswBoard}}">
+    <payModel id="payModel" bind:check="checkpswd" bind:close="close" payPoint="{{allBi}}"></payModel>
+  </view>

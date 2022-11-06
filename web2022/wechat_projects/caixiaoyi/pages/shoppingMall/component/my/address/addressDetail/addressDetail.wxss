@@ -1,0 +1,95 @@
+/* pages/shoppingMall/component/my/address/addressDetail/addressDetail.wxss */
+.bottom {
+    height: calc(100% - 70rpx);
+    box-sizing: border-box;
+    overflow: auto;
+  }
+  .bottom .warp {
+    margin-top: 20rpx;
+    box-sizing: border-box;
+  }
+  .bottom .warp .input-box {
+    box-sizing: border-box;
+    width: 100%;
+    height: 86rpx;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 28rpx;
+  }
+  .bottom .warp .input-box .label {
+    font-size: 28rpx;
+    color: #1a1a1a;
+    width: 150rpx;
+    height: 86rpx;
+    line-height: 86rpx;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .bottom .warp .input-box .input {
+    flex: 1;
+    height: 86rpx;
+    border-bottom: 2rpx solid #f7f7f7;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .bottom .warp .input-box .input input {
+    font-size: 28rpx;
+    width: 100%;
+    height: 95%;
+    border: none;
+    box-sizing: border-box;
+  }
+  .bottom .warp .input-box .input .rtl {
+    text-align: right;
+  }
+  .bottom .warp .input-box .input .address-sel {
+    margin-left: 15rpx;
+  }
+  .bottom .warp .input-box .input .address-sel i {
+    font-size: 28rpx;
+    color: #666666;
+  }
+  .bottom .warp .margin20 {
+    margin-top: 20rpx;
+    display: flex;
+  }
+  .bottom .warp .margin20 .label {
+    flex: 1;
+  }
+  .bottom .warp .margin20 .switch {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .bottom .warp .textarea-box {
+    height:80rpx;
+    color: #666666;
+    font-size: 24rpx;
+    box-sizing: border-box;
+    width:90%;
+    margin:0 auto;
+  }
+  .bottom .warp .textarea-box textarea {
+    height: auto;
+    width: 100%;
+    background: white;
+    box-sizing: border-box;
+    padding: 28rpx 28rpx 0;
+    line-height: 35rpx;
+    border: none;
+  }
+  
+  /*# sourceMappingURL=add.css.map */
+  .saveAddressContent{
+    width:100%;
+  }
+  .saveAddress{
+    width:100%;
+    margin-top:15rpx;
+    background:#030CF9;
+    color:white;
+  }

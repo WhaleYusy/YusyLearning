@@ -1,0 +1,122 @@
+/* pages/purchase/component/otherNeed/otherNeddDetail/otherNeedDetail.wxss */
+.otherNeddDetailContent{
+  margin-bottom:120rpx;
+}
+.otherNeedDetail {
+  background: #f8f8f8;
+  min-height: calc(100vh - 120rpx);
+}
+.otherNeedDetail .swiper {
+  margin-bottom: 20rpx;
+}
+.otherNeedDetail .cardItem {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  margin-top: 20rpx;
+  position: relative;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  text-align: left;
+  color: #666666;
+  font-size: 28rpx;
+}
+.otherNeedDetail .cardItem .mesgTitle {
+  color: black;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.otherNeedDetail .purchaseProductItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto 20rpx;
+  border-radius: 16rpx;
+}
+.otherNeedDetail .purchaseProductItem .left_side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.otherNeedDetail .purchaseProductItem .left_side .contact_btn {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 40rpx;
+  border: 2rpx solid #030CF9;
+  color: #030CF9;
+  background: none;
+  font-size: 32rpx;
+}
+.otherNeedDetail .purchaseProductItem .tag {
+  display: inline-block;
+  /* width: 120rpx; */
+  height: 40rpx;
+  line-height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: red;
+  padding: 5rpx;
+  box-sizing: border-box;
+  border-top-right-radius: 12rpx;
+}
+.otherNeedDetail .purchaseProductItem .mainImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg {
+  width: 100%;
+  line-height: 46rpx;
+  text-align: left;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg .mesgItemTitle {
+  width: 180rpx;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg .mesgItem {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg .mesgItem .pStatus {
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  padding: 2rpx 6rpx;
+  box-sizing: border-box;
+  border-radius: 40rpx;
+  margin-left: 10rpx;
+  border: 2rpx solid gray;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg .mesgItem .ing {
+  color: red !important;
+  border-color: red !important;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg .mesgItem .over {
+  color: gray !important;
+  border-color: gray !important;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg .mesgItem .mesgItemContent {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.otherNeedDetail .purchaseProductItem .leftMesg .mesgItem-flex {
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=lo.css.map */

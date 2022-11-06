@@ -1,0 +1,78 @@
+<view class="container travelo-all">
+  <!-- 返回上一页 -->
+  <view class="travelo-con">
+  <!-- 选择日期行程 -->
+  <view class='wrap'>
+        <view>
+        <!-- 年月 -->
+          <view class='date-show'>
+            <view class='lt-arrow' bindtap='lastMonth'><i class="iconfont icon552cc14536532"></i>
+            </view>
+            {{year}}年{{month}}月
+            <view class='rt-arrow rightJt'  bindtap='nextMonth'><i  class="iconfont icon552cc14536532 "></i>
+            </view>
+          </view>
+        </view>
+        <!-- 星期 -->
+        <view class='header'>
+          <view tt:for='{{date}}' tt:key="{{index}}">{{item}}</view>
+        </view>
+        <!--  -->
+        <view class='date-box'>
+          <view tt:for='{{dateArr}}' tt:key="{{index}}" class='cell {{(isToday == item.isToday ? "nowDay" : "")}}' data-date='{{item.isToday}}' data-today="{{isToday}}" catchtap="chooseDate" >			
+            <view class='date-head {{chooseIndex == item.isToday ? "chooseStyle" : "" }}'>
+              <view >{{item.dateNum}}</view>
+            </view>
+            <!-- <view class='date-weight'>{{item.weight}}</view> -->
+          </view>
+        </view>
+
+        <!-- <view class="date-time">
+          <block tt:for="{{orderTimeList}}" tt:key="{{index}}">
+            <view class="date-time-li {{item.name}}" data-dt="{{item.value}}" bindtap="changeDateTime">{{item.value}}</view>
+          </block>
+        </view> -->
+    </view>
+    <!-- 主要内容 -->
+    <view class="travelo-conmain">
+      <view class="travelo-cmt">预定时间:{{orederDate2}}</view>
+      <view class="travel-cmc">
+        <view><image src="{{toBookData.mainImg}}"></image>
+        </view>
+        <!-- 预定时间信息 -->
+        <view class="travel-cmct" style="margin-left:10px;">
+          <text>{{toBookData.name}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 成人票和儿童票 -->
+    <view class="travelo-amnum">
+      <view class="travelo-adult">
+       <view class="travelo-acl"> 成人票：<text class="t-red">￥{{money.price}}</text></view>
+       <view class="stepper-mocon">
+          <view catchtap='changeMinus' class="stepper-mo" >-</view>
+          <input type="number"  class="stepper-mo2" value="{{adultNum}}" bindinput="changeNum" />
+          <view catchtap='changePlus' class="stepper-mo" >+</view>
+        </view>
+      </view>
+      <view class="travelo-chlid">
+      <view class="travelo-acl"> 儿童票：<text class="t-red">￥{{money.childPrice}}</text><text style="color:#999;font-size:">({{toBookData.childHeightName}})</text></view>
+      <view class="stepper-mocon">
+          <view catchtap='changeMinus1' class="stepper-mo" >-</view>
+          <input type="number"  class="stepper-mo2" value="{{childAmount}}" bindinput="changeNum1" />
+          <view catchtap='changePlus1' class="stepper-mo" >+</view>
+        </view>
+      </view>
+    </view>
+    <!-- 积分详情 -->
+    <view class="travelo-points">
+      <!-- <text class="travelo-pt1">总额：￥{{money.sum}}\n</text> -->
+      <text class="travelo-pt1">您当前的积分：{{toBookData.bi}}\n</text>
+      <text class="travelo-pt1">您当前旅游积分：{{toBookData.travelBi}}\n</text>
+      <text class="travelo-pt1">需要支付的旅游积分：{{money.preTravelBi}}\n</text>
+      <text class="travelo-pt1">需要支付的积分：{{money.preBi}}\n</text>
+      <text class="travelo-pt2">需要支付的金额：￥{{money.amount}}</text>
+      <view class="travelo-nextStep" bindtap="onNextStep">下一步</view>
+    </view>
+  </view>
+</view>

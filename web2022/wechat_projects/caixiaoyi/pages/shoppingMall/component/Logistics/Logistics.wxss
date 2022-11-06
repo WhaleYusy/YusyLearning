@@ -1,0 +1,96 @@
+/* pages/shoppingMall/component/Logistics/Logistics.wxss */
+.LogisticsContent{
+  margin-top:85rpx;
+  margin-bottom:120rpx;
+}
+.bottom {
+  min-height:calc(100vh - 190rpx);
+}
+.bottom .step {
+  margin: 20rpx;
+  box-sizing: border-box;
+}
+.bottom .step .express {
+  display:flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  color:#666666;
+}
+.bottom .step .express p {
+  line-height: 42rpx;
+}
+.bottom .steps {
+  width: 100%;
+  height: calc(100% - 70rpx);
+}
+.bottom .steps .no-address {
+  width: 100%;
+  height: 100%;
+  /* border-top: 15rpx solid #f7f7f7; */
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  display: flex;
+  padding-top: 176rpx;
+  position: relative;
+}
+.bottom .steps .no-address .no-box {
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.bottom .steps .no-address .no-box image {
+  margin: auto;
+  width: 207rpx;
+  height: 241rpx;
+}
+.bottom .steps .no-address .no-box p {
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 24rpx;
+  padding-top: 30rpx;
+}
+
+/*# sourceMappingURL=lo.css.map */
+
+.loContent{
+  font-size:26rpx;
+  color:#999999;
+  border-left:4rpx solid #e8e8e8;
+}
+.loItem{
+  min-height:100rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom:2rpx solid #f8f8f8;
+}
+.loItem::before{
+  content:'';
+  width:15rpx;
+  height:15rpx;
+  border-radius:50%;
+  background:lightgray;
+  margin-left:-8rpx;
+  margin-top:-14rpx;
+}
+.loItem:last-of-type{
+  border:none;
+}
+.active{
+  color:#00C777 !important;
+}
+.active::before{
+  content:'';
+  width:15rpx;
+  height:15rpx;
+  border-radius:50%;
+  background:#00C777;
+  margin-left:-8rpx;
+  margin-top:-14rpx;
+} 

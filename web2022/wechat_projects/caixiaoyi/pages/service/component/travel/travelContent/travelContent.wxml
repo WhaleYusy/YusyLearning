@@ -1,0 +1,99 @@
+<view class="container travelc-all">
+  <!-- 轮播图 -->
+    <swiper  id="purSwiper" imgUrls="{{imgArr}}" ></swiper>
+    <!-- 内容信息 -->
+    <view class="travelc-con">
+    <!-- 标题 -->
+      <view class="travel-con-title">{{tripDetail.name}}
+      </view>
+      <!-- 新旧价格 浏览量 收藏量 -->
+      <view class="travelc-con-nowc">
+        <view class="travel-con-lino">
+          <view class="travel-con-lin"><text class="iconfont iconrmb"></text>{{tripDetail.price}}</view>
+          <view class="travel-con-liqi">起</view>
+          <view class="travel-con-lio"><text class="iconfont iconrmb">{{tripDetail.marketPrice}}</text></view>
+        </view>
+        <view class="travel-con-center"></view>
+        <view class="travel-con-liwc">
+          <view class="travel-con-liw">
+            <text class="iconfont iconwatch">\t{{tripDetail.browseNum}}</text>
+          </view>
+          <view class="travel-con-lic" bindtap="onFabulous" >
+            <text class="iconfont {{tripDetail.isClick ? 'iconcollect2' : 'iconcollect'}}">\t{{tripDetail.zanNum}}</text>
+          </view>
+          </view>
+       </view>
+       <!-- 产品特色 -->
+       <view class="travel-spacial">
+        <text class="special-title-text">产品特色</text>
+          <!-- <text class="ts-label">产品特色：</text> -->
+          <!-- <text class="ts-content">无购车/无票购/无自费/无套路</text> -->
+        <ul class="content">
+          <li wx:for="{{traitDesc}}" wx:key="index">
+            <span>{{item.content}}</span>
+          </li>
+        </ul>
+       </view>
+       <!-- 三大模块 -->
+       <view class="travelc-page">
+        <view class="travelc-pl {{plType==1 ? 'active' : ''}}" data-type="1" bindtap="onplTab">行程介绍<view class="travel-heng"></view></view>
+        <view class="travelc-pl {{plType==2 ? 'active' : ''}}" data-type="2" bindtap="onplTab">图文详情<view class="travel-heng"></view></view>
+        <view class="travelc-pl {{plType==3 ? 'active' : ''}}" data-type="3" bindtap="onplTab">购买方式<view class="travel-heng"></view></view>
+       </view>
+       <view class="travelc-pageCon">
+        <!-- 行程介绍 -->
+        <view class="travelc-pcl pcl1">
+          <view class="travelx-pcltitle">行程介绍</view>
+          <block wx:for="{{tourDesc}}" wx:key="index">
+            <view class="travel-pclstep">
+              <view class="travel-pclstepcon">
+                <view wx:for="{{item.children[0]}}" wx:for-index="index2" wx:for-item="citem" wx:key="index2">
+                  <view class="timeNode">
+                    <van-icon  size="32rpx" name="{{(item.status==1) ? 'checked' : 'stop-circle'}}" color="{{(item.status==1) ? '#0fc2ac' : '#ff3d62'}}"></van-icon>
+                    <text style="padding-left:40rpx;">{{citem}}</text>
+                  </view>
+                </view>
+                <text class="travel-pclstepconc {{(item.status==1) ? '' : 'quan'}}">{{item.content}}</text>
+                <text>\n</text>
+              </view>
+            </view>
+          </block>
+        </view>
+<!-- 图文详情 -->
+        <view class="travelc-pcl pcl2" style="margin-bottom:100rpx;">
+          <view class="travelx-pcltitle">图文详情</view>
+          <view class="travelx-pclcontent detail">
+            <rich-text nodes="{{tripDetail.tourDetDesc}}"></rich-text>
+          </view>
+        </view>
+<!-- 购买方式 -->
+        <view class="travelc-pcl pcl3">
+          <view class="travelx-pcltitle">购买方式</view>
+          <view class="buyWay">积分+旅游积分+微信支付</view>
+        </view>
+       </view>
+       <!-- 底部操作 -->
+      <view class="travelc-foot">
+        <view class="travelc-footquestion" bindtap="ontcfQuestion">
+          <van-icon name="service" size="32rpx"/>
+          <text class="travelc-footquestiont">咨询</text>
+        </view>
+        <view class="travelc-footinvite" bindtap="ontcfInvite"><text>邀约同行</text></view>
+        <view class="travelc-footorder" bindtap="ontcfOrder" data-id="{{tripDetail.id}}"><text>开始预约</text></view>
+      </view>
+    </view>
+</view>
+<!-- 邀约同行弹出框 -->
+<van-popup show="{{ tficIsshow }}" bind:close="onClose"   position="bottom" class="attr-popup" catchtouchmove="preventTouchMove">
+  <view class="tfiContent">
+    <view class="tfic-title">
+      <view class="tfic-con1"><text>邀约同行</text></view>
+      <view class="tfic-con2" bindtap="oncloseMask"><text class="iconfont iconcha"></text></view>
+    </view>
+    <view class="tfic-item">
+      <view class="tfic-itemf"><text>微信内直接分享\n</text></view>
+      <view class="tfic-itemf"><text>点击微信右上角三个点"..."\n</text></view>
+      <view class="tfic-itemf"><text>通过【发送给朋友】【分享朋友圈】推广</text></view>
+    </view>
+  </view>
+</van-popup>

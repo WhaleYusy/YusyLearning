@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabBar":"/componentS/tabBar/tabBar",
+    "swiper":"/componentS/swiper/swiper"
+  },
+  "enablePullDownRefresh": true
+}

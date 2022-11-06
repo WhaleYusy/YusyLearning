@@ -1,0 +1,46 @@
+<!--pages/shoppingMall/component/my/index/myIndex.ttml-->
+<shopNav selected="{{2}}" ></shopNav>
+<view class="myContent">
+    <view class="mall-my">
+    <view class="user-warp">
+      <view class="info">
+        <view class="left">
+          <image src="{{userInfo.userPic}}" alt=""></image>
+        </view>
+        <view class="right">
+          <view class="user-box">
+            <view class="user-name">{{userInfo.nickName}}</view>
+            <p class="user-points">用户积分：{{userInfo.bi}}</p>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="menu-warp">
+      <view class="order">
+        <view class="order-title" catchtap="onHandlerGoPage" data-index="1">
+          <view class="msg">我的订单</view>
+          <view class="all">查看全部<i class="el-icon-arrow-right"></i></view>
+        </view>
+        <view class="nav">
+          <view class="item" tt:for="{{navList}}" tt:for-item="v" tt:key="index" data-index="{{v.index}}" catchtap="onHandlerGoPage">
+            <view class="icon">
+              <image src="{{v.icon}}" alt=""></image>
+            </view>
+            <view class="lable">{{v.label}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="menu">
+        <view class="box" tt:for="{{menuList}}" tt:key="index"  tt:for-item="v" class=" box {{v.isBottomBorder ? 'bottom-border' : ''}}" catchtap="onHandlerMenuClick" data-path="{{v.path}}">
+          <view class="left">{{v.label}}</view>
+          <view class="icon">
+            <i class="el-icon-arrow-right"></i>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 加上这个收货卡片就出来了 -->
+  </view>
+</view>
+
+<tabBar></tabBar>

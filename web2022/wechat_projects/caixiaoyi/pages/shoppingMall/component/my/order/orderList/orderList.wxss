@@ -1,0 +1,226 @@
+/* pages/shoppingMall/component/my/order/orderList/orderList.wxss */
+.orderListContent{
+  margin-top:140rpx;
+  padding-bottom:140rpx;
+}
+.tab{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  height:70rpx;
+  /* border:1rpx solid red; */
+  position: fixed;
+  left:0;
+  right:0;
+  top:70rpx;
+  background:white;
+  z-index:1000;
+  font-size: 26rpx;
+}
+.tab text{
+  display:flex;
+  border-bottom:4rpx solid transparent;
+  padding-bottom:10rpx;
+}
+.activeTab{
+  border-color:#030CF9 !important;
+}
+.loading-box {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+}
+.loading-box .loading {
+  margin: auto;
+}
+
+.no-address {
+  width: 100%;
+  /* height: 100%; */
+  /* height:calc(100vh - 190rpx); */
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  display: flex;
+  justify-content: center;
+  padding-top: 176rpx;
+  position: relative;
+}
+.no-address .no-box {
+  box-sizing: border-box;
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.no-address .no-box image {
+  margin: auto;
+  width: 207rpx;
+  height: 241rpx;
+}
+.no-address .no-box p {
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 24rpx;
+  padding-top: 30rpx;
+}
+
+.flex {
+  width: 100%;
+  height: auto;
+  min-height: 490rpx;
+  background: white;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.flex .banner {
+  font-size: 24rpx;
+  color: #666666;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f7f7f7;
+}
+.flex .banner .type-primary {
+  color: #409eff;
+}
+.flex .banner .type-success {
+  color: #67c23a;
+}
+.flex .banner .type-info {
+  color: #909399;
+}
+.flex .banner .type-danger {
+  color: #e20001;
+}
+.flex .center {
+  box-sizing: border-box;
+  display: flex;
+  padding: 30rpx 20rpx;
+  border-bottom: 2rpx solid #f7f7f7;
+}
+.flex .center .img {
+  width: 189rpx;
+  border-radius: 10rpx;
+}
+.flex .center .img image {
+  border-radius: 10rpx;
+  width: 189rpx;
+  height: 189rpx;
+}
+.flex .center .info-box {
+  flex: 1;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+}
+.flex .center .info-box .info {
+  width: 100%;
+  margin: auto;
+  padding-left: 20rpx;
+}
+.flex .center .info-box .info .title {
+  color: #1a1a1a;
+  font-size: 24rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 35rpx;
+}
+.flex .center .info-box .info .attr {
+  color: #7d7d7d;
+  font-size: 24rpx;
+  margin: 28rpx 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 35rpx;
+}
+.flex .center .info-box .info .price {
+  display: flex;
+  justify-content: space-between;
+  color: #e20001;
+  font-size: 24rpx;
+}
+.flex .center .info-box .info .price .msg {
+  color: #1a1a1a;
+}
+.flex .footer {
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  height: 180rpx;
+  width: 100%;
+}
+.flex .footer .footer-box {
+  width: 100%;
+  margin: auto;
+}
+.flex .footer .footer-box .num {
+  font-size: 24rpx;
+  color: #535353;
+  display: flex;
+  justify-content: flex-end;
+}
+.flex .footer .footer-box .num text {
+  color: #1a1a1a;
+}
+.flex .footer .footer-box .num .trip {
+  padding-right: 15rpx;
+  color: #535353;
+}
+.flex .footer .footer-box .btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30rpx;
+}
+.flex .footer .footer-box .btn .btn-item {
+  height: 46rpx;
+  line-height: 46rpx;
+  border: 2rpx solid #1a1a1a;
+  margin-left: 15rpx;
+  font-size: 24rpx;
+  color: #1a1a1a;
+  padding: 0 20rpx;
+  border-radius: 23rpx;
+}
+.flex .footer .footer-box .btn .btn-color {
+  border: 2rpx solid #0200fb;
+  color: #0200fb;
+}
+
+.load-more {
+  background: white;
+  border-top: 2rpx solid #f7f7f7;
+  border-bottom: 2rpx solid #f7f7f7;
+  display: flex;
+  height: 70rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.load-more .more-box {
+  margin: auto;
+  font-size: 24rpx;
+  color: #616161;
+}
+
+/*# sourceMappingURL=order.css.map */
+  /* 安全键盘的 */
+  .layer{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:rgba(0,0,0,0.5);
+  z-index:2000;
+}

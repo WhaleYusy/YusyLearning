@@ -1,0 +1,104 @@
+var filter = {
+  getTypeName: function (type) {
+    switch (type) {
+      case 0:
+        return "打赏需求";
+        break;
+      case 1:
+        return "打赏补偿";
+        break;
+      case 2:
+        return  "团队打赏分润";
+        break;
+      case 3:
+        return "团队被打赏分润";
+        break;
+      case 4:
+        return "粉丝充值奖励";
+        break;
+      case 5:
+        return "转让";
+        break;
+      case 6:
+        return "提现扣除";
+        break;
+      case 7:
+        return "VIP充值";
+        break;
+      case 8:
+        return "打赏不满意退还";
+        break;
+      case 9:
+        return "粉丝关注";
+        break;
+      case 10:
+        return "发布需求";
+        break;
+      case 11:
+        return "普通充值";
+        break;
+      case 12:
+        return "满意好评奖励";
+        break;
+      case 13:
+        return "全面统计";
+        break;
+      case 14:
+        return "打赏赠送";
+        break;
+      case 15:
+        return "旅游打赏分润";
+        break;
+      case 16:
+        return "充值奖励";
+        break;
+      case 17:
+        return "团队充值奖励";
+        break;
+      case 18:
+        return "商城购物";
+        break;
+      case 19:
+        return "旅游消费";
+        break;
+      case 20:
+        return "旅游奖励";
+        break;
+      case 21:
+        return "退款用户";
+        break;
+      case 22:
+        return "旅游打款服务商";
+        break;
+      case 23:
+        return "提现不通过返还";
+        break;
+      case 24:
+        return "添加圈友消费";
+        break;
+      case 25:
+        return "通过圈友奖励";
+        break;
+      case 26:
+        return "满10人好评奖励";
+        break;
+      case 31:
+        return "PCB消费";
+        break;
+      case 32:
+        return "PCB收款";
+        break;
+      case 33:
+        return "PCB退款";
+        break;
+      case 34:
+        return "PCB强制放款";
+        break;
+      default: return '默认'
+    }
+    return txt;
+  }
+}
+module.exports = {
+  getTypeName: filter.getTypeName
+}

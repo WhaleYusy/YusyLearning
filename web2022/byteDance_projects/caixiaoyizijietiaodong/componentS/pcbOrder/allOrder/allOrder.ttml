@@ -1,0 +1,97 @@
+<!--componentS/pcbOrder/allOrder/allOrder.ttml-->
+<view class="allOrder">
+    <view class="listContent">
+      <view class="listContentItem" tt:for="{{orderList}}" tt:key="{{index}}" catchtap="toOrderInfo" data-orderid="{{item.orderId}}"
+      >
+        <view class="listContentItems" style="border-top-left-radius:10px;border-top-right-radius:10px">
+          <view class="title" style="border-top-left-radius:10px;">板子尺寸</view>
+          <view class="item">{{item.pcbLong}} X {{item.pcbWide}}</view>
+          <view class="title">板子数量</view>
+          <view class="item" style="border-top-right-radius:10px;">{{item.pcbNum}}</view>
+        </view>
+        <view class="listContentItems">
+          <view class="title">板子层数</view>
+          <view class="item">{{item.layerNum}}</view>
+          <view class="title">板子厚度</view>
+          <view class="item">{{item.depth}}</view>
+        </view>
+        <view class="listContentItems" style="border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-bottom:1px solid rgb(200,200,200)">
+          <view class="titleAddr" style="border-bottom-left-radius:10px;">收货地址</view>
+          <view class="itemAddr " style="border-bottom-right-radius:10px;">{{item.area}} {{item.detailArea}}</view>
+        </view>
+        <view class="catchOrder111" tt:if="{{item.orderStatus === 1 && dataList.length > 0 }}" catchtap="catchOrder"   data-orderid="{{item.orderId}}" data-index="{{index}}">抢单</view>
+        <!--catchtap="catchOrder(item.orderId)"-->
+        <view class="catchOrder111" tt:if="{{item.orderStatus === 2 && dataList.length > 0}}" catchtap="toPost" data-orderid="{{item.orderId}}" >发货</view>
+        <view class="catchOrder111" tt:if="{{item.orderStatus === 0 && item.userId == userInfoC}}"  catchtap='toPay' data-orderid="{{item.orderId}}" data-item="{{item}}" >支付</view>
+        <view class="catchOrder111" tt:if="{{item.orderStatus === 3 && item.userId == userInfoC}}"  catchtap="confirmReceive" data-orderid="{{item.orderId}}">确认收货</view>
+      </view>
+      <!-- <view class="loadMore" catchtap="loadMore" tt:if="{{!showNoMore && orderList.length >= 10 }}">加载更多</view> -->
+      <!-- <view class=""></view> -->
+    </view>
+    <view class="noData" tt:if="{{orderList.length === 0}}">暂无数据</view>
+    <view class="showNoMore" tt:if="{{showNoMore1 && orderList.length > 0}}">没有更多数据啦~</view>
+    <!--抢单弹出-->
+    <view class="catchLayer" tt:if="{{showCatchLayer}}" >
+      <view class="suppliorContent">
+          <text catchtap="toCancel" class="cancel">X</text>
+          <view class="tip">请选择一家供应商</view>
+          <ul>
+            <li
+              tt:for="{{dataList}}"
+              tt:for-item="cItem"
+              tt:key="{{index}}"
+              class=" content_list_box {{active === index ? 'link' : ''}}"
+              catchtap="chooseService"
+              data-serveid="{{cItem.id}}"
+              data-suppliername="{{cItem.supplierName}}"
+              data-index="{{index}}"
+            >
+              <view class="left-warp">
+                <image src="{{cItem.logo}}" alt class="shop_img {{cItem.status == 1 ? 'seop_img_h':''}}" />
+                <!-- <view class="left-btn">
+                  <text>+圈友</text>
+                  <text class="text-active" tt:if="{{cItem.status == 0}}">已添加</text>
+                  <text>+私信</text>
+                </view> -->
+              </view>
+              <view class="right_box">
+                <p class="isStick" tt:if="{{cItem.isStick == 1}}">置顶</p>
+                <view class="right-warp">
+                  <p class="right_box_p1">{{cItem.supplierName}}</p>
+                  <view class="right_box_p2">
+                    <text>浏览：{{cItem.viewNum || 0}}</text>
+                    <text>粉丝：{{cItem.fansNum || 0}}</text>
+                    <text>点赞：{{cItem.zanNum || 0}}</text>
+                  </view>
+                  <p class="right_box_p3">地址：{{cItem.supplierAddress}}</p>
+                  <p class="right_box_p4">供应：{{cItem.operateProduces || ''}}</p>
+                </view>
+              </view>
+            </li>
+          </ul>
+        </view>
+        <!-- 操作按钮 -->
+        <view class="btnGroup"> 
+          <view class="cancelUpload" catchtap="toCancel" >取消</view> 
+          <view class="ensureUpload" catchtap="toEnsureChoose" >确定</view>
+        </view>
+    </view>
+    <!-- 发货弹窗 -->
+    <view class="postLayer" tt:if="{{showPostLayer}}">
+        <text catchtap="toCancelPost" class="cancel">X</text>
+        <view class="entering">
+          <view class="enteringNumber">
+            <input type="number" value="{{enteringNumber}}" placeholder="请输入你的物流单号" bindinput="saveEnteringnum" />
+          </view>
+          <view class="btnGroup"> 
+            <view class="ensureUpload" catchtap="toEnsurePost" >确定</view>
+            <view class="cancelUpload" catchtap="toCancelPost" >取消</view> 
+          </view> 
+          <!--输入物流单号  --> 
+        </view>
+    </view>
+    <!-- <show-loading tt:if="loading"></show-loading> -->
+  </view>
+  <view class="layer" tt:if="{{showPswBoard}}">
+    <payModel id="payModel" bind:check="checkpswd" bind:close="close" payPoint="{{payBi}}"></payModel>
+  </view>

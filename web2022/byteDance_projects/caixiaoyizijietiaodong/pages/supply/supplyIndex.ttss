@@ -1,0 +1,355 @@
+/* pages/supply/supplyIndex.wxss */
+  /* 搜索条样式 */
+  .supplyIndexContent{
+  margin-top: 80rpx;
+  }
+  .searchBar {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx;
+  box-sizing: border-box;
+  background: white;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+.searchBar .icon {
+  font-size: 50rpx;
+  color: gray;
+}
+.searchBar .searchContent {
+  flex: 1;
+  height: 100%;
+  margin: 0 10px;
+  padding: 0 40rpx;
+  background: #f8f8f8;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.searchBar .searchContent .search {
+  height: 80%;
+  margin-left: 10rpx;
+  border: none;
+  background: none;
+  flex: 1;
+}
+.searchBar button {
+  width: 140rpx;
+  height:100%;
+  background: none;
+  font-size: 24rpx;
+  border: none;
+}
+/* 内容 */
+ .tips_p {
+  display: flex;
+  align-items: center;
+  height: 190rpx;
+  box-sizing: border-box;
+  font-size: 35rpx;
+  color: #62b900;
+  font-weight: bold;
+  padding: 20rpx 15rpx;
+  background: #F7F7F7;
+}
+ .tips_p .wechat_img {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  height:150rpx;
+}
+ .content_list_box {
+  margin: 15rpx;
+  margin-top: 0;
+  background: #fff;
+  display: flex;
+  padding: 10rpx;
+  box-sizing: border-box;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+}
+ .content_list_box .left-warp {
+  flex-basis: 200rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+ .content_list_box .left-warp .shop_img {
+  width: 100%;
+  height: 160rpx;
+}
+ .content_list_box .left-warp .seop_img_h {
+  height: 180rpx;
+}
+ .content_list_box .left-warp .left-btn {
+  flex: 1;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin-top: 15rpx;
+}
+ .content_list_box .left-warp .left-btn text {
+  width: 40%;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  display: inline-block;
+  background: #030CF9;
+  padding: 5rpx;
+  color: #ffffff;
+}
+ .content_list_box .left-warp .left-btn text:last-of-type {
+  background: #62b900;
+}
+ .content_list_box .left-warp .left-btn .text-active {
+  background: #cccccc !important;
+}
+ .content_list_box .right_box {
+  width: 73%;
+  padding: 0rpx 0rpx 0 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+}
+ .content_list_box .right_box .isStick {
+  color: white;
+  position: absolute;
+  right: -0;
+  top: -0;
+  background: red;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  padding: 5rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  letter-spacing: 2rpx;
+}
+ .content_list_box .right_box .right-warp {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+ .content_list_box .right_box .right-warp p {
+  line-height: 40rpx !important;
+}
+ .content_list_box .right_box .right-warp .right_box_p1 {
+   width: 90%;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* padding: 5rpx 0 6rpx; */
+  font-weight: bold;
+}
+ .content_list_box .right_box .right-warp .right_box_p2 {
+  margin-top: 5rpx;
+  font-size: 24rpx;
+  color: #030CF9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ .content_list_box .right_box .right-warp .right_box_p2 text {
+  display: inline-block;
+  padding: 5rpx 10rpx 5rpx 0;
+}
+ .content_list_box .right_box .right-warp .right_box_p3 {
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ .content_list_box .right_box .right-warp .right_box_p4 {
+  font-size: 28rpx;
+  margin-top: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 34rpx !important;
+}
+ .popup {
+  position: fixed;
+  z-index: 504;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: white;
+  width: 80%;
+  border-radius: 10rpx;
+}
+ .popup .ad {
+  background: #0066ff;
+  font-size: 32rpx;
+  padding: 24rpx 0;
+  text-align: center;
+  color: white;
+  border-top-right-radius: 10rpx;
+  border-top-left-radius: 10rpx;
+  overflow: hidden;
+}
+ .popup .popup-cont {
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+ .popup .popup-btn-line {
+  width: 100%;
+  display: flex;
+  border-bottom-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  overflow: hidden;
+}
+ .popup .popup-btn-line button {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  background: none;
+  border: none;
+  outline: none;
+}
+ .popup .popup-btn-line button:nth-of-type(1) {
+  border-right: 1rpx solid #cccccc;
+}
+ .popup p {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 15rpx 0;
+}
+ .popup-img {
+  width: 100%;
+}
+ .popup .close {
+  position: absolute;
+  bottom: -80rpx;
+  right: calc(50% - 25rpx);
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 100%;
+  background: #4A4749;
+  padding: 5rpx;
+  color: white;
+  font-size: 30rpx;
+}
+ .popup .ad-title {
+  font-size: 30rpx;
+  color: red;
+  padding: 15rpx 20rpx;
+  line-height: 45rpx;
+  font-weight: bold;
+  text-align: center;
+}
+ .mb {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 504;
+}
+ .issue_btn {
+  position: fixed;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  font-size: 35rpx;
+  background: #0066ff;
+  color: #fff;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+  padding: 0rpx 20rpx;
+  border: transparent;
+  border-radius: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+ .no_more {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 25rpx;
+  margin: 15rpx auto 0;
+}
+
+/*# sourceMappingURL=supplyIndex.css.map */
+
+.closeChaP{
+  position: relative;
+}
+.closeCha{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius: 100%;
+  border: 4rpx solid white;
+  background: #09f;
+  color: white;
+  padding: 5rpx; 
+}
+.catoLayer{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  background:rgba(0,0,0,0.5);
+  z-index:500;
+}
+.catoLayer .fir{
+  display:flex;
+  flex-direction: column;
+  background:white;
+  width:350rpx;
+  height:100vh;
+  font-size:26rpx;
+  overflow-y: auto;
+  position: relative;
+  border-right:2rpx solid #f8f8f8;
+  box-sizing: border-box;
+}
+.catoLayer  .fir .firli{
+  /* border-bottom:2rpx solid #e8e8e8; */
+  text-align: center;
+  height:60rpx;
+  line-height:60rpx;
+}
+.catoLayer .sec{
+  position: fixed;
+  left:350rpx;
+  top:55rpx;
+  background:white;
+  width:350rpx;
+  color:#333333;
+  display:flex;
+  flex-direction: column;
+  background:white;
+  height:calc(100vh - 54rpx);
+  font-size:26rpx;
+  overflow-y: auto;
+}
+.active-class{
+  color:#3A8BEE !important;
+}

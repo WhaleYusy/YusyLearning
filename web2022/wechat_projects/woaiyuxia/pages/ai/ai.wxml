@@ -1,0 +1,117 @@
+<view class="container">
+  <view> - 第二年 -</view>
+  <view class="container2">
+    <image class="img2" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkX9u2QmnL5BFjFAM9OJvcJKE4d1ibybEFkr3m51qrRXGtbuyTds1aPE2A/0?wx_fmt=jpeg"></image>
+    <text class="title2">宝光塔下</text>
+  </view>
+  <view class="container2">
+    <image class="img1" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkXScZyx5wqgStVJibI35D23fVmqjyQkZRLtPAHczGO1p8rD0T42RR1F8A/0?wx_fmt=jpeg"></image>
+    <text class="title2">挂榜岭下</text>
+  </view>
+  <view class="container2">
+    <swiper class="img2" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list}}" wx:key="index">
+      <swiper-item>
+        <image class="img2" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <text class="title2">挂榜岭上</text>
+  </view>
+  <view class="container2">
+    <image class="img2" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkXgKbt7W1Hvic63XzKjficCuia634VqPKRNHLvibticib3BKo5ZMN5fdN5VN5Q/0?wx_fmt=jpeg"></image>
+    <text class="title2">行通济</text>
+  </view>
+  <view class="container2">
+    <swiper class="img2" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list2}}" wx:key="index">
+      <swiper-item>
+        <image class="img2" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <text class="title3">花痴，哈哈，，，</text>
+  </view>
+  <view class="container2">
+    <image class="img2" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkXtvZw7MzmIC3odCibDDKkjvO4WUcf7tF33iapDps8wibcoZeteFZMcRicZA/0?wx_fmt=jpeg"></image>
+    <text class="title2">打边炉的你</text>
+  </view>
+  <view class="container2">
+    <image class="img1" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkXSmq58ztr32hFGVW2dqiaIoW6e7ARpt9bbOxSYus5rG1sFGezXlPBVjg/0?wx_fmt=jpeg"></image>
+    <text class="title2">打边炉的我</text>
+  </view>
+  <view class="container2">
+    <image class="img2" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkXFOBO1CmFJyJJN0BOqPtuzwV5Bnxxga2FvvaS65AqoOVExzibLv1wcMw/0?wx_fmt=jpeg"></image>
+    <text class="title2">商业街牛杂</text>
+  </view>
+  <view class="container2">
+    <image class="img1" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkX9wD16cLaT23BjJjGNy39rRsuykZicf5Tc4UccL7C9gXR1jKy97ccHhQ/0?wx_fmt=jpeg"></image>
+    <text class="title3">羞羞哒，爱你哟。。。</text>
+  </view>
+  <view class="container2">
+    <swiper class="img2" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list3}}" wx:key="index">
+      <swiper-item>
+        <image class="img2" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <text class="title3">在你以前兼职的地方吃东西。。。</text>
+  </view>
+  <view class="container2">
+    <image class="img1" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkX8E1bBicCAxbR53nuzuolXjlk49MDunZFrZ4uO9VfpicjxQ62EcGoI8sA/0?wx_fmt=jpeg"></image>
+    <text class="title3">可爱型的你</text>
+  </view>
+  <view class="container2">
+    <swiper class="img4" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list4}}" wx:key="index">
+      <swiper-item>
+        <image class="img4" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <text class="title2">爱自拍的傻妹</text>
+  </view>
+  <view class="container2">
+    <swiper class="img1" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list5}}" wx:key="index">
+      <swiper-item>
+        <image class="img1" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <text class="title3">两个吃货。。。</text>
+  </view>
+  <view class="container2">
+    <image class="img2" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkX0un0be8D0JJuyxEibhiaQkCNX6xKZnibkbRqIUGhgcMibY6FaSgvUWS0MQ/0?wx_fmt=jpeg"></image>
+    <text class="title2">卜卜贝</text>
+  </view>
+  <view class="container2">
+    <swiper class="img3" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list6}}" wx:key="index">
+      <swiper-item>
+        <image class="img3" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <text class="title3">忘记看什么电影了，反正你就是好看。。。</text>
+  </view>
+  <view class="container2">
+    <swiper class="img3" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list7}}" wx:key="index">
+      <swiper-item>
+        <image class="img3" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <text class="title3">在一个移动K房干“坏事”，哟哟哟、、、</text>
+  </view>
+  <view class="container2">
+    <image class="img5" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkXOInibcPkMvlXFX5P1OrOxIU7OeJfLdZlic5mXxfrfeDIMrCjLiaASGzyw/0?wx_fmt=jpeg"></image>
+    <text class="title2">九毛九</text>
+  </view>
+  <view class="container2">
+    <image class="img5" src="https://mmbiz.qpic.cn/mmbiz_jpg/YDAMvtOf0AWFcmjgGx2wGVWibCqphHhkXNcDM4BFDQ7ibNtB3u1bjT69oDvyc9p1gqfd8A8PLf0JrJsfDKCHnElA/0?wx_fmt=jpeg"></image>
+    <text class="title2">九毛九</text>
+  </view>
+</view>

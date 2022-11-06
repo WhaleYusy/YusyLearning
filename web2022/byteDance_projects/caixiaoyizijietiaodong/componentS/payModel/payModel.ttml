@@ -1,0 +1,47 @@
+<view class='page_box' bindtap="init">
+    <view class='input_view'>
+    <!-- showKeyboard -->
+    <!-- content -->
+      <view class="titleLine">
+        <text class="close" catchtap="close">x</text>
+        <text class="payTitle">请输入支付密码</text>
+      </view>
+      <view class="payCodeContent">
+        <text class="CodeNum">{{payPoint}}</text>
+        <text class="codeTitle">积分</text>
+      </view>
+      <view class="onputList" >
+        <view class="inputItem" >
+          <text class="{{content.length == ''  ? 'className' : '' }}" ></text>
+          <text class="{{content.length >= 1  ? 'dotItem' : '' }}" ></text>
+        </view>
+        <view class="inputItem " >
+          <text class="{{content.length == 1 ? 'className' : ''}}" ></text>
+          <text class="{{content.length >= 2 ? 'dotItem' : ''}}" ></text>
+        </view>
+        <view class="inputItem " >
+          <text class="{{content.length == 2 ? 'className' : ''}}" ></text>
+          <text class="{{content.length >= 3 ? 'dotItem' : ''}}" ></text>
+        </view>
+        <view class="inputItem " >
+          <text class="{{content.length == 3 ? 'className' : ''}}" ></text>
+          <text class="{{content.length >= 4 ? 'dotItem' : ''}}" ></text>
+        </view>
+        <view class="inputItem " >
+          <text class="{{content.length == 4 ? 'className' : ''}}" ></text>
+          <text class="{{content.length >= 5 ? 'dotItem' : ''}}" ></text>
+        </view>
+        <view class="inputItem " >
+          <text class="{{content.length == 5 ? 'className' : ''}}" ></text>
+          <text class="{{content.length == 6 ? 'dotItem' : ''}}" ></text>
+        </view>
+      </view>
+        <!-- <text class='pay'>立即支付</text> -->
+    </view>
+    <view class='keyboard {{keyShow&&"hind_box"}}'>
+        <!-- <view class='complete'>完成</view> -->
+        <view class='key_box'>
+            <text class='keys {{index%3==0&&"border0"}} {{(index==9||index==11)&&"bg_color"}} {{link === index ? "linked" : "" }}' tt:for='{{KeyboardKeys}}' tt:key='this' catchtap='keyTap' data-keys='{{item}}' data-index="{{index}}">{{item}}</text>
+        </view>
+    </view>
+</view>

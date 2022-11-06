@@ -1,0 +1,11 @@
+<!--componentS/tabBar/tabBar.ttml-->
+<view class="tab_wrap">
+  <view  tt:for="{{tabList}}" tt:key="index" class="tab_item {{selected == index ? 'active': ''}}">
+    <view catchtap="onGoto" data-path="{{item.path}}" data-index="{{index}}">
+      <p class="ssss">
+        <image src="{{item.icon}}" ></image>
+        <text>{{item.name}}</text>
+      </p>
+    </view>
+  </view>
+</view>

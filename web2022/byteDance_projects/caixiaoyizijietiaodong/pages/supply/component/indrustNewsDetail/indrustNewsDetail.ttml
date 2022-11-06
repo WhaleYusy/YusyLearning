@@ -1,0 +1,11 @@
+<!--pages/supply/component/indrustNewsDetail/indrustNewsDetail.ttml-->
+<view class="businessNewDetails">
+    <!-- <Top-bar :param="topBarParam" /> -->
+    <view class="title" tt:if="{{html.title != null}}">{{html.title}}</view>
+    <view class="title" wx:else>{{$route.query.title}}</view>
+    <view class="time" tt:if="{{html.createdTime != null}}">发布时间：{{html.createdTime}}</view>
+    <view class="time" wx:else>发布时间：{{$route.query.createdTime}}</view>
+    <!-- <view class="html" v-html="html.companyDynamic"></view> -->
+    <rich-text nodes="{{html.companyDynamic}}"></rich-text>
+</view>
+<tabBar></tabBar>

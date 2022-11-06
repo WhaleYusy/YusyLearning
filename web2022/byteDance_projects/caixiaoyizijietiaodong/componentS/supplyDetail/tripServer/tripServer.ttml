@@ -1,0 +1,22 @@
+<!--componentS/supplyDetail/tripServer/tripServer.ttml-->
+<view class="main_content">
+  <view class="image_card">
+    <view class="image_box" tt:for="{{datasList}}" tt:key="index" bindtap="onNavigateCon" data-id="{{item.id}}">
+      <image src="{{item.mainImg}}" alt class="detail_img" />
+      <p class="detail-title">{{item.name}}</p>
+      <view class="del-btn" catchtap="onEdit" tt:if="{{userStatus == 1}}" data-pid="{{item.id}}">修改</view>
+      <view class="lower-shelf" tt:if="{{item.expireStatus == 0}}">已下架</view>
+    </view>
+    <view class="add" tt:if="{{userStatus == 1}}">
+        <view class="br" catchtap="onAddClick">
+          <p class="icon">+</p>
+        </view>
+    </view>
+  </view>
+  <!-- <view class="load-more" catchtap="onLoadMoreClick">
+    <view class="more-box">
+      {{loadMoreTxt}}
+      <i class="el-icon-arrow-right" tt:if="loadMoreStatus === 0 "></i>
+    </view>
+  </view> -->
+</view>

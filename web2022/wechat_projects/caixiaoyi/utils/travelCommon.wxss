@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 1497102 */
+  src: url('//at.alicdn.com/t/font_1497102_hz9mm6bgl7t.eot');
+  src: url('//at.alicdn.com/t/font_1497102_hz9mm6bgl7t.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1497102_hz9mm6bgl7t.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1497102_hz9mm6bgl7t.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1497102_hz9mm6bgl7t.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1497102_hz9mm6bgl7t.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 24rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconwatch:before {
+  content: "\e609";
+}
+.iconcollect:before {
+  color: #f00c0c;
+  content: "\e601";
+}
+.iconcollect2:before {
+  color: gray;
+  content: "\e601";
+}
+.iconrmb:before {
+  content: "\e7d8";
+}
+.icongou:before {
+  content: "\e659";
+}
+.iconquan:before {
+  content: "\e629";
+}
+.iconquestion:before {
+  content: "\e68c";
+}
+.iconcha:before {
+  content: "\e685";
+}

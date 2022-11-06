@@ -1,0 +1,9 @@
+<!--componentS/shopNav/shopNav.wxml-->
+<view class="tab_wrap">
+  <view  wx:for="{{navData}}" wx:key="index" class=" tab_item {{selected == index ? 'active': ''}}">
+    <view  class="ssss" catchtap="onGoto1" data-path="{{item.path}}" data-index="{{index}}">
+        <van-icon class="ssss2" name="{{item.icon}}" size="32rpx"/>
+        <view>{{item.name}}</view>
+    </view>
+  </view>
+</view>

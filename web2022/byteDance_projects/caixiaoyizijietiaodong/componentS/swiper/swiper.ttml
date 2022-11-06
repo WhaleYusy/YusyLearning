@@ -1,0 +1,22 @@
+<!--componentS/swiper.ttml-->
+<view class="swiperContent">
+  <swiper
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+    circular="{{circular}}"
+    class="content"
+    bindchange="swiperChange"
+  >
+    <block tt:for="{{imgUrls}}"  tt:key="index">
+      <swiper-item  class="item">
+        <image style="display:block;width:100%;margin:0 auto;" src="{{item.advertisingPictureAddress ||  item.advertisingPictureAddress || item.picUrl || item.imgUrl || item }}" data-img="{{item.advertisingPictureAddress ||  item.advertisingPictureAddress || item.picUrl || item.imgUrl || item }}" class="slide-image" catchtap="imgView" />
+      </swiper-item>
+    </block>
+    
+  </swiper>
+  <view class="dotsContent" >
+    <text class="dots" tt:for="{{imgUrls.length}}" tt:key="unique" style="{{index == swiperCurrent ? linkDotColor : unLinkDotColor }}"></text>
+  </view>
+</view>

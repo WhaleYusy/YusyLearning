@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     if (Date.now() % 2 === 0) {
+      //       resolve('成功')
+      //     } else {
+      //       reject('失败')
+      //     }
+      //   }, 1000)
+      // })
+      //   .then(value => {
+      //     console.log('onResolved()1', value)
+      //   })
+      //   .catch(reason => {
+      //     console.log('onRejected()1', reason)
+      //   })
+
+      // const p1 = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve(1)
+      //   }, 100)
+      // })
+      // const p2 = Promise.resolve(2)
+      // const p3 = Promise.reject(3)
+      // p1.then(value => {
+      //   console.log(value)
+      // })
+      // p2.then(value => {
+      //   console.log(value)
+      // })
+      // p3.catch(reason => {
+      //   console.log(reason)
+      // })
+
+      // const pAll = Promise.all([p2, p1])
+      // pAll.then(
+      //   values => {
+      //     console.log(values)
+      //   },
+      //   reasons => {
+      //     console.log(reasons)
+      //   }
+      // )
+
+      // const pRace = Promise.race([p1, p2, p3])
+      // pRace.then(
+      //   value => {
+      //     console.log(value)
+      //   },
+      //   reason => {
+      //     console.log(reason)
+      //   }
+      // )
+      // new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve(1)
+      //   }, 1000)
+      // }).then(
+      //   value => {
+      //     console.log('value', value)
+      //   },
+      //   reason => {
+      //     console.log('reason', reason)
+      //   }
+      // )
+      const p = new Promise((resolve, reject) => {
+        resolve(1)
+      })
+        .then(
+          value => {
+            console.log('value', value)
+            return Promise.reject(3)
+          },
+          reason => {
+            console.log('reason', reason)
+          }
+        )
+        .then(
+          value => {
+            console.log('value2', value)
+          },
+          reason => {
+            console.log('reason2', reason)
+          }
+        )
+    </script>
+  </body>
+</html>

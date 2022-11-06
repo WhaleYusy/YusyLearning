@@ -1,0 +1,23 @@
+<!--componentS/orderTab/orderTab.ttml-->
+<view class="public-warp">
+    <!-- <view class="bottom">
+      <view class="nav-warp">
+        <view class="nav" :class="isNavActive === 0 ? 'nav-active' : ''" catchtap="onHandlerClick(0)">全部</view>
+        <view class="nav" :class="isNavActive === 1 ? 'nav-active' : ''" catchtap="onHandlerClick(1)">待付款
+          <view class="num" v-if="$store.state.mallOrderPaymentNum !== 0">{{$store.state.mallOrderPaymentNum}}</view>
+        </view>
+        <view class="nav" :class="isNavActive === 2 ? 'nav-active' : ''" catchtap="onHandlerClick(2)">待发货</view>
+        <view class="nav" :class="isNavActive === 3 ? 'nav-active' : ''" catchtap="onHandlerClick(3)">待收货</view>
+        <view class="nav" :class="isNavActive === 4 ? 'nav-active' : ''" catchtap="onHandlerClick(4)">已完成</view>
+      </view> -->
+
+      <!-- <view class="content-warp">
+        <view class="loading-view" v-show="isOrderLoading">
+          <van-loading class="loading" size="35px" color="#0303fe" />
+        </view>
+        <view class="content" v-show="!isOrderLoading">
+          <component :is="componentId"></component>
+        </view>
+      </view> -->
+    <!-- </view> -->
+  </view>

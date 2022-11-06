@@ -1,0 +1,124 @@
+<!--pages/purchase/component/mertialNeed/getContactDetail/getContactDetail.wxml-->
+<view class="getContactDetailContent">
+    <view class="getContactDetail">
+         <swiper  id="purSwiper" imgUrls="{{imgUrls}}" wx:if="{{getContact}}"></swiper>
+        <view class="reward_cont" wx:if="{{!getContact}}">
+            <view class="reward">
+            <view wx:if="{{userInfo.freeDemandCount <= 0}}">
+                <text class="font-size">需要支付：</text>
+                <!-- <font class="line-through">{{dataList.biCountShow}}积分</font> -->
+                <text class="line-pay">{{dataList.biCountShow}}积分</text>
+            </view>
+            <view wx:else>
+                <text class="font-size">本次免费</text>
+            </view>
+            </view>
+            <view class="reward">
+              <text class="font-size">每月免费10次，剩余{{userInfo.freeDemandCount == -1 ? 0 : userInfo.freeDemandCount}}次</text>
+            </view>
+            <!-- <view class="tips tip_title" wx:if="{{userInfo.freeDemandCount <= 0}}">
+            您是{{userInfo.levelName}}，打赏需要支付
+            <text class="biCount-pay">{{dataList.biCountShow}}积分</text>
+            <font class="biCount-pays">10积分</font>
+            </view>
+            <view class="tips tip_title" wx:if="{{userInfo.freeDemandCount > 0}}">您是新用户，可享受免费10次打赏机会！</view>
+            <view class="my_follow" wx:if="{{isPublicNumber == true}}">
+            新用户马上关注公众号，立即获得4次免费打赏机会
+            <text style="color: red;" catchtap="publicNumberShow">（点击）</text>
+            </view> -->
+            <view class="my_money">
+                我的积分：{{userInfo.bi}}
+                <text catchtap="onGoTo">购买积分</text>
+            </view>
+            <view class="contactButtons" catchtap="onGiveReward">
+                 <view class="give_line">点击获取得联系方式</view>
+                  <van-icon class="btn_1" name="http://qiniuoss.822644.com/wxPic/20191223/787683807653274624.png" size="120rpx" />
+            </view>
+
+            <view class="tip">
+                <text class="title">温馨提示：</text>
+                <view class="rightSide">
+                    <p>1.入驻后免费展示广告品牌，长期免积分</p>
+                    <p>2.支付积分，是为了减少采购被骚扰</p>
+                </view>
+            </view>
+            <!-- <view class="qr-code">
+              <image src="{{qrCodeImg}}" alt class="qr-img" catchtap="imgView"  data-img="{{qrCodeImg}}"></image> 
+            </view> -->
+        </view>
+
+        <!-- 已经获取之后的 -->
+        <view class="reword_msg" wx:else>
+            <!-- <view class="qr-code">
+                <p>想找免费客户吗？快来扫一扫</p>
+                <image src="{{qrCodeImg}}" alt class="qr-img" catchtap="imgView"  data-img="{{qrCodeImg}} "></image>
+            </view> -->
+            <view class="msg_item" wx:if="{{callList[0].value != ''}}">
+                <text class="msg_title" >手机号：</text>
+                <text class="msg_content">{{callList[0].value}}</text>
+                <view class="bg msg_btn " data-number="{{callList[0].value}}" catchtap="phoneCall">拨打</view>
+            </view>
+            <view class="msg_item" wx:if="{{callList[1] != ''}}">
+                <text class="msg_title" >QQ号：</text>
+                <text class="msg_content">{{callList[1].value}}</text>
+                <view class="msg_btn blue" data-content="{{callList[1].value}}" catchtap="clip">复制</view>
+            </view>
+            <view class="msg_item" wx:if="{{callList[2].value  != ''}}">
+                <text class="msg_title">微信号：</text>
+                <text class="msg_content">{{callList[2].value}}</text>
+                <view class="msg_btn blue" data-content="{{callList[2].value}}" catchtap="clip" >复制</view>
+            </view>
+            <view class="msg_item" wx:if="{{callList[3].value != ''}}">
+                <text class="msg_title">邮  箱：</text>
+                <text class="msg_content">{{callList[3].value}}</text>
+                <view class="msg_btn blue" data-content="{{callList[3].value}}" catchtap="clip" >复制</view>
+            </view>
+            <view class="msg_item">
+                <text class="msg_title blue">易  聊：</text>
+                <text class="msg_content blue" catchtap="chat">直接聊天</text>
+            </view>
+            <p class="msg_item msg_item_red">
+                温馨提示：对发帖人/需求公司不满意或者虚假信息全额退款
+            </p>
+        </view>
+        <!-- 分割线 -->
+        <!-- <van-viewider contentPosition="center" dashed style="'color: black !important;border-color: lightgray;font-size: 18px;font-size:16px;margin:15px 0;'" >以下是广告区域</van-viewider> -->
+        <view class="h2Tip">入驻即可展示品牌，找客户免积分</view>
+        <!-- 展示前三的灵魂 -->
+        <view wx:if="{{companyList.length==0}}" class="dataNone">暂无数据</view>
+        <view class="companyList" wx:else>
+            <view class="companyItem" wx:for="{{companyList}}" wx:key="index" catchtap="toSupplyDetail" data-id="{{item.id}}">
+                <view class="comLogo">
+                  <image src="{{item.logo}}" alt />
+                </view>
+                <view class="rightSide">
+                    <h2>{{item.supplierName}}</h2>
+                    <view class="numBlock">
+                        <text>推荐点赞:{{item.likeCount}}</text>
+                        <text>浏览:{{item.viewNum}}</text>
+                        <text wx:if="{{item.distance== null || item.distance<=0}}"></text>
+                        <text wx:elif="{{item.distance<=1}}">距离:{{filter.toFixed(item.distance * 1000,0)}}m</text>
+                        <text wx:elif="{{item.distance<=3}}">距离:{{filter.toFixed(item.distance,1)}}km</text>
+                        <text wx:else>距离:3km以上</text>
+                    </view>
+                    <view class="address">
+                        <text class="twoHang"> 地址：{{item.supplierAdress}}</text>
+                    </view>
+                    <view class="supply">
+                        <text class="twoHang">供应：{{item.operateProduces || '暂无数据'}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        
+        <view class="catchQrcode">
+          <image class="qrCode" src="{{qrCodeImg}}"  data-img="{{qrCodeImg}}" catchtap="imgView" />
+          <view class="catchCon">加我好友，给您带来</view>
+          <view class="catchCon"><text class="blue">优质</text>的资源、<text class="blue">优秀</text>的客户</view>
+          <view class="catchCon"><text class="blue">志同</text>的伙伴、<text class="blue">前沿</text>的行情</view>
+          <!-- <view class="catchCon">还等什么，扫二维码加入我们吧！</view> -->
+        </view>
+      </view>
+</view>
+<tabBar></tabBar>
+<wxs src="../../../../../utils/filter.wxs" module="filter" />

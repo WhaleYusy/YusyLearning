@@ -1,0 +1,32 @@
+<!--pages/purchase/component/mertialNeed/mertialNeed.ttml-->
+<swiperImgs id="purSwiper" imgUrls="{{imgUrls}}"></swiperImgs>
+<view class="mertialNeedContent">
+  <view class="purchaseProductlist">
+      <view class="purchaseProductItem" tt:for="{{purchaseProductlist}}" tt:key="id" catchtap="goPage" data-item="{{item}}">
+    <view tt:if="{{item.status != 1}}" class="ppiMeng"></view>
+          <view class="leftMesg">
+              <h3 class="mesgTitle">求购:{{item.title}}</h3>
+              <p class="mesgItem">
+                  <text class="mesgItemTitle">日期：</text>
+                  <text class="mesgItemContent">{{item.startTime}}至{{item.endTime}}</text>
+              </p>
+              <p class="mesgItem">
+                  <text class="mesgItemTitle">类别：</text>
+                  <text class="mesgItemContent">{{item.className}}</text>
+              </p>
+              <p class="mesgItem mesgItem-flex">
+                  <text class="mesgItemTitle">要求：</text>
+                  <text class="mesgItemContent">{{item.description}}</text>
+                  <!-- <text  class=" pStatus {{item.status == 1 ? 'ing' : '' }}">{{item.status == 1 ? '进行中' : '已结束'}}</text> -->
+              </p>
+              
+          </view>
+          <image src="{{item.logo}}" tt:if="{{item.logo}}" alt class="mainImg"/>
+          <image src="{{'http://qiniuoss.822644.com/wxPic/20191122/765288437703020544.blob'}}" wx:else alt class="mainImg"></image>
+        </view>
+      </view>
+      <!-- <show-loading v-if="showLoading" class="loading"/> -->
+</view>
+<tabBar></tabBar>
+
+<wxs src="../../../../utils/filter.wxs" module="filter" />

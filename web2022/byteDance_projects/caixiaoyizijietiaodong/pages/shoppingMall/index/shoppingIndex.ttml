@@ -1,0 +1,54 @@
+<!--pages/shoppingMall/shoppingIndex.ttml-->
+<shopNav bind:toPath="toPath" selected="{{0}}" ></shopNav>
+<view class="shoppingIndex">
+  <swiperImgs id="purSwiper" imgUrls="{{imgUrls}}"></swiperImgs>
+  <view class="today-odds" tt:if="{{todaySpecialList.length > 0}}">
+      <view class="msg">
+        <text>今日特惠</text>
+        <i class="el-icon-arrow-right" catchtap="onRightArrowClick"></i>
+      </view>
+      <view class="content">
+        <view class="flex" tt:for="{{todaySpecialList}}" tt:for-item="v" tt:for-key="k"   
+        tt:key="{{k}}" catchtap="onTodayOddsClick" data-v="{{v}}" data-index="{{index}}" data-id="{{item.id}}">
+          <view class="price">￥{{v.price}} <text>/{{v.points}}积分换购</text></view>
+          <image src="{{v.mainImage}}" alt=""></image>
+          <view class="describe">{{v.goodsName}}</view>
+          <view class="btn">立即购买</view>
+        </view>
+      </view>
+      <view class="showTip" tt:if="{{todaySpecialList.length == 0}}">暂无数据</view>
+    </view>
+    <!-- 精品推荐 -->
+    <view class="recommend">
+      <view class="msg">
+        <text>精品推荐</text>
+        <i class="el-icon-arrow-right" catchtap="onRightArrowClick"></i>
+      </view>
+      <view class="content">
+        <view class="flexs"  tt:for="{{recommendList}}" tt:for-item="v" tt:for-key="k"   tt:key="{{k}}" catchtap="onRecommendClick" data-id="{{item.id}}" data-v="{{v}}">
+          <view class="items">
+            <image src="{{v.mainImage}}" ></image>
+            <view class="hr"></view>
+            <view class="points">
+              <text>{{v.points}}积分换购</text>
+              ￥{{v.price}}
+            </view>
+            <!-- <view class="title">{{v.goodsName}}</view> -->
+            <view class="name-box">
+              <view class="name">{{v.goodsName}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 加载更多 -->
+      <!-- <view class="load-more" tt:if="{{recommendList.length >= 10}}" catchtap="onLoadingClick">
+        <view class="more-box">
+          {{loadMoreTxt}}
+          <i class="el-icon-arrow-right" v-show="!isMoreLoading"></i>
+        </view>
+      </view> -->
+      <view class="showTip" tt:if="{{showNoMore && recommendList.length > 0}}">没有更多啦~</view>
+      <view class="showTip" tt:if="{{recommendList.length == 0}}">暂无数据</view>
+    </view>
+</view>
+<!-- <tabBar></tabBar> -->

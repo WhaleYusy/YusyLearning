@@ -1,0 +1,116 @@
+<!--pages/shoppingMall/component/pageDetail/pageDetail.wxml-->
+<shopNav></shopNav>
+<view class="productDetail">
+  <swiper id="purSwiper" imgUrls="{{goods.swiperImgUrlsEight}}"></swiper>
+  <view class="impurity-warp">
+    <view class="title">{{goods.info.goodsName}}</view>
+    <view class="price">
+      ￥{{goods.info.price}}
+      <del class="del" wx:if="goods.info.marketPrice !== null">￥{{goods.info.marketPrice}}</del>
+    </view>
+    <view class="points">{{goods.info.points}}积分换购</view>
+    <view class="info">
+      <view class="item">库存：{{goods.info.inventory}}</view>
+      <view class="item">浏览：{{goods.info.viewNum}}</view>
+      <view class="item">已售：{{goods.info.salesCount}}</view>
+    </view>
+  </view>
+
+  <!-- 属性选择 -->
+  <view class="sel-warp" wx:if="goods.info.inventory > 0 && goods.info.goodsSpec !== null">
+    <view class="left height">选择</view>
+    <view class="center" catchtap="onAttrPopupOpen">{{attrSelData.indexs !== undefined ? attrSelData.indexs : '请选择属性'}}</view>
+    <view class="right height">
+      <i class="el-icon-arrow-right"></i>
+    </view>
+  </view>
+
+  <!-- 属性选择弹窗 -->
+  <van-popup show="{{ show }}" bind:close="onClose"   position="bottom" class="attr-popup" >
+    <!-- <van-loading class="loading" size="35px" color="#0303fe" wx:if="{{isLoading}}" /> -->
+    <block v-else >
+      <view class="top">
+        <view class="details">
+          <view class="left">
+            <image src="{{initGoods.mainImage}}" alt=""></image>
+            <!-- <img src="../../../../img/s2.jpg" alt=""> -->
+          </view>
+          <view class="right">
+            <view class="box">
+              <view class="price margin">
+                ￥{{initGoods.price}}<del class="del" wx:if="{{initGoods.marketPrice !== null}}">￥{{initGoods.marketPrice}}</del>
+              </view>
+              <view class="points margin">{{initGoods.points}}积分换购</view>
+              <view class="stock margin">库存 {{initGoods.inventory}} 件</view>
+              <view class="sel">已选 {{attrSelData.indexs === undefined ? '规格属性不可用' : attrSelData.indexs}}</view>
+            </view>
+          </view>
+          <view class="close" catchtap="onArrtPopupClose">
+            <i class="el-icon-close"></i>
+          </view>
+        </view>
+        <view class="info-box">
+          <view class="box" wx:for="{{goodsSpec}}"wx:for-item="val" wx:key="index">
+            <view class="title">{{val.specName}}</view>
+            <view class="flex">
+            <!-- 属性选择 -->
+              <view wx:for="{{val.attrList}}"  wx:for-item="v" wx:for-key="k" wx:key="k" class=" item {{v.selected === true ? 'item-active' : ''}}" wx:for-index="index2"  catchtap="onHandlerClick" data-val="{{val}}" data-key="{{index}}" data-v="{{v}}" data-k="{{index2}}">{{v.attrName}}</view>
+            </view>
+          </view>
+          <view class="box">
+            <view class="stepper">
+              <view class="stepper-title">购买数量</view>
+              <van-stepper value="{{attrStepperNum}}" bindchange='change'  integer :min="1" :max="100" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bottom" wx:if="{{!isAttrClick}}">
+      <!-- onAddToCart -->
+        <view class="item-box item-btn1" catchtap="onAddToCart">加入购物车</view>
+        <view class="item-box item-btn2" catchtap="onPayClick">立即购买</view>
+      </view>
+      <view class="bottom" wx:if="{{isAttrClick}}">
+        <view class="item-box item-btn3" catchtap="onAddToCart">确认</view>
+      </view>
+    </block>
+  </van-popup>
+
+  <!-- 图文详情 -->
+  <view class="image-text-warp">
+    <view class="title">
+      <text>图文详情</text>
+    </view>
+    <view class="htmls">
+      <rich-text nodes="{{goods.info.detail}}"></rich-text>
+    </view>
+  </view>
+</view>
+<!-- 底部操作按钮 -->
+<view class="footer">
+  <view class="left footer-height">
+    <view class="left-box">
+      <button class="serviceButton" open-type="contact" style="background:none">
+        <van-icon class="serviceIcon" name="service" />
+        <view class="label">客服</view>
+      </button>
+    </view>
+    <!-- 这个客服可以是 -->
+    <!-- <button open-type='contact' session-from=''>客服</button>
+ -->
+    <view class="left-box" catchtap="collectionClick" >
+      <i class="iconfont icon {{isCollection ? 'iconaixin' : 'iconaixin_line' }} {{isCollection ? 'red' : ''}}  "></i>
+      <view class="label label2">{{isCollection ? '已收藏' : '未收藏'}}</view>
+    </view>
+  </view>
+  <view class="right footer-height">
+    <block wx:if="{{goods.info.inventory > 0 && goods.info.goodsSpec !== null}}">
+      <view class="item item1" catchtap="onGoToCart">加入购物车</view>
+      <view class="item item2" catchtap="onPayClick">立即购买</view>
+    </block>
+    <block wx:else>
+      <view class="item item1 disabled-bg">加入购物车</view>
+      <view class="item item2 disabled-bg">立即购买</view>
+    </block>
+  </view>
+</view>

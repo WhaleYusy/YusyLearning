@@ -1,0 +1,164 @@
+/* pages/shoppingMall/component/my/index/myIndex.wxss */
+.myContent{
+  margin-top:70rpx;
+  margin-bottom: 140rpx;
+}
+.mall-my {
+  position: relative;
+  min-height: 90vh;
+}
+.mall-my .user-warp {
+  width: 100%;
+  height: 300rpx;
+  box-sizing: border-box;
+  /* background-image: url("../../../assets/shoppingMall/mySvg/my-bg.jpg"); */
+  background: url('http://qiniuoss.822644.com/wxPic/20191126/768097231893991424.blob');
+  background-size: 100% 100%;
+  padding: 28rpx;
+}
+.mall-my .user-warp .info {
+  display: flex;
+  margin-top: 30rpx;
+}
+.mall-my .user-warp .info .left image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 100%;
+}
+.mall-my .user-warp .info .right {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.mall-my .user-warp .info .right .user-box {
+  color: #dee2fd;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mall-my .user-warp .info .right .user-box .user-name {
+  box-sizing: border-box;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 32rpx;
+  width: 85%;
+}
+.mall-my .user-warp .info .right .user-box .user-points {
+  font-size: 28rpx;
+  margin-top: 18rpx;
+}
+.mall-my .menu-warp {
+  margin-top: -40rpx;
+  padding: 0 28rpx;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.mall-my .menu-warp .order {
+  background: white;
+  box-shadow: 0rpx 3rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+  height: 302rpx;
+  border-radius: 10rpx;
+  width: 100%;
+}
+.mall-my .menu-warp .order .order-title {
+  width: 100%;
+  height: 86rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.mall-my .menu-warp .order .order-title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1rpx;
+  left: 0;
+  bottom: 0;
+  background: #e6e6e6;
+  transform: scaleY(0.5);
+}
+.mall-my .menu-warp .order .order-title .msg {
+  text-align: left;
+  flex: 1;
+}
+.mall-my .menu-warp .order .order-title .all {
+  text-align: right;
+  flex: 1;
+  color: #666666;
+}
+.mall-my .menu-warp .order .nav {
+  display: flex;
+  justify-content: space-around;
+  height: 222rpx;
+  align-items: center;
+  box-sizing: border-box;
+}
+.mall-my .menu-warp .order .nav .icon {
+  background: #f7f7f7;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+.mall-my .menu-warp .order .nav .icon image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.mall-my .menu-warp .order .nav .lable {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  text-align: center;
+}
+.mall-my .menu-warp .menu {
+  background: white;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 3rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+  margin: 20rpx 0;
+}
+.mall-my .menu-warp .menu .box {
+  display: flex;
+  height: 86rpx;
+  font-size: 28rpx;
+  align-items: center;
+  padding: 0 30rpx;
+  color: #1a1a1a;
+}
+.mall-my .menu-warp .menu .box .left {
+  text-align: left;
+  flex: 1;
+}
+.mall-my .menu-warp .menu .box .icon {
+  width: 50rpx;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.mall-my .menu-warp .menu .box .icon i {
+  color: #666666;
+}
+.mall-my .menu-warp .menu .bottom-border {
+  position: relative;
+}
+.mall-my .menu-warp .menu .bottom-border::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1rpx;
+  left: 0;
+  bottom: 0;
+  background: #e6e6e6;
+  transform: scaleY(0.5);
+}
+
+/*# sourceMappingURL=myIndex.css.map */

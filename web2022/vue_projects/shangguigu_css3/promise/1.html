@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // function Fn () {}
+      // const fn = new Fn()
+      // console.log(Fn.prototype)
+      // 1、同步回调函数
+      // const arr = [1, 3, 5]
+      // arr.forEach(item => {
+      //   //遍历的回调函数，同步回调函数，不会放入队列
+      //   console.log(item)
+      // })
+      // console.log('forEach()之后')
+
+      // 2、异步回调函数，会放入队列中将来执行
+      // setTimeout(() => {
+      //   console.log('setTimeout')
+      // }, 0)
+      // console.log('setTimeout()之后')
+
+      //引用的变量不存在
+      // console.log(a) //Uncaught TypeError: Cannot read property 'xxx' of undefined
+      // console.log('123456') //没有捕获error，下面代码不会执行
+
+      //数据类型不正确
+      // let b
+      // console.log(b.xxx)  //Uncaught TypeError: Cannot read property 'xxx' of undefined
+
+      //数据值不在其所允许得范围内
+      // function fn () {
+      //   fn()
+      // }
+      // fn() //RangeError: Maximum call stack size exceeded
+
+      //语法错误
+      // const c = """"   //Uncaught SyntaxError: Unexpected string
+
+      //错误处理
+      // try {
+      //   let d
+      //   console.log(d.xxx)
+      // } catch (error) {
+      //   console.log(error.message)
+      //   console.log(error.stack)
+      // }
+      // console.log('出错之后')
+
+      function something () {
+        if (Date.now() % 2 === 1) {
+          console.log('当前时间为基数，可以执行')
+        } else {
+          throw new Error('当前时间为偶数，无法执行')
+        }
+      }
+      try {
+        something()
+      } catch (error) {
+        console.log(error.message)
+      }
+    </script>
+  </body>
+</html>

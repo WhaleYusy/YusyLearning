@@ -1,0 +1,59 @@
+<!--pages/purchase/component/otherNeed/otherNeddDetail/otherNeedDetail.ttml-->
+<view class="otherNeddDetailContent">
+    <view class="otherNeedDetail">
+      <swiperImgs class="swiper"  id="purSwiper" imgUrls="{{swperInfoList}}"></swiperImgs>
+      <view class="purchaseProductItem cardItem" >
+          <!-- <view class="left_side">
+              <img :src="otherNeedDetail.imgUrl" alt class="mainImg"/>
+              <button catchtap="toContact" class="contact_btn">沟通</button>
+          </view> -->
+          <view class="leftMesg">
+              <h3 class="mesgTitle">{{otherNeedDetail.title}}</h3>
+              <p class="mesgItem">
+                  <!-- <text class="mesgItemTitle">日期：</text> -->
+                  <text class="mesgItemContent">{{otherNeedDetail.comName}}</text>
+              </p>
+
+              <view class="mesgItem">
+                <text class="mesgItemInLine">
+                    <text class="mesgItemTitle">公司名称：{{otherNeedDetail.company}}</text>
+                </text>
+              </view>
+
+              <view class="mesgItem">
+                <text class="mesgItemInLine">
+                    <text class="mesgItemTitle">招聘人数：</text>
+                    <text class="mesgItemContent">{{otherNeedDetail.recruitmentPersons}}人</text>
+                </text>
+              </view>
+
+              <p class="mesgItem mesgItem-flex">
+                  <text class="mesgItemTitle">工作地点：</text>
+                  <text class="mesgItemContent">{{otherNeedDetail.workAddress}}</text>
+              </p>
+              <p class="mesgItem mesgItem-flex">
+                  <text class="mesgItemTitle">生产产品：</text>
+                  <text class="mesgItemContent">{{otherNeedDetail.product}}</text>
+              </p>
+              <text class="tag">{{otherNeedDetail.salary}}</text>
+          </view>
+      </view>
+      <view class="require cardItem">
+            <h3 class="mesgTitle">职位要求：</h3>
+            <p class="mesgItem">
+                <!-- <text class="mesgItemTitle">日期：</text> -->
+                <!-- <text class="mesgItemContent">{{otherNeedDetail.require}}</text> -->
+                <rich-text nodes="{{otherNeedDetail.remark}}"></rich-text>
+            </p>
+      </view>
+      <view class="shouledDo cardItem">
+           <h3 class="mesgTitle">岗位职责：</h3>
+            <p class="mesgItem">
+                <!-- <text class="mesgItemTitle">日期：</text> -->
+                <!-- <text class="mesgItemContent">{{otherNeedDetail.shouldDo}}</text> -->
+                <rich-text nodes="{{otherNeedDetail.jobRemark}}"></rich-text>
+            </p>
+      </view>
+  </view>
+</view>
+<tabBar></tabBar>

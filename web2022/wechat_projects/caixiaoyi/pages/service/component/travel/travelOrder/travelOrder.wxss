@@ -1,0 +1,119 @@
+/* pages/service/travelOrder/travelOrder.wxss */
+.travel-nav{
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  position: relative;
+  margin: 20rpx 0;
+}
+.travel-nav-a{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom:0;
+  padding: 0 20rpx;
+  margin: auto;
+}
+.t-red{
+  color:red;
+}
+.travelo-all{
+  padding:0;
+  margin:10rpx 0;
+}
+.travelo-con{
+  padding: 20rpx;
+  background: #f7f7f7;
+}
+#travelCalendar{
+  height: 800rpx;
+}
+.travelo-conmain{
+  background: #fff;
+  margin: 20rpx 0;
+  padding: 20rpx ;
+}
+.travelo-cmt{
+  color: gray;
+  font-size: 22rpx;
+  margin-bottom: 20rpx;
+}
+.travel-cmc{
+  display: flex;
+  align-items:center;
+  font-size:28rpx;
+}
+.travel-cmc image{
+   width:200rpx;
+   height:150rpx; 
+}
+.travel-cmct{
+  margin: 0 20rpx;
+  padding-bottom: 40rpx;
+font-size: 28rpx;
+letter-spacing: 2rpx;
+}
+.travel-cmct .cmct1{
+  font-size: 22rpx;
+}
+.travelo-amnum{
+  background: #fff;
+  padding: 20rpx ;
+  margin: 20rpx 0;
+  font-size: 28rpx;
+}
+.travelo-adult{
+  margin:20rpx 0;
+}
+.travelo-adult,.travelo-chlid{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.travelo-acl{
+  display: flex;
+  align-items: center;
+}
+.travelo-points{
+  background: #fff;
+  padding: 20rpx ;
+  position: relative;
+  font-size:28rpx;
+}
+.travelo-pt1{
+  font-size: 24rpx;
+}
+.travelo-pt2{
+  font-size: 28rpx;
+  font-weight: 600;
+  color: red;
+}
+.travelo-nextStep{
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  width: 160rpx;
+  font-size: 30rpx;
+  padding: 8rpx 0;
+  border-radius: 50rpx;
+  background: #0004f9;
+  color: #fff;
+  text-align: center;
+}
+/* 兼容van-stepper大页面的大小 */
+.van-stepper__minus,.van-stepper__plus{
+  width: 56rpx!important;
+  height: 56rpx!important;
+  padding: 10rpx!important;
+  margin: 2rpx!important;
+
+}
+.van-stepper__input{
+  width: 60rpx!important;
+height: 52rpx!important;
+padding: 2rpx!important;
+margin: 2rpx!important;
+font-size: 28rpx!important;
+border-width: 2rpx 0!important;
+
+}

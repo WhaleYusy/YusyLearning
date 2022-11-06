@@ -1,0 +1,121 @@
+<!--pages/service/component/vote/voteIndex/voteIndex.ttml-->
+<swiperImgs id="purSwiper" imgUrls="{{imgUrls}}"></swiperImgs>
+<view class="voteIndexContent">
+  <!-- 投票列表 -->
+  <view class="total_line">
+      <ul class="total_line_ul">
+        <li class="total_line_li">
+          <text>参与选手</text>
+          <text>{{findVoteAction.participantCount}}</text>
+        </li>
+        <li class="total_line_li">
+          <text>累计投票</text>
+          <text>{{findVoteAction.voteCount}}</text>
+        </li>
+        <li class="total_line_li">
+          <text>访问量</text>
+          <text>{{findVoteAction.viewNum}}</text>
+        </li>
+      </ul>
+    </view>
+    <view class="date_line">
+      <i class="iconfont icon-shizhong"></i>
+      投票时间：{{findVoteAction.actionStartTime}} 到 {{findVoteAction.actionEndTime}}
+      <view tt:if="{{findVoteAction.status == 1}}"  class="pro-status">未开始</view>
+      <view tt:if="{{findVoteAction.status == 2}}"  class="pro-status ing">进行中</view>
+      <view tt:if="{{findVoteAction.status == 3}}"  class="pro-status">已结束</view>
+    </view>
+    <view class="date_lines" catchtap="onFollow" tt:if="{{isShowBtn == 0}}">
+      <text>【马上关注公众号】</text>，每日可投票10次
+      <p>快给您心仪的选手投更多的票吧</p>
+    </view>
+    <view class="search_line">
+      <input type="text" placeholder="请输入名称" class="search_inp" maxlength="18" value="{{themeInfoParam.search}}" bindinput="searchInput" />
+      <view class="search_btn" catchtap="onSearch">
+        搜索
+      </view>
+    </view>
+    <view class="btn_line">
+      <text catchtap="goToReward">规则/奖品</text>
+      <text catchtap="goToRankingList">比赛排名</text>
+      <text catchtap="goToApply" data-status="{{findVoteAction.status}}">我要报名</text>
+    </view>
+    <!-- <view class="select_tab_line">
+      <button
+        v-for="(item,index) in btnList"
+        :class="active == index ? 'btn_active' : ''"
+        :key="index"
+        catchtap="selctTab(index)"
+      >{{item.name}}</button>
+    </!-->
+    <view class="list_conent">
+      <view class="cont_item" tt:for="{{voteList}}" :key="index">
+        <image src="{{item.voteMainImg}}" alt catchtap="previewImg(item.voteMainImg)" />
+        <p class="item_title">{{item.companyName}}</p>
+        <view class="msgs">
+          <view class="user">
+            <view>编号：{{item.voteCode}}号选手</view>
+            <view>选手：{{item.userName}}</view>
+            <view>籍贯：{{item.birthplace}}</view>
+            <view>格言：{{item.motto}}</view>
+          </view>
+        </view>
+        <!-- <view class="item_info" tt:if="{{item.status == 2}}">
+          <button catchtap="goToDetail(item)">投票</button>
+        </view>
+        <view class="item_info" tt:if="{{item.status == 1}}">
+          <button class="be-overdue">未开始</button>
+        </view>
+        <view class="item_info" tt:if="{{item.status == 3}}">
+          <button class="btn-details" catchtap="goToDetail(item)">详情</button>
+        </view> -->
+        <p class="item_no">
+          票数：
+          <text>{{item.voteNum}}</text>
+        </p>
+        <view class="content">
+          <text catchtap="toDetail" class="toDetail" data-item="{{item}}" tt:if="{{item.status == 3}}">详情</text>
+          <text class="toDetail" tt:if="{{item.status == 1}}">未开始</text>
+          <text class="toDetail" tt:if="{{item.status == 2}}" catchtap="toDetail" data-item="{{item}}" data-vote="vote">投票</text>
+        </view>
+      </view>
+      <view tt:if="{{voteList.length == 0}}" class="showNoMore">
+        暂无数据
+      </view>
+    </view>
+    <view class="no-search" tt:if="{{isShowMoreBtn}}">没有更多了</view>
+    <view class="more-btn-box" tt:if="{{voteList.length >= 10 && !isShowMoreBtn}}">
+      <!-- <el-button type="primary" :loading="btnLoading" class="more-btn" catchtap="onLoadMore">{{btnLoadingTxt}}</el-button> -->
+      <text>{{btnLoadingTxt}}</text>
+    </view>
+
+    <!-- 公众号关注弹窗 -->
+    <view class="mb" tt:if="{{isShow}}" catchtap="onCloseClick"></view>
+    <view class="popup" tt:if="{{isShow}}">
+      <view class="ad">采购，爱上【采销易】</view>
+      <image src="{{qrCodeImg}}" alt catchtap="previewImg(qrCodeImg)" class="popup-img" />
+      <view class="close" catchtap="onCloseClick">X</view>
+      <view class="ad-title">关注公众号，及时获取最新需求消息，记得关注哟~</view>
+    </view>
+
+    <!-- 检测是否刷票 -->
+    <view class="mb" tt:if="{{isBrush}}"></view>
+    <view class="brush-ticket" tt:if="{{isBrush}}">
+      <view class="b-title">系统提示</view>
+      <!-- <img src="../../../assets/brush.png" alt class="b-img" /> -->
+      <image src="http://qiniuoss.822644.com/wxPic/20191127/768755294846095360.gif" alt class="b-img" />
+      <view class="b-content">系统正在检测是否有刷票行为</view>
+      <view class="b-footer">找供应商，找客户，爱上【采销易】</view>
+      <view class="b-code">
+        <view class="b-c-l">
+          <p>人脉是最宝贵的资源</p>
+          <p>欢迎加入【万盟商城】</p>
+        </view>
+        <view class="b-c-r">
+        <!-- catchtap="previewImg(wmQrCode)"  -->
+          <image src="http://qiniuoss.822644.com/wxPic/20191127/768753603954380800.png" alt catchtap="imgView" data-img="http://qiniuoss.822644.com/wxPic/20191127/768753603954380800.png" ></image>
+        </view>
+      </view>
+    </view>
+</view>
+<tabBar></tabBar>

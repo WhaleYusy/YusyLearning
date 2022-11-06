@@ -1,0 +1,80 @@
+.mc-bg{
+  height: 400rpx;
+}
+.mc-bg image{
+  height: 100%;
+  width: 100%;
+}
+.mc-block{
+  background: #fff;
+  position: relative;
+}
+.mc-blocka{
+  position: absolute;
+  width: 600rpx;
+  padding: 20rpx;
+  top: -50rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: 60rpx;
+  background: #fff;
+  border:4rpx solid #f6f6f6;
+  z-index: 9999;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+.mc-blockh{
+  display: flex;
+  justify-items: center;
+}
+.mc-blockh image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.mc-blockhc{
+  flex: 1;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.mc-blockhl{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 24rpx;
+}
+.mc-blockhlt{
+  font-size: 32rpx;
+  padding: 0 10rpx;
+}
+.mc-blockc{
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+.mc-blockf{
+  padding: 40rpx 0;
+}
+.mc-blockfh{
+  font-size: 30rpx;
+  display: flex;
+  padding-bottom: 20rpx;
+  align-items: center;
+}
+.mc-blockfh image{
+  width: 10rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.mc-blockfht{
+  letter-spacing: 6rpx;
+}
+.mc-blockff{
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+}
+.mc-blockfr{
+  height: 80rpx;
+  width: 100%;
+}

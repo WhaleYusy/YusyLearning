@@ -1,0 +1,244 @@
+#map{
+  width: 100%;
+  height: 600rpx;
+}
+.mbe-main{
+  padding-bottom: 140rpx;
+}
+.mbe-title{
+  display: flex;
+  background: #fff;
+}
+.mbe-title text{
+  font-size: 28rpx;
+  line-height: 56rpx;
+}
+.mbe-last{
+  padding: 10rpx 20rpx;
+}
+.mbe-nes{
+  color: red;
+}
+.mbe-nes-n{
+  color: #fff;
+}
+.mbe-1{
+  margin: 10rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.mbe-1 label{
+  height: 40rpx;
+  width: 100%;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #9a9a9a;
+}
+.mbe-2{
+  display: flex;
+  height: 100rpx;
+}
+.mbe-2 label{
+  width: 200rpx;
+  font-size: 28rpx;
+}
+.mbe-2 .van-radio{
+ margin: 0 20rpx;
+  font-size: 24rpx;
+}
+.mbe-3{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  font-size: 28rpx;
+}
+.mbe-3 label{
+  margin-right: 200rpx;
+}
+.mbe-4{
+  display: flex;
+  height: 80rpx;
+  color: #9a9a9a;
+  align-items: center;
+  font-size: 28rpx;
+}
+.mbe-4 label{
+  margin-right: 200rpx;
+}
+.mbe-5{
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+  border-bottom: 2rpx solid #e0e2e4;
+}
+.mbe-5 label{
+  width: 160rpx;
+  margin-right: 80rpx;
+  font-size: 28rpx;
+}
+.mbe-5 input{
+  font-size: 24rpx;
+  color: #606266;
+}
+.mbe-6{
+  display: flex;
+  flex-direction: column;
+}
+.mbe-6 label{
+  width: 160rpx;
+  margin: 20rpx 0;
+  color: #9a9a9a;
+  font-size: 28rpx;
+}
+.mbe-6 textarea{
+  margin: 10rpx 0;
+  font-size: 26rpx;
+  border: 2rpx solid #e0e2e4;
+}
+.mbe-7{
+  border-top: 2rpx solid #030CF9;
+  color: #030CF9;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 10rpx;
+}
+.product-li{
+  display: inline-block;
+    width: 200rpx;
+    height: 80rpx;
+    background: #f7f7f7;
+    margin-right: 20rpx;
+    margin-bottom: 15rpx;
+    font-size: 24rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    color: #696b6f;
+}
+.product-li2{
+    display: inline-block;
+    width: 670rpx;
+    height: 80rpx;
+    background: #f7f7f7;
+    margin-right: 20rpx;
+    margin-bottom: 15rpx;
+    font-size: 24rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    color: #696b6f;
+}
+.product-li21{
+  background: #fff;
+}
+.product-li3{
+     display: inline-block;
+    width: 210rpx;
+    height: 80rpx;
+    background: #f7f7f7;
+    margin-right: 20rpx;
+    margin-bottom: 15rpx;
+    font-size: 24rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box; 
+    color: #696b6f;
+}
+.imgUoload,.imgUoload2{
+  display: flex;
+  border-top: 2rpx solid #9a9a9a;
+}
+.imgUoload image{
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 10rpx;
+}
+.imgUoload2 image{
+  margin-top: 10rpx;
+  width: 250rpx;
+  height: 150rpx;
+}
+.imgUpload{
+  height: 50rpx;
+  width: 220rpx;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  padding: 10rpx;
+}
+.mbe-content{
+  padding: 20rpx;
+}
+.identify0{
+  font-size: 26rpx;
+  color: red;
+}
+.identify1{
+  font-size: 26rpx;
+  margin:10rpx 16rpx;
+  color: #b8b8b8;
+}
+.identify2{
+  font-size: 24rpx;
+  color: #606266;
+  background: #f7f7f7;
+}
+.identify2 input{
+  height: 75rpx;
+  padding: 0 15rpx;
+}
+.btn-line{
+  width: 600rpx!important;
+  margin: 30rpx auto;
+  height: 80rpx;
+  background: #030CF9;
+  border-radius: 30rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 0;
+  line-height: 80rpx;
+  min-height: 80rpx!important;
+  letter-spacing: 8rpx;
+}
+.catoLayer{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  background:rgba(0,0,0,0.5);
+  z-index:500;
+}
+.catoLayer .fir{
+  display:flex;
+  flex-direction: column;
+  background:white;
+  width:350rpx;
+  height: calc(100vh - 96rpx);
+  font-size:26rpx;
+  overflow-y: auto;
+  position: relative;
+  border-right:2rpx solid #f8f8f8;
+  box-sizing: border-box;
+}
+.catoLayer  .fir .firli{
+  /* border-bottom:2rpx solid #e8e8e8; */
+  text-align: center;
+  height:60rpx;
+  line-height:60rpx;
+}
+.catoLayer .sec{
+  position: fixed;
+  left:350rpx;
+  top:55rpx;
+  background:white;
+  width:350rpx;
+  color:#333333;
+  display:flex;
+  flex-direction: column;
+  background:white;
+  height:calc(100vh - 150rpx);
+  font-size:26rpx;
+  overflow-y: auto;
+}
+.active-class{
+  color:#3A8BEE !important;
+}
