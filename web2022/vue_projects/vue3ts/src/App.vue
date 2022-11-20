@@ -1,6 +1,19 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+const text = ref("");
+const h11 = () => {
+  console.log("h11");
+};
+const h22 = (id?: string) => {
+  console.log("h22", id);
+  text.value += id;
+};
+const hello1 = ref();
+onMounted(() => {
+  console.log(hello1.value);
+});
 </script>
 
 <template>
@@ -14,8 +27,8 @@ import HelloWorld from "./components/HelloWorld.vue";
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <HelloWorld ref="hello1" msg="You did it!" @h11="h11" @h22="h22" />
+      <p>{{ text }}</p>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
