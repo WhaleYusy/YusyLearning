@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 const text = ref("");
@@ -11,6 +11,10 @@ const h22 = (id?: string) => {
   text.value += id;
 };
 const hello1 = ref();
+watch(text, (value) => {
+  console.log(value);
+});
+const textDouble = computed(() => text.value + "!!!");
 onMounted(() => {
   console.log(hello1.value);
 });
@@ -29,6 +33,7 @@ onMounted(() => {
     <div class="wrapper">
       <HelloWorld ref="hello1" msg="You did it!" @h11="h11" @h22="h22" />
       <p>{{ text }}</p>
+      <p>{{ textDouble }}</p>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>

@@ -3,7 +3,7 @@ import { reactive, ref } from "vue";
 const props = withDefaults(
   defineProps<{
     msg: string;
-    title: number;
+    title?: number;
   }>(),
   {
     title: 100,
