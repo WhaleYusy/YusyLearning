@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, onMounted, ref, watch, watchEffect } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 const text = ref("");
@@ -15,6 +15,11 @@ watch(text, (value) => {
   console.log(value);
 });
 const textDouble = computed(() => text.value + "!!!");
+watchEffect(() => {
+  const text2 = text.value;
+  console.log("text变了");
+  console.error(text2);
+});
 onMounted(() => {
   console.log(hello1.value);
 });

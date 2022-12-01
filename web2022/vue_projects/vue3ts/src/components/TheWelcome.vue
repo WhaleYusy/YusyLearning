@@ -5,6 +5,29 @@ import ToolingIcon from "./icons/IconTooling.vue";
 import EcosystemIcon from "./icons/IconEcosystem.vue";
 import CommunityIcon from "./icons/IconCommunity.vue";
 import SupportIcon from "./icons/IconSupport.vue";
+import { inject, reactive, toRefs } from "vue";
+const data = reactive({
+  name: "RNGYusy",
+  age: 28,
+  sex: true,
+  child: [
+    {
+      name: "jingjing",
+    },
+  ],
+  others: {
+    hobby: ["ball", "chess"],
+    level: 1,
+  },
+});
+const { name, age, sex, others } = toRefs(data);
+const changeName = () => {
+  data.name += "reactive";
+};
+const changeName2 = () => {
+  name.value += "ref";
+};
+console.log(inject("injectName"));
 </script>
 
 <template>
@@ -20,7 +43,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     >
     provides you with all information you need to get started.
   </WelcomeItem>
-
+  <p>{{ data }}</p>
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />
@@ -54,7 +77,8 @@ import SupportIcon from "./icons/IconSupport.vue";
 
     More instructions are available in <code>README.md</code>.
   </WelcomeItem>
-
+  <p>name:{{ name }},age:{{ age }},sex:{{ sex ? "男" : "女" }}</p>
+  <p>{{ others }}</p>
   <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
@@ -80,7 +104,8 @@ import SupportIcon from "./icons/IconSupport.vue";
     >
     a visit.
   </WelcomeItem>
-
+  <button @click="changeName">changeName</button>
+  <button @click="changeName2">changeName2</button>
   <WelcomeItem>
     <template #icon>
       <CommunityIcon />
