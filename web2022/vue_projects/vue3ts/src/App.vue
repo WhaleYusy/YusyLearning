@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import add from "./utils/run";
 import { computed, onMounted, ref, watch, watchEffect } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+
+add(1);
+add(1, 2, 3, 4, 5);
 const text = ref("");
 const h11 = () => {
   console.log("h11");
