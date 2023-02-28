@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var url1 = "https://www.ujob.com.cn/back/getpaymentstatisticsData?sDay=2018-10-01&eDay=2019-03-31&sDay1=undefined&eDay1=undefined&locationId=440600000000&graduates=0&analysisType=2&selects=undefined&education=0&industry=0&jobType=&sex=&nodeType=&interviewType=&workLife=0&schoolType=0&companyType=&educationId=&xType=2&jobFairChoice=undefined&personType=03&accountType=";
+	var url1 = "https://ujob.fsrlzy.cn/back/getpaymentstatisticsData?sDay=2018-10-01&eDay=2019-03-31&sDay1=undefined&eDay1=undefined&locationId=440600000000&graduates=0&analysisType=2&selects=undefined&education=0&industry=0&jobType=&sex=&nodeType=&interviewType=&workLife=0&schoolType=0&companyType=&educationId=&xType=2&jobFairChoice=undefined&personType=03&accountType=";
 	$.post(url1,{},function(data){
 		var datafd = data.dataMap;
 		var datafdk = Object.keys(datafd);
@@ -100,7 +100,7 @@ $(document).ready(function() {
 		
 	});
 
-	var url2 = "https://www.ujob.com.cn/back/getpaymentstatisticsData?sDay=2018-10-01&eDay=2019-03-31&sDay1=&eDay1=&locationId=440600000000&graduates=&analysisType=2&selects=undefined&education=0&industry=0&jobType=&sex=&nodeType=&interviewType=&workLife=0&schoolType=0&companyType=&educationId=&xType=5&jobFairChoice=&personType=0&accountType=";
+	var url2 = "https://ujob.fsrlzy.cn/back/getpaymentstatisticsData?sDay=2018-10-01&eDay=2019-03-31&sDay1=&eDay1=&locationId=440600000000&graduates=&analysisType=2&selects=undefined&education=0&industry=0&jobType=&sex=&nodeType=&interviewType=&workLife=0&schoolType=0&companyType=&educationId=&xType=5&jobFairChoice=&personType=0&accountType=";
 	$.post(url2,{},function(data){
 		var datafd = data.dataMap;
 		var datafdk = Object.keys(datafd);
@@ -168,7 +168,7 @@ $(document).ready(function() {
 		myChart.setOption(option);
 	});
 
-	var url3 = "https://www.ujob.com.cn/back/getRecommendResumeInfoData?sDay=2018-10-01&eDay=2019-03-31&sDay1=undefined&eDay1=undefined&locationId=440600000000&graduates=1&analysisType=&selects=0&education=undefined&industry=undefined&jobType=undefined&sex=undefined&nodeType=&interviewType=&workLife=&schoolType=&companyType=&educationId=&xType=1&jobFairChoice=undefined&personType=undefined&accountType=undefined";
+	var url3 = "https://ujob.fsrlzy.cn/back/getRecommendResumeInfoData?sDay=2018-10-01&eDay=2019-03-31&sDay1=undefined&eDay1=undefined&locationId=440600000000&graduates=1&analysisType=&selects=0&education=undefined&industry=undefined&jobType=undefined&sex=undefined&nodeType=&interviewType=&workLife=&schoolType=&companyType=&educationId=&xType=1&jobFairChoice=undefined&personType=undefined&accountType=undefined";
 	$.post(url3,{},function(data){
 		var datafd = data.dataMap;
 		var datafdk = Object.keys(datafd);
@@ -215,7 +215,7 @@ $(document).ready(function() {
 		myChart.setOption(option);
 	});
 
-	var url4 = "https://www.ujob.com.cn/back/getSeekerStatisticsData?sDay=2018-10-01&eDay=2019-03-31&sDay1=&eDay1=&locationId=440600000000&graduates=&analysisType=&selects=undefined&education=undefined&industry=&jobType=&sex=&nodeType=&interviewType=&workLife=&schoolType=&companyType=&educationId=&xType=4&jobFairChoice=&personType=&accountType=1";
+	var url4 = "https://ujob.fsrlzy.cn/back/getSeekerStatisticsData?sDay=2018-10-01&eDay=2019-03-31&sDay1=&eDay1=&locationId=440600000000&graduates=&analysisType=&selects=undefined&education=undefined&industry=&jobType=&sex=&nodeType=&interviewType=&workLife=&schoolType=&companyType=&educationId=&xType=4&jobFairChoice=&personType=&accountType=1";
 	$.post(url4,{},function(data){
 		var datafd = data.dataMap;
 		var datafdk = Object.keys(datafd);
@@ -282,7 +282,7 @@ $(document).ready(function() {
 		// 使用刚指定的配置项和数据显示图表。
 		myChart.setOption(option);
 	});
-var url5 = "https://www.ujob.com.cn/back/getpaymentstatisticsData?sDay=2017-10-01&eDay=2018-03-31&sDay1=undefined&eDay1=undefined&locationId=440600000000&graduates=0&analysisType=2&selects=undefined&education=0&industry=0&jobType=&sex=&nodeType=&interviewType=&workLife=0&schoolType=0&companyType=&educationId=&xType=2&jobFairChoice=undefined&personType=03&accountType=";
+var url5 = "https://ujob.fsrlzy.cn/back/getpaymentstatisticsData?sDay=2017-10-01&eDay=2018-03-31&sDay1=undefined&eDay1=undefined&locationId=440600000000&graduates=0&analysisType=2&selects=undefined&education=0&industry=0&jobType=&sex=&nodeType=&interviewType=&workLife=0&schoolType=0&companyType=&educationId=&xType=2&jobFairChoice=undefined&personType=03&accountType=";
 	$.post(url5,{},function(data){
 		var datafd = data.dataMap;
 		var datafdk = Object.keys(datafd);
