@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TreeChart from "vue-tree-chart-3";
 import { reactive, ref } from "vue";
+import ChildView from "./ChildView.vue";
 
 const treeData = reactive({
   name: "余其彩",
@@ -104,6 +105,7 @@ const treeData = reactive({
   ],
 });
 const isTrue = ref(true);
+const textData = reactive({ age: 1, title: "yusy" });
 </script>
 
 <template>
@@ -112,6 +114,7 @@ const isTrue = ref(true);
     <span v-show="isTrue">哟哟哟</span>
     <button @click="isTrue = !isTrue">显示、隐藏</button>
   </main>
+  <ChildView :text="textData" />
 </template>
 <style scoped>
 span {
