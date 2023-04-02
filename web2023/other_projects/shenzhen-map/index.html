@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello world!</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style type="text/css">
+      #container {
+        /*地图(容器)显示大小*/
+        width: calc(100vw - 1px);
+        height: calc(100vh - 1px);
+      }
+    </style>
+    <!--引入Javascript API GL，参数说明参见下文-->
+    <script src="https://map.qq.com/api/gljs?v=1.exp&key=TCNBZ-MROKV-B6NP7-U37YF-QX6UZ-5HFTC"></script>
+    <script src="data.js"></script>
+    <script>
+      const xy = [22.610763, 114.199497];
+      //地图初始化函数，本例取名为init，开发者可根据实际情况定义
+      function initMap() {
+        //定义地图中心点坐标
+        var center = new TMap.LatLng(...xy);
+        //定义map变量，调用 TMap.Map() 构造函数创建地图
+        var map = new TMap.Map(document.getElementById("container"), {
+          center: center, //设置地图中心点坐标
+          zoom: 11.5, //设置地图缩放级别
+          // pitch: 43.5, //设置俯仰角
+          // rotation: 45, //设置地图旋转角度
+        });
+
+        var markerLayer = new TMap.MultiMarker({
+          map: map, //指定地图容器
+          //样式定义
+          styles: {
+            //创建一个styleId为"myStyle"的样式（styles的子属性名即为styleId）
+            myStyle: new TMap.MarkerStyle({
+              width: 15, // 点标记样式宽度（像素）
+              height: 21, // 点标记样式高度（像素）
+              // "src": '../img/marker.png',  //图片路径
+              // //焦点在图片中的像素位置，一般大头针类似形式的图片以针尖位置做为焦点，圆形点以圆心位置为焦点
+              // "anchor": { x: 16, y: 32 }
+            }),
+          },
+          //点标记数据数组
+          geometries: houseData.map((item, index) => {
+            return {
+              id: index,
+              styleId: "myStyle",
+              position: new TMap.LatLng(...item.xy),
+            };
+          }),
+          // [
+          //   {
+          //     id: "1", //点标记唯一标识，后续如果有删除、修改位置等操作，都需要此id
+          //     styleId: "myStyle", //指定样式id
+          //     position: new TMap.LatLng(22.593247, 113.84857), //点标记坐标位置
+          //     properties: {
+          //       //自定义属性
+          //       title: "marker1",
+          //     },
+          //   },
+          // ],
+        });
+        houseData.forEach((item, index) => {
+          //初始化infoWindow
+          var infoWindow = new TMap.InfoWindow({
+            map: map,
+            position: new TMap.LatLng(...item.xy),
+            offset: { x: 0, y: -32 }, //设置信息窗相对position偏移像素
+            content: `<div style="padding: 5px;background-color: #fff;border: 1px solid ${
+              houseColors[index % houseColors.length]
+            }">${item.source} ${item.price}</div>`,
+            enableCustom: true,
+          });
+        });
+      }
+    </script>
+  </head>
+  <!-- 页面载入后，调用init函数 -->
+  <body onload="initMap()">
+    <!-- 定义地图显示容器 -->
+    <div id="container"></div>
+  </body>
+</html>
