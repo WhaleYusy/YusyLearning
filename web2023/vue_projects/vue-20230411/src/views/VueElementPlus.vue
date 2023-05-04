@@ -1,12 +1,13 @@
-<script setup lang="ts">import { reactive } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue'
 
 const form = reactive({
   name: '',
-  sex: undefined,
+  sex: undefined
 })
 
 const showFormData = () => {
-  console.log(form);
+  console.log(form)
 }
 </script>
 
