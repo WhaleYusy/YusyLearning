@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
 </script>
 
 <template>
@@ -11,10 +13,11 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/axios">Axios</RouterLink>
-        <RouterLink to="/pinia">Pinia</RouterLink>
+        <RouterLink to="/">{{t('message.homeName')}}</RouterLink>
+        <RouterLink to="/about">{{t('message.aboutName')}}</RouterLink>
+        <RouterLink to="/axios">{{t('message.axiosName')}}</RouterLink>
+        <RouterLink to="/pinia">{{t('message.piniaName')}}</RouterLink>
+        <RouterLink to="/echarts">{{t('message.echartsName')}}</RouterLink>
       </nav>
     </div>
   </header>

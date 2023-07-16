@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useI18n } from "vue-i18n"
 
+const { locale } = useI18n()
+const changeLang = (lang: string) => {
+  locale.value = lang
+}
 defineProps<{
   msg: string
 }>()
-const lang = ref("")
+const lang = ref("en")
 const langs = [{
     key: 'en',
-    value: '英文',
+    value: '英语',
   },
   {
     key: 'zh',
-    value: '中文'
+    value: '汉语'
   }
 ]
 </script>
@@ -21,7 +26,7 @@ const langs = [{
     <h1 class="green">{{ msg }}</h1>
     <ElRow>
       <span>请选择语言：</span>
-      <ElSelect v-model="lang">
+      <ElSelect v-model="lang" @change="changeLang">
         <ElOption v-for="lang in langs" :key="lang.key" :label="lang.value" :value="lang.key"></ElOption>
       </ElSelect>
     </ElRow>

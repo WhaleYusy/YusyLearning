@@ -8,10 +8,19 @@ instance.interceptors.request.use(res => {
   return err
 })
 
-instance.interceptors.response.use(res => {
+instance.interceptors.response.use((res) => {
+  if(res.status >= 200 && res.status <= 299){
+    return {
+      code: 1,
+      data: res.data
+    }
+  }
   return res
 }, err => {
-  return err
+  return {
+    code: 0,
+    data: err
+  }
 })
 
 export const Get = (url: string, config?: AxiosRequestConfig) => {

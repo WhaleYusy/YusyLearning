@@ -8,5 +8,10 @@ export default [
     path: '/pinia',
     name: 'pinia',
     component: () => import('@/views/PiniaView.vue')
+  },
+  {
+    path: '/echarts',
+    name: 'echarts',
+    component: () => import('@/views/EchartsView.vue')
   }
 ]
