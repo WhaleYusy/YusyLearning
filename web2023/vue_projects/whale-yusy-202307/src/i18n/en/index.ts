@@ -5,5 +5,5 @@ export default {
     axiosName: 'Axios',
     piniaName: 'Pinia',
     echartsName: 'Echarts',
-  }
+  },
 }

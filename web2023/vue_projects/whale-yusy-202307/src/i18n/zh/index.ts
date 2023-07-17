@@ -4,6 +4,6 @@ export default {
     aboutName: 'About关于',
     axiosName: 'Axios接口',
     piniaName: 'Pinia缓存',
-    echartsName: 'Echarts图表'
-  }
+    echartsName: 'Echarts图表',
+  },
 }

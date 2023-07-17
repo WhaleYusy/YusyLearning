@@ -16,8 +16,8 @@ const langs = [{
   },
   {
     key: 'zh',
-    value: '汉语'
-  }
+    value: '汉语',
+  },
 ]
 </script>
 

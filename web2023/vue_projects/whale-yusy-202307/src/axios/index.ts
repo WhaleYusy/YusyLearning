@@ -13,14 +13,14 @@ instance.interceptors.response.use(res => instanceSuccess(res), err => instanceF
 const instanceSuccess:any = (res: any) => {
   return {
     code: 1,
-    data: res.data
+    data: res.data,
   }
 }
 
 const instanceFail = (err: any) => {
   return {
     code: 0,
-    data: err.message || '接口返回失败'
+    data: err.message || '接口返回失败',
   }
 }
 

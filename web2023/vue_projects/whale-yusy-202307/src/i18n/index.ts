@@ -8,8 +8,8 @@ const i18n = createI18n({
   locale: 'en',
   messages: {
     zh,
-    en
-  }
+    en,
+  },
 })
 
 export default i18n

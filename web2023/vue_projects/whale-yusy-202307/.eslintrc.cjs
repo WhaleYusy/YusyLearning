@@ -7,10 +7,10 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier/skip-formatting'
+    '@vue/eslint-config-prettier/skip-formatting',
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
   },
   rules: {
     'no-var': 2,  // 需要 let 或 const 而不是 var
@@ -27,5 +27,9 @@ module.exports = {
     'keyword-spacing': 2, // 在关键字前后强制使用一致的间距
     'no-trailing-spaces': 2, // 不允许在行尾尾随空格
     'key-spacing': 2, // 在对象字面属性中强制执行键和值之间的一致间距
-  }
+    'comma-dangle': [2, {
+      'objects': 'always-multiline',
+      'arrays': 'always-multiline',
+    }],  // 要求或禁止尾随逗号
+  },
 }

@@ -16,7 +16,7 @@ Get('https://jsonplaceholder.typicode.com/todos1').then(res => {
 
 Post('https://jsonplaceholder.typicode.com/posts', {
   title: 'foo',
-  completed: false
+  completed: false,
 }).then(res => {
   console.log(res)
 
@@ -25,7 +25,7 @@ Post('https://jsonplaceholder.typicode.com/posts', {
 })
 Post('https://jsonplaceholder.typicode.com/posts1', {
   title: 'foo',
-  completed: false
+  completed: false,
 }).then(res => {
   console.log(res)
 
