@@ -2,35 +2,35 @@
 import { Get, Post } from "@/axios"
 
 Get('https://jsonplaceholder.typicode.com/todos').then(res => {
-  console.log(res);
+  console.log(res)
   
 }).catch(err => {
-  console.log(err);
+  console.log(err)
 })
 Get('https://jsonplaceholder.typicode.com/todos1').then(res => {
-  console.log(res);
+  console.log(res)
   
 }).catch(err => {
-  console.log(err);
+  console.log(err)
 })
 
 Post('https://jsonplaceholder.typicode.com/posts', {
   title: 'foo',
   completed: false
 }).then(res => {
-  console.log(res);
+  console.log(res)
   
 }).catch(err => {
-  console.log(err);
+  console.log(err)
 })
 Post('https://jsonplaceholder.typicode.com/posts1', {
   title: 'foo',
   completed: false
 }).then(res => {
-  console.log(res);
+  console.log(res)
   
 }).catch(err => {
-  console.log(err);
+  console.log(err)
 })
 </script>
 
