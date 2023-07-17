@@ -8,20 +8,21 @@ instance.interceptors.request.use(res => {
   return err
 })
 
-instance.interceptors.response.use((res) => {
-  if(res.status >= 200 && res.status <= 299){
-    return {
-      code: 1,
-      data: res.data
-    }
+instance.interceptors.response.use(res => instanceSuccess(res), err => instanceFail(err))
+
+const instanceSuccess:any = (res: any) => {
+  return {
+    code: 1,
+    data: res.data
   }
-  return res
-}, err => {
+}
+
+const instanceFail = (err: any) => {
   return {
     code: 0,
-    data: err
+    data: err.message || '接口返回失败'
   }
-})
+}
 
 export const Get = (url: string, config?: AxiosRequestConfig) => {
   return instance.get(url, config)
