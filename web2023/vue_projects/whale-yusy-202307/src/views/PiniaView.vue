@@ -13,7 +13,7 @@ const { increment } = store
  */ 
 
 const interval = () => {
-  if(count.value >= 10) return
+  if (count.value >= 10) return
   increment()
   store.count++
 }

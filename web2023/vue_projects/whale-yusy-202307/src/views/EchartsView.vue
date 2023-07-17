@@ -5,7 +5,7 @@ import { onMounted } from 'vue'
 onMounted(() => {
   // 基于准备好的dom，初始化echarts实例
   const main = document.getElementById('main')
-  if(main) {
+  if (main) {
     const myChart = echarts.init(main)
     // 绘制图表
     myChart.setOption({

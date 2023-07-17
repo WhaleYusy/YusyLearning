@@ -22,5 +22,8 @@ module.exports = {
     'space-before-blocks': 2, // 在块之前强制执行一致的间距
     'space-infix-ops': 2, // 要求中缀运算符周围有间距
     'object-curly-spacing': [2, 'always'], // 在大括号内强制执行一致的间距
+    'space-before-function-paren': 2, // 在 function 定义左括号之前强制执行一致的间距
+    // 'no-unused-vars': 2,  // 禁止未使用的变量(ts也有检测，不过是warning)
+    'keyword-spacing': 2, // 在关键字前后强制使用一致的间距
   }
 }
