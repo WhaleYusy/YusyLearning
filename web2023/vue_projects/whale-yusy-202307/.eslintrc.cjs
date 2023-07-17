@@ -18,5 +18,7 @@ module.exports = {
     'semi': [2, 'never'], // 要求或禁止使用分号而不是 ASI
     'arrow-spacing': 2, // 在箭头函数中的箭头前后强制执行一致的间距
     'spaced-comment': 2,  // 在注释中的 // 或 /* 之后强制执行一致的间距
+    'comma-spacing': 2, // 在逗号前后强制执行一致的间距
+    'space-before-blocks': 2, // 在块之前强制执行一致的间距
   }
 }
