@@ -25,5 +25,7 @@ module.exports = {
     'space-before-function-paren': 2, // 在 function 定义左括号之前强制执行一致的间距
     // 'no-unused-vars': 2,  // 禁止未使用的变量(ts也有检测，不过是warning)
     'keyword-spacing': 2, // 在关键字前后强制使用一致的间距
+    'no-trailing-spaces': 2, // 不允许在行尾尾随空格
+    'key-spacing': 2, // 在对象字面属性中强制执行键和值之间的一致间距
   }
 }

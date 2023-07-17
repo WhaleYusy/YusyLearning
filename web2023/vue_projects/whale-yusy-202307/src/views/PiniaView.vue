@@ -10,7 +10,7 @@ const { increment } = store
 
 /**
  *count加3
- */ 
+ */
 
 const interval = () => {
   if (count.value >= 10) return
