@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {useCounterStore} from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter'
 import { storeToRefs } from 'pinia'
 const store = useCounterStore()
-const {count, doubleCount} = storeToRefs(store)
-const {increment} = store
+const { count, doubleCount } = storeToRefs(store)
+const { increment } = store
 // count加1
 
 /** count加2*/

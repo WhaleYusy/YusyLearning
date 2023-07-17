@@ -20,5 +20,7 @@ module.exports = {
     'spaced-comment': 2,  // 在注释中的 // 或 /* 之后强制执行一致的间距
     'comma-spacing': 2, // 在逗号前后强制执行一致的间距
     'space-before-blocks': 2, // 在块之前强制执行一致的间距
+    'space-infix-ops': 2, // 要求中缀运算符周围有间距
+    'object-curly-spacing': [2, 'always'], // 在大括号内强制执行一致的间距
   }
 }
