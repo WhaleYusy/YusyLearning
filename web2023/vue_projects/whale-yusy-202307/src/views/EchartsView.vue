@@ -6,7 +6,7 @@ onMounted(() => {
   // 基于准备好的dom，初始化echarts实例
   const main = document.getElementById('main')
   if(main){
-    let myChart = echarts.init(main);
+    const myChart = echarts.init(main);
     // 绘制图表
     myChart.setOption({
       title: {
