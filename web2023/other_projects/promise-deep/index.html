@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise Deep</title>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    const p1 = new Promise((resolve, reject) => { })
+    console.log(p1);  // 初始化 pending undefined
+
+    const p2 = new Promise((resolve, reject) => {
+      resolve('p2')
+    })
+    console.log(p2);  // 初始化成功 fulfilled  'p2'
+    const p4 = Promise.resolve('p4')
+    console.log(p4);  // 永远成功 fulfilled  'p4'
+
+    const p3 = new Promise((resolve, reject) => {
+      reject('p3')
+      // throw 'p3 throw'
+    })
+    console.log(p3);  // 初始化失败或者报错 rejected 'p3' / 'p3 throw'
+    const p5 = Promise.reject('p5')
+    console.log(p5);  // 永远失败 rejected 'p5'
+
+    const p11 = p1.then()
+    console.log(p11); // pending then 还是 pending undefined
+
+    const p12 = p1.then(resolve => {
+      console.log('p12 resolve', resolve);  // 状态为pending，不会输出
+    }, reject => {
+      console.log('p12 reject', reject);  // 状态为pending，不会输出
+    })
+    console.log(p12); // pending then 还是 pending undefined
+
+    const p21 = p2.then()
+    console.log(p21); // 成功  then不执行回调函数 还是成功 fulfilled 'p2'
+
+    const p22 = p2.then(resolve => {
+      console.log('p22 resolve', resolve);  // 状态为fulfilled，会输出
+      // return 'p22'
+      // return Promise.resolve('p22 resolve')
+      return Promise.reject('p22 reject')
+      // throw 'p22 throw'
+    }, reject => {
+      console.log('p22 reject', reject);  // 状态为fulfilled，不会输出
+    })
+    console.log(p22); // 成功 then 执行回调函数  fulfilled undefined / 'p22' / 'p22 resolve' ; rejected 'p22 reject' / 'p22 throw'
+
+    const p31 = p3.then()
+    console.log(p31); // 失败  then不执行回调函数 还是失败 rejected 'p3'
+
+    const p32 = p3.then(resolve => {
+      console.log('p32 resolve', resolve);  // 状态为rejected，不会输出
+    }, reject => {
+      console.log('p32 reject', reject);  // 状态为fulfilled，不会输出
+      // return 'p32'
+      return Promise.resolve('p32 resolve')
+      // return Promise.reject('p32 reject')
+      // throw 'p32 throw'
+    })
+    console.log(p32); // 成功 then 执行回调函数  fulfilled undefined / 'p32' / 'p32 resolve' ; rejected 'p32 reject' / 'p32 throw'
+
+    const p41 = p4.catch()
+    console.log(p41); // 永远成功 catch不执行回调函数 fulfilled  'p4'
+    const p42 = p4.catch(err => {
+      console.log('p42', err);  // catch只会抓取失败情况，不会输出
+    })
+    console.log(p42); // 永远成功 catch只针对失败情况，不执行回调函数 fulfilled  'p4'
+
+    const p51 = p5.catch()
+    console.log(p51); // 永远失败 catch不执行回调函数 rejected 'p5'
+    const p52 = p5.catch(err => {
+      console.log('p52', err);  // catch抓取失败情况，会输出、
+      // return 'p52'
+      // return Promise.resolve('p52 resolve')
+      // return Promise.reject('p52 reject')
+      throw 'p52 throw'
+    })
+    console.log(p52); // 永远失败 catch不执行回调函数 fulfilled undefined / 'p52' / 'p52 resolve' ; rejected 'p52 reject' / 'p52 throw'
+
+
+  </script>
+</body>
+
+</html>
