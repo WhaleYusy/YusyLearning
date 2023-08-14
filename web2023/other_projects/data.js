@@ -49,5 +49,15 @@ export default [{
   nameOther: `Inception`,
   year: 2010,
   releaseDate: `2010-07-16`
+},{
+  name: `楚门的世界`,
+  nameOther: `The Truman Show`,
+  year: 1998,
+  releaseDate: `1998-06-05`
+},{
+  name: '三傻大闹宝莱坞',
+  nameOther: `3 Idiots`,
+  year: 2009,
+  releaseDate: `2009-12-25`
 }]
 

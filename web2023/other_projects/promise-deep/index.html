@@ -84,7 +84,14 @@
     })
     console.log(p52); // 永远失败 catch不执行回调函数 fulfilled undefined / 'p52' / 'p52 resolve' ; rejected 'p52 reject' / 'p52 throw'
 
-
+    const p6 = Promise.resolve().finally(() => {
+      console.log('p6');
+    })
+    console.log(p6);
+    const p61 = Promise.reject().finally(() => {
+      console.log('p61');
+    })
+    console.log(p61);
   </script>
 </body>
 
