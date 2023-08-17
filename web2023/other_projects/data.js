@@ -59,5 +59,15 @@ export default [{
   nameOther: `3 Idiots`,
   year: 2009,
   releaseDate: `2009-12-25`
+},{
+  name: '无名之辈',
+  nameOther: ``,
+  year: 2018,
+  releaseDate: `2018-11-16`
+},{
+  name: '名侦探柯南：黑铁的鱼影',
+  nameOther: `名探偵コナン 黒鉄の魚影`,
+  year: 2023,
+  releaseDate: `2023-04-14`
 }]
 
