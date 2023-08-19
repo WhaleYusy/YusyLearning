@@ -55,19 +55,24 @@ export default [{
   year: 1998,
   releaseDate: `1998-06-05`
 },{
-  name: '三傻大闹宝莱坞',
+  name: `三傻大闹宝莱坞`,
   nameOther: `3 Idiots`,
   year: 2009,
   releaseDate: `2009-12-25`
 },{
-  name: '无名之辈',
+  name: `无名之辈`,
   nameOther: ``,
   year: 2018,
   releaseDate: `2018-11-16`
 },{
-  name: '名侦探柯南：黑铁的鱼影',
+  name: `名侦探柯南：黑铁的鱼影`,
   nameOther: `名探偵コナン 黒鉄の魚影`,
   year: 2023,
   releaseDate: `2023-04-14`
+},{
+  name: `从你的全世界路过`,
+  nameOther: ``,
+  year: 2016,
+  releaseDate: `2016-09-29`
 }]
 
