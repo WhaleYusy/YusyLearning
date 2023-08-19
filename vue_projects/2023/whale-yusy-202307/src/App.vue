@@ -13,11 +13,11 @@ const { t } = useI18n()
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">{{t('message.homeName')}}</RouterLink>
-        <RouterLink to="/about">{{t('message.aboutName')}}</RouterLink>
-        <RouterLink to="/axios">{{t('message.axiosName')}}</RouterLink>
-        <RouterLink to="/pinia">{{t('message.piniaName')}}</RouterLink>
-        <RouterLink to="/echarts">{{t('message.echartsName')}}</RouterLink>
+        <RouterLink to="/">{{ t('message.homeName') }}</RouterLink>
+        <RouterLink to="/about">{{ t('message.aboutName') }}</RouterLink>
+        <RouterLink to="/axios">{{ t('message.axiosName') }}</RouterLink>
+        <RouterLink to="/pinia">{{ t('message.piniaName') }}</RouterLink>
+        <RouterLink to="/echarts">{{ t('message.echartsName') }}</RouterLink>
       </nav>
     </div>
   </header>
