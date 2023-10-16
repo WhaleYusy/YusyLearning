@@ -199,4 +199,47 @@ export default [
     year: 1993,
     releaseDate: `1993-07-01`,
   },
+  {
+    name: `超能陆战队`,
+    nameOther: `Big Hero 6`,
+    year: 2014,
+    releaseDate: `2014-10-23`,
+  },
+  {
+    name: `倩女幽魂`,
+    nameOther: ``,
+    year: 1987,
+    releaseDate: `1987-07-18`,
+  },
+  {
+    name: `釜山行`,
+    nameOther: `부산행`,
+    year: 2016,
+    releaseDate: `2016-05-13`,
+  },
+  {
+    name: `射雕英雄传之东成西就`,
+    nameOther: `射鵰英雄傳之東成西就`,
+    year: 1993,
+    releaseDate: `1993-02-05`,
+  },
+  {
+    name: `头号玩家`,
+    nameOther: `Ready Player One`,
+    year: 2018,
+    releaseDate: `2018-03-29`,
+  },
+  {
+    name: `色，戒`,
+    nameOther: `Ready Player One`,
+    year: 2007,
+    releaseDate: `2007-09-24`,
+  },
+  {
+    name: `碟中谍7：致命清算（上）`,
+    nameOther: `Mission: Impossible – Dead Reckoning Part One`,
+    year: 2023,
+    releaseDate: `2023-06-19`,
+  },
+  
 ];
