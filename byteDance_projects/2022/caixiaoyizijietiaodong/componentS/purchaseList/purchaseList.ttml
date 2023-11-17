@@ -1,7 +1,0 @@
-<!--componentS/purchaseList/purchaseList.ttml-->
-<view class="purchaseList" >
-  <view class="purchaseItem" tt:for="{{5}}" tt:key="{{index}}" catchtap="toDetail">
-    <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=568518704,3189834681&fm=26&gp=0.jpg" catchtap="imgClick"></image>
-    <view class="right" catchtap="rightClick">332</view>
-  </view>
-</view>

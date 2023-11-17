@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "swiperImgs": "/componentS/swiper/swiper",
-    "purchaseList":"/componentS/purchaseList/purchaseList"
-  },
-  "enablePullDownRefresh": true
-}

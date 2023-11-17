@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "swiperImgs": "/componentS/swiper/swiper",
-    "tabBar": "/componentS/tabBar/tabBar"
-  },
-  "navigationBarTitleText": "采销更容易，爱上【采销易】"
-}

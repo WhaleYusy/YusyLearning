@@ -231,7 +231,7 @@ export default [
   },
   {
     name: `色，戒`,
-    nameOther: `Ready Player One`,
+    nameOther: ``,
     year: 2007,
     releaseDate: `2007-09-24`,
   },
@@ -240,6 +240,18 @@ export default [
     nameOther: `Mission: Impossible – Dead Reckoning Part One`,
     year: 2023,
     releaseDate: `2023-06-19`,
+  },
+  {
+    name: `封神第一部：朝歌风云`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-07-20`,
+  },
+  {
+    name: `第八个嫌疑人`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-09-09`,
   },
   
 ];
