@@ -2,7 +2,7 @@
     <div class="top">
         <div class="content">
             <div class="left">
-                <img src="" alt="尚医通">
+                <img src="" alt="syt">
                 <p>尚医通 预约挂号统一平台</p>
             </div>
             <div class="right">

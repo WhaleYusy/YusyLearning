@@ -2,11 +2,9 @@
   <div class="container">
     <HospitalTop />
     <div class="content">
-      xxxxx
+      <RouterView />
     </div>
-    <div class="bottom">
-      123123
-    </div>
+    <HospitalBottom />
   </div>
 </template>
 
@@ -22,13 +20,6 @@
     margin-top: 70px;
     width: 1200px;
     height: 1000px;
-    background-color: red;
-  }
-
-  .bottom {
-    width: 100%;
-    height: 50px;
-    background-color: cyan;
   }
 }
 </style>
