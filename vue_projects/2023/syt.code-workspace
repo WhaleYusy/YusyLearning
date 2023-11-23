@@ -4,5 +4,14 @@
 			"path": "syt"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.tabSize": 2,
+		"editor.formatOnSave": true,
+		"[vue]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}
+	}
 }

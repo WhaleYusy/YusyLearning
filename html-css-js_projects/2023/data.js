@@ -259,5 +259,10 @@ export default [
     year: 2023,
     releaseDate: `2023-06-22`,
   },
-  
+  {
+    name: `无名`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-01-22`,
+  },
 ];
