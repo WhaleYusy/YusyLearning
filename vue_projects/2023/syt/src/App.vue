@@ -19,7 +19,7 @@
   .content {
     margin-top: 70px;
     width: 1200px;
-    height: 1000px;
+    min-height: 1000px;
   }
 }
 </style>
