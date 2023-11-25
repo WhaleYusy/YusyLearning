@@ -40,7 +40,7 @@
                 p-id="5228"
               ></path>
             </svg>
-            <span>每天{{ hospitalInfo.bookingRule.releaseTime }}</span>
+            <span>每天{{ hospitalInfo?.bookingRule?.releaseTime }}放号</span>
           </div>
         </div>
       </div>

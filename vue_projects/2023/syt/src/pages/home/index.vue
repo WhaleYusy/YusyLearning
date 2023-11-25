@@ -6,7 +6,7 @@
       <ElCol :span="20">
         <Level />
         <Region />
-        <div class="hospital">
+        <div class="hospital" v-loading="cardLoading">
           <Card
             class="item"
             v-for="(item, index) in hasHospitalArr"
@@ -21,6 +21,8 @@
           :background="true"
           layout="prev, pager, next, jumper, sizes, ->, total,"
           :total="total"
+          @current-change="currentChange"
+          @size-change="sizeChange"
         />
       </ElCol>
       <ElCol :span="4"> </ElCol>
@@ -36,17 +38,23 @@ import Search from "./search/index.vue";
 import Level from "./level/index.vue";
 import Region from "./region/index.vue";
 import Card from "./card/index.vue";
+import type { Content, HospitalResponseData } from "@/api/home/type";
 
-const pageNo = ref(1);
-const pageSize = ref(10);
-const hasHospitalArr = ref([]);
-const total = ref(0);
+const pageNo = ref<number>(1);
+const pageSize = ref<number>(10);
+const hasHospitalArr = ref<Content>([]);
+const total = ref<number>(0);
 onMounted(() => {
   getHospitalInfo();
 });
 
 const getHospitalInfo = async () => {
-  let result: any = await reqHospital(pageNo.value, pageSize.value);
+  cardLoading.value = true;
+  let result: HospitalResponseData = await reqHospital(
+    pageNo.value,
+    pageSize.value
+  );
+  cardLoading.value = false;
   const { code, data } = result;
   if (code === 200) {
     const { content, totalElements } = data;
@@ -54,6 +62,17 @@ const getHospitalInfo = async () => {
     total.value = totalElements || 0;
   }
 };
+
+const currentChange = () => {
+  getHospitalInfo();
+};
+
+const sizeChange = () => {
+  pageNo.value = 1;
+  getHospitalInfo();
+};
+
+const cardLoading = ref<boolean>(false);
 </script>
 <style scoped lang="scss">
 .hospital {

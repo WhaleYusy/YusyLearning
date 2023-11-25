@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://139.198.34.216:8201",
+        target: "http://syt.atguigu.cn",
         changeOrigin: true,
       },
     },

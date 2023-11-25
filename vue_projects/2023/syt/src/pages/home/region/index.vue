@@ -3,35 +3,46 @@
     <div class="content">
       <div class="left">地区：</div>
       <ul class="hospital">
-        <li class="active">全部</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
-        <li>昌平区</li>
+        <li :class="{ active: regionFlag === '' }" @click="changeRegion('')">
+          全部
+        </li>
+        <li
+          :class="{ active: regionFlag === region.value }"
+          v-for="region in regionArr"
+          :key="region.value"
+          @click="changeRegion(region.value)"
+        >
+          {{ region.name }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { reqHospitalLevelAndRegion } from "@/api/home";
+import { onMounted, ref } from "vue";
+
+const regionArr = ref<any>([]);
+
+const regionFlag = ref("");
+
+onMounted(() => {
+  getRegion();
+});
+
+const getRegion = async () => {
+  const result: any = await reqHospitalLevelAndRegion("Beijin");
+  const { code, data } = result;
+  if (code === 200) {
+    regionArr.value = data || [];
+  }
+};
+
+const changeRegion = (region: string) => {
+  regionFlag.value = region;
+};
+</script>
 
 <style scoped lang="scss">
 .region {
@@ -42,8 +53,7 @@
     display: flex;
 
     .left {
-      margin-right: 10px;
-      width: 68px;
+      min-width: 52px;
     }
 
     ul {
