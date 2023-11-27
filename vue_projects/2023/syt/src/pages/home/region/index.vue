@@ -41,7 +41,10 @@ const getRegion = async () => {
 
 const changeRegion = (region: string) => {
   regionFlag.value = region;
+  $emit("getRegion", region);
 };
+
+const $emit = defineEmits(["getRegion"]);
 </script>
 
 <style scoped lang="scss">
