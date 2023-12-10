@@ -48,7 +48,7 @@ const markerLayer = (list) => {
       position: new TMap.LatLng(...item.xy),
       offset: {x: 0, y: -32},
       enableCustom: true,
-      content: `<div title="${item.name}" style="padding: 5px;background-color: #fff;border: 1px solid #000;">${item.type} ${item.source} ${item.price}</div>`,
+      content: `<div title="${item.name}" style="padding: 5px;background-color: #fff;border: 1px solid #000;">${item.type} ${item.source} ${item.price} ${item.date}</div>`,
     })
   })
 }
