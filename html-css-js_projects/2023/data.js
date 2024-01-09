@@ -1,4 +1,4 @@
-export default [
+const data = [
   {
     name: `肖申克的救赎`,
     nameOther: `The Shawshank Redemption`,
@@ -146,12 +146,6 @@ export default [
     releaseDate: `1995-02-04`,
   },
   {
-    name: `疯狂动物城`,
-    nameOther: `Zootopia`,
-    year: 2016,
-    releaseDate: `2016-03-04`,
-  },
-  {
     name: `黄飞鸿之英雄有梦`,
     nameOther: ``,
     year: 2014,
@@ -265,4 +259,78 @@ export default [
     year: 2023,
     releaseDate: `2023-01-22`,
   },
+  {
+    name: `居家男人`,
+    nameOther: `The Family Man`,
+    year: 2000,
+    releaseDate: `2000-12-22`,
+  },
+  {
+    name: `速度与激情9`,
+    nameOther: `F9: The Fast Saga`,
+    year: 2021,
+    releaseDate: `2021-05-21`,
+  },
+  {
+    name: `西游记女儿国`,
+    nameOther: ``,
+    year: 2018,
+    releaseDate: `2018-02-16`,
+  },
+  {
+    name: `西游记之孙悟空三打白骨精`,
+    nameOther: ``,
+    year: 2016,
+    releaseDate: `2016-02-08`,
+  },
+  {
+    name: `西游伏妖篇`,
+    nameOther: ``,
+    year: 2017,
+    releaseDate: `2017-01-28`,
+  },
+  {
+    name: `寒战`,
+    nameOther: `寒戰`,
+    year: 2012,
+    releaseDate: `2012-11-08`,
+  },
+  {
+    name: `寒战2`,
+    nameOther: `寒戰II`,
+    year: 2016,
+    releaseDate: `2016-07-08`,
+  },
+  {
+    name: `黑社会`,
+    nameOther: `黑社會`,
+    year: 2005,
+    releaseDate: `2005-10-20`,
+  },
+  {
+    name: `黑社会2：以和为贵`,
+    nameOther: `黑社會以和為貴`,
+    year: 2006,
+    releaseDate: `2006-04-27`,
+  },
+  {
+    name: `赤道`,
+    nameOther: ``,
+    year: 2015,
+    releaseDate: `2015-04-30`,
+  },
+  {
+    name: `金鸡SSS`,
+    nameOther: `黑金雞SSS`,
+    year: 2014,
+    releaseDate: `2014-01-30`,
+  },
+  {
+    name: `扫毒`,
+    nameOther: `掃毒`,
+    year: 2013,
+    releaseDate: `2013-11-29`,
+  },
 ];
+
+data.sort((a,b) => a.name.length > b.name.length ? 1 : -1).forEach(item => console.log(item.name))
