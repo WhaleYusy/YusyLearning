@@ -331,6 +331,12 @@ const data = [
     year: 2013,
     releaseDate: `2013-11-29`,
   },
+  {
+    name: `追击8月15`,
+    nameOther: ``,
+    year: 2004,
+    releaseDate: `2004-08-19`,
+  },
 ];
 
 data.sort((a,b) => a.name.length > b.name.length ? 1 : -1).forEach(item => console.log(item.name))
