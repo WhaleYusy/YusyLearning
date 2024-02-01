@@ -1,35 +1,33 @@
 <template>
   <div class="person">
-    <h2>姓名：{{ name }}</h2>
-    <h2>年龄：{{ age }}</h2>
+    姓名： {{ person.name }}
+    年龄： {{ person.age }}
     <button @click="changeName">修改名字</button>
     <button @click="changeAge">修改年龄</button>
-    <button @click="showTel">查看联系方式</button>
+    姓名： {{ name }}
+    年龄： {{ age }}
+
+    年龄{{ age1 }}
   </div>
 </template>
 
-<script lang="ts">
-  export default {
-    name: 'Person',
-    data() {
-      return {
-        name: '张三',
-        age: 18,
-        tel: '12341234'
-      }
-    },
-    methods: {
-      changeName(){
-        this.name = 'zhang-san'
-      },
-      changeAge(){
-        this.age += 1
-      },
-      showTel(){
-        alert(this.tel)
-      }
-    },
+<script setup lang="ts">
+  import { reactive, toRef, toRefs } from 'vue';
+  
+  let person = reactive({
+    name: '张三',
+    age: 18
+  })
+  let {age, name} = toRefs(person)
+  const changeName = () => {
+    name.value += '-'
   }
+  const changeAge = () => {
+    age.value += 1
+    age1.value += 1
+  }
+
+  let age1 = toRef(person, 'age')
 </script>
 
 <style scoped>

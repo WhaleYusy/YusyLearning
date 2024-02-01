@@ -1,18 +1,13 @@
 <template>
-  <div class="app">
-    <h1>你好啊！</h1>
-    <Person />
-  </div>
+  <!-- <Person /> -->
+  <!-- <Car /> -->
+  <Computed />
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import Person from './components/Person.vue'
-export default {
-  name: 'App',
-  components: {
-    Person
-  }
-}
+import Car from './components/Car.vue'
+import Computed from './components/Computed.vue';
 </script>
 
 <style>
