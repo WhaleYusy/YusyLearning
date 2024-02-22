@@ -337,6 +337,30 @@ const data = [
     year: 2004,
     releaseDate: `2004-08-19`,
   },
+  {
+    name: `金手指`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-12-30`,
+  },
+  {
+    name: `第二十条`,
+    nameOther: ``,
+    year: 2024,
+    releaseDate: `2024-02-10`,
+  },
+  {
+    name: `三大队`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-12-15`,
+  },
+  {
+    name: `八角笼中`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-07-06`,
+  },
 ];
 
 data.sort((a,b) => a.name.length > b.name.length ? 1 : -1).forEach(item => console.log(item.name))
