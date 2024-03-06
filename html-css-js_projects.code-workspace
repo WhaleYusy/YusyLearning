@@ -1,10 +1,15 @@
 {
-	"folders": [
-		{
-			"path": "html-css-js_projects"
-		}
-	],
-	"settings": {
-		"editor.tabSize": 2
-	}
+  "folders": [
+    {
+      "path": "html-css-js_projects"
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "prettier.configPath": ".prettierrc.json"
+  },
+  "extensions": {
+    "recommendations": ["esbenp.prettier-vscode"]
+  }
 }

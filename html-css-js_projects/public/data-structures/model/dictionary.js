@@ -13,36 +13,36 @@ class Dictionary {
     this.toStrFn = toStrFn
     this.table = {}
   }
-  hasKey(key){
+  hasKey(key) {
     return this.table[this.toStrFn(key)] != null
   }
-  set(key, value){
-    if(key != null && value != null){
+  set(key, value) {
+    if (key != null && value != null) {
       const tableKey = this.toStrFn(key)
       this.table[tableKey] = new ValuePair(key, value)
       return true
     }
     return false
   }
-  remove(key){
-    if(this.hasKey(key)){
+  remove(key) {
+    if (this.hasKey(key)) {
       delete this.table[this.toStrFn(key)]
       return true
     }
     return false
   }
-  get(key){
+  get(key) {
     const valuePair = this.table[this.toStrFn(key)]
     return valuePair == null ? undefined : valuePair.value
   }
 }
 
-class ValuePair{
+class ValuePair {
   constructor(key, value) {
     this.key = key
     this.value = value
   }
-  toString(){
+  toString() {
     return `[#${this.key}: ${this.value}]`
   }
 }

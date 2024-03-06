@@ -13,10 +13,9 @@
 // 要求：
 // (1)正序构建链表;
 // (2)构建后要忘记链表长度。
-// 数据范围：链表长度满足1≤n≤1000  ， k≤n  ，链表中数据满足0≤val≤10000 
+// 数据范围：链表长度满足1≤n≤1000  ， k≤n  ，链表中数据满足0≤val≤10000
 
 // 本题有多组样例输入。
-
 
 // 输入描述：
 // 输入说明
@@ -36,7 +35,7 @@ var countLine = 1
 var tokens = []
 var trulyLine = 3
 var i = 0
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine % trulyLine === 0) {
     // 请输入你的方法
@@ -48,9 +47,9 @@ rl.on('line', (line) => {
     })
     const num = parseInt(tokens[i * 3 + 2])
     console.log(arr[length - num])
-    i++;
+    i++
   }
-  countLine++;
+  countLine++
 })
 
 // 8

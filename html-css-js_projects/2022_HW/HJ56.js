@@ -31,11 +31,14 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
-    let num = parseInt(tokens[0]), result = 0, thanSum, thanNum
+    let num = parseInt(tokens[0]),
+      result = 0,
+      thanSum,
+      thanNum
     for (let a = 4; a <= num; a++) {
       thanSum = 1
       thanNum = a / 2

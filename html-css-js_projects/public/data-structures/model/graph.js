@@ -1,17 +1,17 @@
-const Dictionary = require('./dictionary');
+const Dictionary = require('./dictionary')
 class Graph {
   constructor(isDirected = false) {
     this.isDirected = isDirected
     this.vertices = []
     this.adjList = new Dictionary()
   }
-  addVertex(v){
-    if(!this.vertices.includes(v)){
+  addVertex(v) {
+    if (!this.vertices.includes(v)) {
       this.vertices.push(v)
       this.adjList.set(v, [])
     }
   }
-  addEdge(v, w){
+  addEdge(v, w) {
     if (!this.adjList.get(v)) {
       this.addVertex(v)
     }
@@ -19,20 +19,20 @@ class Graph {
       this.addVertex(w)
     }
     this.adjList.get(v).push(w)
-    if(!this.isDirected){
+    if (!this.isDirected) {
       this.adjList.get(w).push(v)
     }
   }
-  getVertices(){
+  getVertices() {
     return this.vertices
   }
-  getAdjList(){
+  getAdjList() {
     return this.adjList
   }
-  toString(){
+  toString() {
     let s = ''
     for (let i = 0; i < this.vertices.length; i++) {
-      s+= `${this.vertices[i]} -> `
+      s += `${this.vertices[i]} -> `
       const neighbors = this.adjList.get(this.vertices[i])
       for (let j = 0; j < neighbors.length; j++) {
         s += `${neighbors[j]} `

@@ -18,7 +18,7 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
@@ -31,13 +31,13 @@ rl.on('line', (line) => {
       } else {
         strArr2[item] = 1
       }
-    });
+    })
     const min = Math.min(...new Set(Object.values(strArr2)))
     Object.keys(strArr2).forEach(key => {
       if (strArr2[key] === min) {
         strArr = strArr.filter(item3 => item3 !== key)
       }
-    });
+    })
     console.log(strArr.join(''))
   } else {
     countLine++

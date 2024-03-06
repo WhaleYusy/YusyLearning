@@ -15,7 +15,6 @@
 
 // 11
 
-
 // 输入描述：
 // 输入正整数N（N不大于100）
 
@@ -30,13 +29,13 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
     const num = parseInt(tokens[0])
     for (let i = 0; i < num; i++) {
-      let fNum = (i) * (i + 1) / 2 + 1
+      let fNum = (i * (i + 1)) / 2 + 1
       let result = fNum + ''
       for (let j = i + 1; j < num; j++) {
         fNum += j + 1
@@ -53,4 +52,4 @@ rl.on('line', (line) => {
 // 1 3 6 10
 // 2 5 9
 // 4 8
-// 7       
+// 7

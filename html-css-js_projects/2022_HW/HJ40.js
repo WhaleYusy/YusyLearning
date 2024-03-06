@@ -3,7 +3,7 @@
 // 描述
 // 输入一行字符，分别统计出包含英文字母、空格、数字和其它字符的个数。
 
-// 数据范围：输入的字符串长度满足1≤n≤1000 
+// 数据范围：输入的字符串长度满足1≤n≤1000
 
 // 输入描述：
 // 输入一行字符串，可以有空格
@@ -19,7 +19,7 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
@@ -40,7 +40,7 @@ rl.on('line', (line) => {
     }
     sum.forEach(el => {
       console.log(el)
-    });
+    })
   } else {
     countLine++
   }

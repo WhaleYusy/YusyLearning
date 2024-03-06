@@ -20,15 +20,16 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
     const arr = tokens[0].split(' ')
-    let m = parseInt(arr[0]), n = parseInt(arr[1])
+    let m = parseInt(arr[0]),
+      n = parseInt(arr[1])
     function compute(m, n) {
-      if (m <= 1) return 1  // 没有苹果/1个苹果
-      if (n === 1) return 1  // 只有一个盘子
+      if (m <= 1) return 1 // 没有苹果/1个苹果
+      if (n === 1) return 1 // 只有一个盘子
       if (m < n) {
         return compute(m, m)
       }

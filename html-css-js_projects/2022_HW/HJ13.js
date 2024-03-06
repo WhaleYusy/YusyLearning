@@ -5,7 +5,7 @@
 
 // 所有单词之间用一个空格隔开，语句中除了英文字母外，不再包含其他字符
 
-// 数据范围：输入的字符串长度满足 1≤n≤1000 
+// 数据范围：输入的字符串长度满足 1≤n≤1000
 
 // 注意本题有多组输入
 // 输入描述：
@@ -22,7 +22,7 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法

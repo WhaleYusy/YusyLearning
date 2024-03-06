@@ -13,7 +13,7 @@
 
 // 4、每个单词最长20个字母；
 
-// 数据范围：字符串长度满足1≤n≤10000 
+// 数据范围：字符串长度满足1≤n≤10000
 // 输入描述：
 // 输入一行，表示用来倒排的句子
 
@@ -28,11 +28,17 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
-    console.log(tokens[0].replace(/[^A-Za-z]/g, ' ').split(' ').reverse().join(' '))
+    console.log(
+      tokens[0]
+        .replace(/[^A-Za-z]/g, ' ')
+        .split(' ')
+        .reverse()
+        .join(' ')
+    )
   } else {
     countLine++
   }
@@ -42,4 +48,4 @@ rl.on('line', (line) => {
 // student a am I
 
 // $bo*y gi!r#l
-// l r gi y bo 
+// l r gi y bo

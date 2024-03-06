@@ -3,7 +3,7 @@
 // 描述
 // 根据输入的日期，计算是这一年的第几天。
 // 保证年份为4位数且日期合法。
-// 进阶：时间复杂度：O(n)\O(n) ，空间复杂度：O(1)\O(1) 
+// 进阶：时间复杂度：O(n)\O(n) ，空间复杂度：O(1)\O(1)
 // 输入描述：
 // 输入一行，每行空格分割，分别是年，月，日
 
@@ -20,7 +20,7 @@ var tokens = []
 var trulyLine = 1
 var yearPing = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 var yearRun = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
@@ -42,7 +42,7 @@ rl.on('line', (line) => {
       }
     }
     days += arr[2]
-    console.log(days);
+    console.log(days)
   } else {
     countLine++
   }

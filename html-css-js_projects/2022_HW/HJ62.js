@@ -4,7 +4,7 @@
 // 输入一个正整数，计算它在二进制下的1的个数。
 // 注意多组输入输出！！！！！！
 
-// 数据范围：1≤n≤2^31−1 
+// 数据范围：1≤n≤2^31−1
 // 输入描述：
 // 输入一个整数
 
@@ -19,7 +19,7 @@ const rl = readline.createInterface({
 var countLine = 0
 var tokens = []
 // var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   // if (countLine === trulyLine) {
   // 请输入你的方法

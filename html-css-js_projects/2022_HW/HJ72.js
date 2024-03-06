@@ -17,7 +17,7 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
@@ -34,11 +34,13 @@ rl.on('line', (line) => {
     //   }
     // }
     for (let x = 0; x <= 20; x++) {
-      let x1 = x * 5;
+      let x1 = x * 5
       for (let y = 0; y <= (100 - x1) / 3; y++) {
         let y1 = y * 3
         for (let z = 0; z <= (100 - x1 - y1) * 3; z++) {
-          let z1 = z / 3, xyz = x + y + z, xyz1 = x1 + y1 + z1;
+          let z1 = z / 3,
+            xyz = x + y + z,
+            xyz1 = x1 + y1 + z1
           if (xyz === xyz1 && xyz === 100) {
             console.log(`${x} ${y} ${z}`)
           }

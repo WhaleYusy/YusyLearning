@@ -5,7 +5,7 @@
 
 // 本题有多组输入样例
 
-// 数据范围：1≤n≤1000  ，输入的整数满足 1≤val≤10000 
+// 数据范围：1≤n≤1000  ，输入的整数满足 1≤val≤10000
 // 输入描述：
 // 第一行输入两个整数n和k
 // 第二行输入一个整数数组
@@ -21,12 +21,13 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 2
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
     const nk = tokens[0].split(' ')
-    let n = nk[0], k = nk[1]
+    let n = nk[0],
+      k = nk[1]
     let arr = tokens[1].split(' ')
     arr.sort((a, b) => {
       return parseInt(a) > parseInt(b) ? 1 : -1

@@ -3,7 +3,7 @@
 // 描述
 // 给定 n 个字符串，请对 n 个字符串按照字典序排列。
 
-// 数据范围： 1≤n≤1000  ，字符串长度满足 1≤len≤100 
+// 数据范围： 1≤n≤1000  ，字符串长度满足 1≤len≤100
 // 输入描述：
 // 输入第一行为一个正整数n(1≤n≤1000),下面n行为n个字符串(字符串长度≤100),字符串中只含有大小写字母。
 // 输出描述：
@@ -17,7 +17,7 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 0
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法

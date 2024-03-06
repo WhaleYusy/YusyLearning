@@ -3,7 +3,7 @@
 // 描述
 // 功能:输入一个正整数，按照从小到大的顺序输出它的所有质因子（重复的也要列举）（如180的质因子为2 2 3 3 5 ）
 
-// 数据范围： 1≤n≤2×10^9+14 
+// 数据范围： 1≤n≤2×10^9+14
 // 输入描述：
 // 输入一个整数
 
@@ -18,7 +18,7 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法

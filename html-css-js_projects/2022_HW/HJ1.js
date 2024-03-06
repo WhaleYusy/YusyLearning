@@ -16,11 +16,12 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 1
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === trulyLine) {
     // 请输入你的方法
-    let strArr = tokens[0].split(' '), length = strArr.length
+    let strArr = tokens[0].split(' '),
+      length = strArr.length
     console.log(strArr[length - 1].length)
   } else {
     countLine++

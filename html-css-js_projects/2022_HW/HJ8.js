@@ -22,7 +22,7 @@ const rl = readline.createInterface({
 var countLine = 1
 var tokens = []
 var trulyLine = 0
-rl.on('line', (line) => {
+rl.on('line', line => {
   tokens.push(line)
   if (countLine === 1) {
     trulyLine = parseInt(tokens[0]) + 1
@@ -31,7 +31,7 @@ rl.on('line', (line) => {
     // 请输入你的方法
     let obj = {}
     for (let i = 1; i < tokens.length; i++) {
-      const element = tokens[i];
+      const element = tokens[i]
       const eArr = element.split(' ')
       if (Object.getOwnPropertyDescriptor(obj, eArr[0])) {
         obj[eArr[0]] += parseInt(eArr[1])
