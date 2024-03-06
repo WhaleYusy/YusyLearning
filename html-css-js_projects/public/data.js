@@ -361,6 +361,18 @@ const data = [
     year: 2023,
     releaseDate: `2023-07-06`,
   },
+  {
+    name: `敢死队4：最终章`,
+    nameOther: `Expend4bles`,
+    year: 2023,
+    releaseDate: `2023-09-15`,
+  },
+  {
+    name: `动物园里有什么？`,
+    nameOther: ``,
+    year: 2024,
+    releaseDate: `2024-01-12`,
+  },
 ];
 
 data.sort((a,b) => a.name.length > b.name.length ? 1 : -1).forEach(item => console.log(item.name))
