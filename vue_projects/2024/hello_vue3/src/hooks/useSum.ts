@@ -1,4 +1,4 @@
-import { onUpdated, ref } from "vue"
+import { onUpdated, ref } from 'vue'
 
 export default function () {
   const sum = ref(0)
@@ -6,7 +6,7 @@ export default function () {
     sum.value += 1
   }
   return {
-    sum, 
-    changeSum,
+    sum,
+    changeSum
   }
 }

@@ -10,15 +10,12 @@
   </div>
 </template>
 <script setup lang="ts">
-  // import useSum from '@/hooks/useSum'
-  // import useDog from '@/hooks/useDog';
+// import useSum from '@/hooks/useSum'
+// import useDog from '@/hooks/useDog';
 
-  // const { sum, changeSum} = useSum()
-  // const { dogList, getDog } = useDog()
-  import utils from "@/utils/index";
-  const { sum, changeSum} = utils()
-
+// const { sum, changeSum} = useSum()
+// const { dogList, getDog } = useDog()
+import utils from '@/utils/index'
+const { sum, changeSum } = utils()
 </script>
-<style scoped>
-  
-</style>
+<style scoped></style>

@@ -372,6 +372,18 @@ const data = [
     nameOther: ``,
     year: 2024,
     releaseDate: `2024-01-12`
+  },
+  {
+    name: `开国将帅授衔1955`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-11-24`
+  },
+  {
+    name: `93国际列车大劫案：莫斯科行动`,
+    nameOther: ``,
+    year: 2023,
+    releaseDate: `2023-09-29`
   }
 ]
 

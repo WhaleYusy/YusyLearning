@@ -13,42 +13,43 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive, ref, watch } from 'vue';
+import { reactive, ref, watch } from 'vue'
 
-  let sum = ref(0)
+let sum = ref(0)
 
-  const stopWatch = watch(sum, (newVal, oldValue) => {
-    console.log('sum变化了',newVal, oldValue);
-    if(newVal >= 10){
-      stopWatch()
-    }
-  })
+const stopWatch = watch(sum, (newVal, oldValue) => {
+  console.log('sum变化了', newVal, oldValue)
+  if (newVal >= 10) {
+    stopWatch()
+  }
+})
 
-  const person = reactive({
-    name: 'zhangsan',
-    age: 18,
-    car: {
-      name: 'baoma',
-      price: 100
-    }
-  })
-  const changeCar = () => {
-    person.car.name = 'benchi'
+const person = reactive({
+  name: 'zhangsan',
+  age: 18,
+  car: {
+    name: 'baoma',
+    price: 100
   }
-  const changeCar2 = () => {
-    person.car.price = 1000
+})
+const changeCar = () => {
+  person.car.name = 'benchi'
+}
+const changeCar2 = () => {
+  person.car.price = 1000
+}
+const changeCar3 = () => {
+  person.car = {
+    name: 'tailing',
+    price: 10
   }
-  const changeCar3 = () => {
-    person.car = {
-      name: 'tailing',
-      price: 10
-    }
+}
+watch(
+  () => person.car,
+  (n, o) => {
+    console.log(n, o)
   }
-  watch(() => person.car, (n, o) => {
-    console.log(n,o);
-  })
+)
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
