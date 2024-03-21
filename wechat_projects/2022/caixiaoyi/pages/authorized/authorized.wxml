@@ -1,8 +1,0 @@
-
-<view class='authorized_content'>
-  <image src='http://qiniuoss.822644.com/wxPic/20191125/767178300916273152.png'></image>
-  <view class='title'>采销易获得以下权限</view>
-  <view class='getInfo'><text>●</text> 获得你的公开信息（昵称、头像等）</view>      
-  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击授权</button>
-  <button style='background:#cccccc;margin-top:30rpx;color:#333' bindtap='noGetUserInfo'>暂不授权</button>
-</view>

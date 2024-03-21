@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "tabBar":"/componentS/tabBar/tabBar",
-    "shopNav":"/componentS/shopNav/shopNav",
-    "payModel": "/componentS/payModel/payModel"
-  }
-}

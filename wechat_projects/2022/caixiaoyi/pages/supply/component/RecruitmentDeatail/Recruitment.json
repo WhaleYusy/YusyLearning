@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "swiper":"/componentS/swiper/swiper",
-    "tabBar":"/componentS/tabBar/tabBar"
-  }
-}

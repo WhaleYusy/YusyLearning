@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "HtmlCssJsProjects"
+		}
+	],
+	"settings": {
+	  "editor.defaultFormatter": "esbenp.prettier-vscode",
+	  "editor.formatOnSave": true,
+	  "prettier.configPath": ".prettierrc.json"
+	},
+	"extensions": {
+	  "recommendations": ["esbenp.prettier-vscode"]
+	}
+}
