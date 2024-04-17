@@ -1,5 +1,5 @@
 {
-  "name": "2024-yu-parent",
+  "name": "2024-shenzhen-house",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,11 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.21",
-    "vue-tree-chart-3": "^1.2.9"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.1.6"
+    "vite": "^5.2.8"
   }
 }
