@@ -59,4 +59,3 @@ const initShenzhen = () => {
   height: 100%;
 }
 </style>
-@/map/2024-shenzhen-baidumap
