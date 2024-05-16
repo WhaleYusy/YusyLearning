@@ -396,6 +396,30 @@ const data = [
     nameOther: ``,
     year: 2023,
     releaseDate: `2023-11-01`
+  },
+  {
+    name: `第二十条`,
+    nameOther: ``,
+    year: 2024,
+    releaseDate: `2024-02-10`
+  },
+  {
+    name: `机动部队—警例`,
+    nameOther: ``,
+    year: 2008,
+    releaseDate: `2008-10-13`
+  },
+  {
+    name: `机动部队 PTU`,
+    nameOther: ``,
+    year: 2003,
+    releaseDate: `2003-04-17`
+  },
+  {
+    name: `机动部队—绝路`,
+    nameOther: ``,
+    year: 2008,
+    releaseDate: `2008`
   }
 ]
 
