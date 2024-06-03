@@ -420,6 +420,24 @@ const data = [
     nameOther: ``,
     year: 2008,
     releaseDate: `2008`
+  },
+  {
+    name: `机动部队—人性`,
+    nameOther: ``,
+    year: 2008,
+    releaseDate: `2008`
+  },
+  {
+    name: `机动部队—伙伴`,
+    nameOther: ``,
+    year: 2009,
+    releaseDate: `2009`
+  },
+  {
+    name: `机动部队—同袍`,
+    nameOther: ``,
+    year: 2009,
+    releaseDate: `2009-01-08`
   }
 ]
 
