@@ -21,17 +21,18 @@ const initMap = () => {
 }
 
 const initPoint = () => {
-  console.table(anjurencaifang)
-  anjurencaifang.forEach(({ point, name, price, offset = [-50, 5] }) => {
-    map.value.addOverlay(new BMap.Marker(new BMap.Point(...point))) // 标点
-    map.value.addOverlay(
-      // 提示框
-      new BMap.Label(`2024 - ${name} - ${price}`, {
-        position: new BMap.Point(...point),
-        offset: new BMap.Size(...offset)
-      })
-    )
-  })
+  anjurencaifang
+    .filter(({ date }) => date > '2024-09-01')
+    .forEach(({ point, name, price, date, offset = [-50, 5] }) => {
+      map.value.addOverlay(new BMap.Marker(new BMap.Point(...point))) // 标点
+      map.value.addOverlay(
+        // 提示框
+        new BMap.Label(`${date} - ${name} - ${price}`, {
+          position: new BMap.Point(...point),
+          offset: new BMap.Size(...offset)
+        })
+      )
+    })
 }
 
 const initShenzhen = () => {

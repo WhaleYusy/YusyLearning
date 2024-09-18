@@ -1,15 +1,31 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import FormList from './ElFormItem'
 
 const formData = reactive({})
-const formList = reactive(FormList)
+const formRef = ref()
+const onValidate = () => {
+  formRef.value.validate((valid, fields) => {
+    console.log(valid, fields)
+
+    if (valid) {
+      console.log('校验成功')
+    } else {
+      console.log('校验不成功', fields)
+    }
+  })
+}
 </script>
 
 <template>
   <div id="demo">
-    <el-form :model="formData" label-width="auto" style="max-width: 960px">
-      <el-form-item v-for="item in FormList" :key="item.key" :label="item.label">
+    <el-form ref="formRef" :model="formData" label-width="auto" style="max-width: 960px">
+      <el-form-item
+        v-for="item in FormList"
+        :key="item.key"
+        :prop="item.key"
+        :label="item.label"
+        :required="item.required">
         <el-select v-if="item.type === 'select'" v-model="formData[item.key]">
           <el-option v-for="opt in item.options" :key="opt.value" :label="opt.label" :value="opt.value"></el-option>
         </el-select>
@@ -24,6 +40,7 @@ const formList = reactive(FormList)
         <el-input v-else type="input" v-model="formData[item.key]"></el-input>
       </el-form-item>
     </el-form>
+    <el-button @click="onValidate">检验</el-button>
   </div>
 </template>
 

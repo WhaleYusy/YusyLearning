@@ -2,12 +2,14 @@ export default [
   {
     key: 'name',
     label: '姓名',
-    type: 'input'
+    type: 'input',
+    required: true
   },
   {
     key: 'zone',
     label: '地区',
     type: 'select',
+    required: true,
     options: [
       {
         value: 'China',
@@ -22,17 +24,20 @@ export default [
   {
     key: 'birthday',
     label: '生日',
-    type: 'date'
+    type: 'date',
+    required: true
   },
   {
     key: 'isBest',
     label: '是否最棒',
-    type: 'switch'
+    type: 'switch',
+    required: true
   },
   {
     key: 'hobby',
     label: '兴趣爱好',
     type: 'checkbox',
+    required: true,
     options: [
       {
         value: 'basketball',
@@ -52,6 +57,7 @@ export default [
     key: 'sex',
     label: '性别',
     type: 'radio',
+    required: true,
     options: [
       {
         value: true,
