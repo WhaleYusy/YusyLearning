@@ -25,16 +25,21 @@ rl.on('line', line => {
   if (countLine === trulyLine) {
     // 请输入你的方法
     const arr = tokens[0].split(' ')
-    let m = parseInt(arr[0]),
-      n = parseInt(arr[1])
+    let mr = parseInt(arr[0]),
+      nr = parseInt(arr[1])
     function compute(m, n) {
       if (m <= 1) return 1 // 没有苹果/1个苹果
       if (n === 1) return 1 // 只有一个盘子
       if (m < n) {
         return compute(m, m)
       }
+      return compute(m, n - 1) + compute(m - n, n)
     }
+    console.log(compute(mr, nr))
   } else {
     countLine++
   }
 })
+
+// 7 3
+// 8
