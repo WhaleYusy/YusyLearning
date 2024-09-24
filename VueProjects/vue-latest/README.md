@@ -1,4 +1,4 @@
-# 20240902-element-form-rules-demo
+# vue-latest
 
 This template should help get you started developing with Vue 3 in Vite.
 

@@ -1,5 +1,5 @@
 {
-  "name": "20240902-element-form-rules-demo",
+  "name": "vue-latest",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,13 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "element-plus": "^2.8.1",
     "vue": "^3.4.29"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
-    "unplugin-auto-import": "^0.18.2",
-    "unplugin-vue-components": "^0.27.4",
     "vite": "^5.3.1"
   }
 }
