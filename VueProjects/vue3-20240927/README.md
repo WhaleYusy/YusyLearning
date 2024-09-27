@@ -1,4 +1,4 @@
-# vue-latest
+# vue3-20240927
 
 This template should help get you started developing with Vue 3 in Vite.
 
